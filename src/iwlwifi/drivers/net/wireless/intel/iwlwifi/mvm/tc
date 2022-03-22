@@ -1,0 +1,2941 @@
+d3.c:	mutex_lock(&mvm->mutex);
+d3.c:	mutex_unlock(&mvm->mutex);
+d3.c:			mutex_lock(&mvm->mutex);
+d3.c:			mvm->ptk_ivlen = key->iv_len;
+d3.c:			mvm->ptk_icvlen = key->icv_len;
+d3.c:			mvm->gtk_ivlen = key->iv_len;
+d3.c:			mvm->gtk_icvlen = key->icv_len;
+d3.c:			mutex_unlock(&mvm->mutex);
+d3.c:						lockdep_is_held(&mvm->mutex));
+d3.c:						mvm->trans->num_rx_queues);
+d3.c:		mutex_lock(&mvm->mutex);
+d3.c:			mvm->ptk_ivlen = key->iv_len;
+d3.c:			mvm->ptk_icvlen = key->icv_len;
+d3.c:			mvm->gtk_ivlen = key->iv_len;
+d3.c:			mvm->gtk_icvlen = key->icv_len;
+d3.c:		mutex_unlock(&mvm->mutex);
+d3.c:	rcu_assign_pointer(mvm->fw_id_to_mac_id[mvmvif->ap_sta_id], ap_sta);
+d3.c:	set_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status);
+d3.c:	memset(mvm->fw_key_table, 0, sizeof(mvm->fw_key_table));
+d3.c:	mvm->ptk_ivlen = 0;
+d3.c:	mvm->ptk_icvlen = 0;
+d3.c:	mvm->ptk_ivlen = 0;
+d3.c:	mvm->ptk_icvlen = 0;
+d3.c:	bool unified = fw_has_capa(&mvm->fw->ucode_capa,
+d3.c:	 * locking/unlocking mvm->mutex.
+d3.c:	ieee80211_iter_keys(mvm->hw, vif, iwl_mvm_wowlan_program_keys,
+d3.c:	    !fw_has_api(&mvm->fw->ucode_capa,
+d3.c:	bool unified_image = fw_has_capa(&mvm->fw->ucode_capa,
+d3.c:	mvm->offload_tid = wowlan_config_cmd->offloading_tid;
+d3.c:		mutex_unlock(&mvm->mutex);
+d3.c:		mutex_lock(&mvm->mutex);
+d3.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+d3.c:	bool unified_image = fw_has_capa(&mvm->fw->ucode_capa,
+d3.c:	wowlan_config_cmd.sta_id = mvm->aux_sta.sta_id;
+d3.c:	ret = iwl_mvm_sched_scan_start(mvm, vif, nd_config, &mvm->nd_ies,
+d3.c:	if (WARN_ON(mvm->nd_match_sets || mvm->nd_channels))
+d3.c:		mvm->nd_match_sets = kmemdup(nd_config->match_sets,
+d3.c:		if (mvm->nd_match_sets)
+d3.c:			mvm->n_nd_match_sets = nd_config->n_match_sets;
+d3.c:	mvm->nd_channels = kmemdup(nd_config->channels,
+d3.c:	if (mvm->nd_channels)
+d3.c:		mvm->n_nd_channels = nd_config->n_channels;
+d3.c:	kfree(mvm->nd_match_sets);
+d3.c:	mvm->nd_match_sets = NULL;
+d3.c:	mvm->n_nd_match_sets = 0;
+d3.c:	kfree(mvm->nd_channels);
+d3.c:	mvm->nd_channels = NULL;
+d3.c:	mvm->n_nd_channels = 0;
+d3.c:	bool unified_image = fw_has_capa(&mvm->fw->ucode_capa,
+d3.c:	mutex_lock(&mvm->mutex);
+d3.c:	set_bit(IWL_MVM_STATUS_IN_D3, &mvm->status);
+d3.c:		mvm->net_detect = true;
+d3.c:				mvm->fw_id_to_mac_id[mvmvif->ap_sta_id],
+d3.c:				lockdep_is_held(&mvm->mutex));
+d3.c:		mvm->net_detect = false;
+d3.c:	if (mvm->d3_wake_sysassert)
+d3.c:	if (mvm->trans->trans_cfg->device_family < IWL_DEVICE_FAMILY_9000)
+d3.c:		iwl_fw_dbg_stop_restart_recording(&mvm->fwrt, NULL, true);
+d3.c:		mvm->d3_test_pme_ptr =
+d3.c:	clear_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status);
+d3.c:	ret = iwl_trans_d3_suspend(mvm->trans, test, !unified_image);
+d3.c:			if (mvm->fw_restart > 0) {
+d3.c:				mvm->fw_restart--;
+d3.c:				ieee80211_restart_hw(mvm->hw);
+d3.c:		clear_bit(IWL_MVM_STATUS_IN_D3, &mvm->status);
+d3.c:	mutex_unlock(&mvm->mutex);
+d3.c:	struct iwl_trans *trans = mvm->trans;
+d3.c:	iwl_fw_runtime_suspend(&mvm->fwrt);
+d3.c:	pm_wakeup_event(mvm->dev, 0);
+d3.c:					ivlen = mvm->gtk_ivlen;
+d3.c:					icvlen += mvm->gtk_icvlen;
+d3.c:					ivlen = mvm->ptk_ivlen;
+d3.c:					icvlen += mvm->ptk_icvlen;
+d3.c:						   lockdep_is_held(&mvm->mutex));
+d3.c:			for (i = 1; i < mvm->trans->num_rx_queues; i++)
+d3.c:	ieee80211_iter_keys(mvm->hw, vif,
+d3.c:	ieee80211_iter_keys(mvm->hw, vif,
+d3.c:	lockdep_assert_held(&mvm->mutex);
+d3.c:	if (!fw_has_api(&mvm->fw->ucode_capa,
+d3.c:	if (mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_22000) {
+d3.c:		i = mvm->offload_tid;
+d3.c:		iwl_trans_set_q_ptrs(mvm->trans,
+d3.c:	mutex_unlock(&mvm->mutex);
+d3.c:	mutex_unlock(&mvm->mutex);
+d3.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+d3.c:	mvm->last_netdetect_scans = le32_to_cpu(query->n_scans_done);
+d3.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+d3.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+d3.c:					mvm->nd_channels[i]->center_freq;
+d3.c:					mvm->nd_channels[i]->center_freq;
+d3.c:	if (mvm->n_nd_match_sets) {
+d3.c:	for_each_set_bit(i, &matched_profiles, mvm->n_nd_match_sets) {
+d3.c:		idx = mvm->n_nd_match_sets - i - 1;
+d3.c:		match->ssid.ssid_len = mvm->nd_match_sets[idx].ssid.ssid_len;
+d3.c:		memcpy(match->ssid.ssid, mvm->nd_match_sets[idx].ssid.ssid,
+d3.c:		if (mvm->n_nd_channels < n_channels)
+d3.c:	mutex_unlock(&mvm->mutex);
+d3.c:	u32 base = mvm->trans->dbg.lmac_error_event_table[0];
+d3.c:	iwl_trans_read_mem_bytes(mvm->trans, base,
+d3.c:	bool unified_image = fw_has_capa(&mvm->fw->ucode_capa,
+d3.c:	bool d0i3_first = fw_has_capa(&mvm->fw->ucode_capa,
+d3.c:	mutex_lock(&mvm->mutex);
+d3.c:	clear_bit(IWL_MVM_STATUS_IN_D3, &mvm->status);
+d3.c:	iwl_fw_dbg_read_d3_debug_data(&mvm->fwrt);
+d3.c:		set_bit(STATUS_FW_ERROR, &mvm->trans->status);
+d3.c:		iwl_dbg_tlv_time_point(&mvm->fwrt,
+d3.c:		iwl_fw_dbg_collect_desc(&mvm->fwrt, &iwl_dump_desc_assert,
+d3.c:	ret = iwl_trans_d3_resume(mvm->trans, &d3_status, test, !unified_image);
+d3.c:		switch (mvm->cmd_ver.d0i3_resp) {
+d3.c:				iwl_write32(mvm->trans, CSR_RESET,
+d3.c:	if (mvm->net_detect) {
+d3.c:			mvm->keep_vif = vif;
+d3.c:	mutex_unlock(&mvm->mutex);
+d3.c:		ieee80211_iterate_active_interfaces_rtnl(mvm->hw,
+d3.c:	set_bit(IWL_MVM_STATUS_HW_RESTART_REQUESTED, &mvm->status);
+d3.c:	iwl_trans_resume(mvm->trans);
+d3.c:	mvm->trans->system_pm_mode = IWL_PLAT_PM_MODE_DISABLED;
+d3.c:	iwl_fw_runtime_resume(&mvm->fwrt);
+d3.c:	device_set_wakeup_enable(mvm->trans->dev, enabled);
+d3.c:	if (mvm->d3_test_active)
+d3.c:	mvm->trans->system_pm_mode = IWL_PLAT_PM_MODE_D3;
+d3.c:	iwl_fw_runtime_suspend(&mvm->fwrt);
+d3.c:	err = __iwl_mvm_suspend(mvm->hw, mvm->hw->wiphy->wowlan_config, true);
+d3.c:	mvm->d3_test_active = true;
+d3.c:	mvm->keep_vif = NULL;
+d3.c:		if (mvm->d3_test_pme_ptr) {
+d3.c:			pme_asserted = iwl_trans_read_mem32(mvm->trans,
+d3.c:						mvm->d3_test_pme_ptr);
+d3.c:	bool unified_image = fw_has_capa(&mvm->fw->ucode_capa,
+d3.c:	mvm->d3_test_active = false;
+d3.c:	iwl_fw_dbg_read_d3_debug_data(&mvm->fwrt);
+d3.c:	iwl_fw_runtime_resume(&mvm->fwrt);
+d3.c:	mvm->trans->system_pm_mode = IWL_PLAT_PM_MODE_DISABLED;
+d3.c:	iwl_abort_notification_waits(&mvm->notif_wait);
+d3.c:		ieee80211_restart_hw(mvm->hw);
+d3.c:		while (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) &&
+d3.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+d3.c:		iwl_mvm_d3_test_disconn_work_iter, mvm->keep_vif);
+Binary file iwlmvm.ko matches
+quota-adv.c:	lockdep_assert_held(&mvm->mutex);
+quota-adv.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+quota-adv.c:	spin_lock_bh(&mvm->tcm.lock);
+quota-adv.c:			iwl_mvm_tcm_load_percentage(mvm->tcm.result.airtime[id],
+quota-adv.c:						    mvm->tcm.result.elapsed);
+quota-adv.c:		mvm->quotadbg.quota_used[id] = usage[id];
+quota-adv.c:	spin_unlock_bh(&mvm->tcm.lock);
+quota-adv.c:	mvm->quotadbg.cmd = *cmd;
+quota-adv.c:	mvm->quotadbg.last_update = jiffies;
+quota-adv.c:	mutex_lock(&mvm->mutex);
+quota-adv.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+quota-adv.c:	mutex_unlock(&mvm->mutex);
+quota-adv.c:	ADD_ROW("channel busy time", "d", mvm->tcm.result.airtime[_m]);
+quota-adv.c:	ADD_ROW("*quota used (%)", "d", mvm->quotadbg.quota_used[_m]);
+quota-adv.c:			 jiffies_to_msecs(jiffies - mvm->quotadbg.last_update));
+quota-adv.c:			 mvm->tcm.result.elapsed);
+quota-adv.c:			 jiffies_to_msecs(jiffies - mvm->tcm.ts));
+quota-adv.c:			iwl_mvm_quota_cmd_get_quota(mvm, &mvm->quotadbg.cmd, i);
+quota-adv.c:			iwl_mvm_quota_cmd_get_quota(mvm, &mvm->quotadbg.cmd, i);
+mvm.h:	 * mvm->time_event_lock is held, as it value is used to indicate
+mvm.h:	return test_bit(IWL_MVM_STATUS_HW_RFKILL, &mvm->status) ||
+mvm.h:	       test_bit(IWL_MVM_STATUS_HW_CTKILL, &mvm->status);
+mvm.h:	return test_bit(IWL_MVM_STATUS_HW_RFKILL, &mvm->status);
+mvm.h:	return test_bit(IWL_MVM_STATUS_FIRMWARE_RUNNING, &mvm->status);
+mvm.h:	if (sta_id >= ARRAY_SIZE(mvm->fw_id_to_mac_id))
+mvm.h:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+mvm.h:	if (sta_id >= ARRAY_SIZE(mvm->fw_id_to_mac_id))
+mvm.h:	sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[sta_id],
+mvm.h:					lockdep_is_held(&mvm->mutex));
+mvm.h:	if (WARN_ON(vif_id >= ARRAY_SIZE(mvm->vif_id_to_mac)))
+mvm.h:		return rcu_dereference(mvm->vif_id_to_mac[vif_id]);
+mvm.h:	return rcu_dereference_protected(mvm->vif_id_to_mac[vif_id],
+mvm.h:					 lockdep_is_held(&mvm->mutex));
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_OCE);
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_FRAG_EBS);
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	bool nvm_lar = mvm->nvm_data->lar_enabled;
+mvm.h:	bool tlv_lar = fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	if (mvm->cfg->nvm_type == IWL_NVM_EXT)
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	       fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return mvm->trans->trans_cfg->use_tfh;
+mvm.h:	return mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_22000;
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_22000;
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_api(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	       fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+mvm.h:	flush_work(&mvm->async_handlers_wk);
+mvm.h:	return mvm->nvm_data && mvm->nvm_data->valid_tx_ant ?
+mvm.h:	       mvm->fw->valid_tx_ant & mvm->nvm_data->valid_tx_ant :
+mvm.h:	       mvm->fw->valid_tx_ant;
+mvm.h:	return mvm->nvm_data && mvm->nvm_data->valid_rx_ant ?
+mvm.h:	       mvm->fw->valid_rx_ant & mvm->nvm_data->valid_rx_ant :
+mvm.h:	       mvm->fw->valid_rx_ant;
+mvm.h:	return mvm->fw->phy_config & phy_config;
+mvm.h:	return ((BIT(mvm->trans->trans_cfg->base_params->num_of_queues) - 1) &
+mvm.h:	lockdep_assert_held(&mvm->mutex);
+mvm.h:	iwl_fw_cancel_timestamp(&mvm->fwrt);
+mvm.h:	clear_bit(IWL_MVM_STATUS_FIRMWARE_RUNNING, &mvm->status);
+mvm.h:	iwl_fw_dbg_stop_sync(&mvm->fwrt);
+mvm.h:	iwl_trans_stop_device(mvm->trans);
+mvm.h:	iwl_free_fw_paging(&mvm->fwrt);
+mvm.h:	iwl_fw_dump_conf_clear(&mvm->fwrt);
+mvm.h:	return fw_has_capa(&mvm->fw->ucode_capa,
+rxmq.c:	if (!mvm->cur_aid)
+rxmq.c:	memcpy(radiotap->data, &mvm->cur_aid, sizeof(mvm->cur_aid));
+rxmq.c:		ieee80211_rx_napi(mvm->hw, sta, skb, napi);
+rxmq.c:	    IWL_RX_MPDU_STATUS_SEC_UNKNOWN && !mvm->monitor_on)
+rxmq.c:		if (!fw_has_api(&mvm->fw->ucode_capa,
+rxmq.c:		if (mvm->trans->trans_cfg->gen2 &&
+rxmq.c:			if (mvm->trans->trans_cfg->gen2)
+rxmq.c:		    !mvm->monitor_on && net_ratelimit())
+rxmq.c:		sta = rcu_dereference(buf->mvm->fw_id_to_mac_id[sta_id]);
+rxmq.c:	ba_data = rcu_dereference(mvm->baid_map[baid]);
+rxmq.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[ba_data->sta_id]);
+rxmq.c:			 baid >= ARRAY_SIZE(mvm->baid_map)))
+rxmq.c:	ba_data = rcu_dereference(mvm->baid_map[baid]);
+rxmq.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[ba_data->sta_id]);
+rxmq.c:	    mvm->queue_sync_cookie != internal_notif->cookie) {
+rxmq.c:	    !atomic_dec_return(&mvm->queue_sync_counter))
+rxmq.c:		wake_up(&mvm->rx_sync_waitq);
+rxmq.c:	baid_data = rcu_dereference(mvm->baid_map[baid]);
+rxmq.c:	data = rcu_dereference(mvm->baid_map[baid]);
+rxmq.c:		if (toggle_bit != mvm->ampdu_toggle) {
+rxmq.c:	if (unlikely(test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)))
+rxmq.c:	if (mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_AX210) {
+rxmq.c:		if (mvm->trans->trans_cfg->device_family >=
+rxmq.c:		if (toggle_bit != mvm->ampdu_toggle) {
+rxmq.c:			mvm->ampdu_ref++;
+rxmq.c:			if (mvm->ampdu_ref == 0)
+rxmq.c:				mvm->ampdu_ref++;
+rxmq.c:			mvm->ampdu_toggle = toggle_bit;
+rxmq.c:		rx_status->ampdu_reference = mvm->ampdu_ref;
+rxmq.c:	if (unlikely(mvm->monitor_on))
+rxmq.c:		if (!WARN_ON_ONCE(id >= ARRAY_SIZE(mvm->fw_id_to_mac_id))) {
+rxmq.c:			sta = rcu_dereference(mvm->fw_id_to_mac_id[id]);
+rxmq.c:		sta = ieee80211_find_sta_by_ifaddr(mvm->hw, hdr->addr2, NULL);
+rxmq.c:			rcu_dereference(mvm->csa_tx_blocked_vif);
+rxmq.c:		if (!mvm->tcm.paused && len >= sizeof(*hdr) &&
+rxmq.c:		    time_after(jiffies, mvm->tcm.ts + MVM_TCM_PERIOD))
+rxmq.c:			schedule_delayed_work(&mvm->tcm.work, 0);
+rxmq.c:		trig = iwl_fw_dbg_trigger_on(&mvm->fwrt,
+rxmq.c:				iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+rxmq.c:			if (mvm->trans->trans_cfg->device_family ==
+rxmq.c:			     mvm->sched_scan_pass_all ==
+rxmq.c:			mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_FOUND;
+rxmq.c:	if (unlikely(test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)))
+rxmq.c:	ieee80211_rx_napi(mvm->hw, sta, skb, napi);
+rxmq.c:			 baid >= ARRAY_SIZE(mvm->baid_map)))
+rxmq.c:	baid_data = rcu_dereference(mvm->baid_map[baid]);
+vendor-cmd.c:		if (mvm->csi_portid == netlink_notify_portid(notify))
+vendor-cmd.c:			mvm->csi_portid = 0;
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	if (mvm->tdls_peer_cache_cnt >= IWL_MVM_TDLS_CNT_MAX_PEERS) {
+vendor-cmd.c:		      sizeof(cnt->rx[0]) * mvm->trans->num_rx_queues,
+vendor-cmd.c:	list_add_tail_rcu(&cnt->list, &mvm->tdls_peer_cache_list);
+vendor-cmd.c:	mvm->tdls_peer_cache_cnt++;
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	mvm->tdls_peer_cache_cnt--;
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:		for (q = 0; q < mvm->trans->num_rx_queues; q++)
+vendor-cmd.c:	mvm->txp_cmd.v5 = cmd.v5;
+vendor-cmd.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+vendor-cmd.c:		len = sizeof(mvm->txp_cmd.v5);
+vendor-cmd.c:	else if (fw_has_capa(&mvm->fw->ucode_capa,
+vendor-cmd.c:		len = sizeof(mvm->txp_cmd.v4);
+vendor-cmd.c:		len = sizeof(mvm->txp_cmd.v4.v3);
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:		mvm->p2p_opps_test_wa_vif = mvmvif;
+vendor-cmd.c:		mvm->p2p_opps_test_wa_vif = NULL;
+vendor-cmd.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+vendor-cmd.c:						 mvm->p2p_opps_test_wa_vif,
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:	lockdep_assert_held(&mvm->mutex);
+vendor-cmd.c:	if (mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_EINVAL)
+vendor-cmd.c:	for (i = 0; i < mvm->mcast_filter_cmd->count; i++) {
+vendor-cmd.c:		if (mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_MCAST4 &&
+vendor-cmd.c:		    memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:		else if (memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:		else if (mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_MCAST6 &&
+vendor-cmd.c:			 memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:		else if (memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:	memcpy(cmd, mvm->mcast_filter_cmd, sizeof(*cmd));
+vendor-cmd.c:	for (i = 0; i < mvm->mcast_filter_cmd->count; i++) {
+vendor-cmd.c:		if (mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_MCAST4 &&
+vendor-cmd.c:		    memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:		else if (memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:		else if (mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_MCAST6 &&
+vendor-cmd.c:			 memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:		else if (memcmp(&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN],
+vendor-cmd.c:				&mvm->mcast_filter_cmd->addr_list[i * ETH_ALEN]);
+vendor-cmd.c:	kfree(mvm->mcast_active_filter_cmd);
+vendor-cmd.c:	mvm->mcast_active_filter_cmd = cmd;
+vendor-cmd.c:	rx_filters = mvm->rx_filters & ~IWL_MVM_VENDOR_RXFILTER_EINVAL;
+vendor-cmd.c:	first_set = mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_EINVAL;
+vendor-cmd.c:	mvm->rx_filters &= ~IWL_MVM_VENDOR_RXFILTER_EINVAL;
+vendor-cmd.c:	if (rx_filters == mvm->rx_filters && !first_set)
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	old_rx_filters = mvm->rx_filters;
+vendor-cmd.c:	mvm->rx_filters = rx_filters;
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:	iwl_fw_dbg_collect(&mvm->fwrt, FW_DBG_TRIGGER_USER_EXTENDED,
+vendor-cmd.c:	if (mvm->fwrt.sar_chain_a_profile == chain_a &&
+vendor-cmd.c:	    mvm->fwrt.sar_chain_b_profile == chain_b) {
+vendor-cmd.c:	mvm->fwrt.sar_chain_a_profile = chain_a;
+vendor-cmd.c:	mvm->fwrt.sar_chain_b_profile = chain_b;
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:		if (mvm->fwrt.sar_profiles[i].enabled)
+vendor-cmd.c:		       mvm->fwrt.sar_chain_a_profile) ||
+vendor-cmd.c:		       mvm->fwrt.sar_chain_b_profile)) {
+vendor-cmd.c:		value =  &mvm->fwrt.geo_profiles[tbl_idx - 1].values[idx];
+vendor-cmd.c:	mutex_lock(&mvm->mutex);
+vendor-cmd.c:	mutex_unlock(&mvm->mutex);
+vendor-cmd.c:	mvm->csi_portid = cfg80211_vendor_cmd_get_sender(wiphy);
+vendor-cmd.c:	mvm->hw->wiphy->vendor_commands = iwl_mvm_vendor_commands;
+vendor-cmd.c:	mvm->hw->wiphy->n_vendor_commands = ARRAY_SIZE(iwl_mvm_vendor_commands);
+vendor-cmd.c:	mvm->hw->wiphy->vendor_events = iwl_mvm_vendor_events;
+vendor-cmd.c:	mvm->hw->wiphy->n_vendor_events = ARRAY_SIZE(iwl_mvm_vendor_events);
+vendor-cmd.c:	list_add_tail(&mvm->list, &device_list);
+vendor-cmd.c:	list_del(&mvm->list);
+vendor-cmd.c:		cfg80211_vendor_event_alloc(mvm->hw->wiphy,
+vendor-cmd.c:			       mvm->tcm.result.load[mvmvif->id]))
+vendor-cmd.c:		       iwl_mvm_get_vendor_load(mvm->tcm.result.global_load)))
+vendor-cmd.c:	if (!mvm->csi_portid)
+vendor-cmd.c:	msg = cfg80211_vendor_event_alloc_ucast(mvm->hw->wiphy, NULL,
+vendor-cmd.c:						mvm->csi_portid,
+vendor-cmd.c:	for (idx = 0; idx < ARRAY_SIZE(mvm->csi_data_entries); idx++) {
+vendor-cmd.c:		if (mvm->csi_data_entries[idx].page) {
+vendor-cmd.c:			__free_pages(mvm->csi_data_entries[idx].page,
+vendor-cmd.c:				     mvm->csi_data_entries[idx].page_order);
+vendor-cmd.c:			memset(&mvm->csi_data_entries[idx], 0,
+vendor-cmd.c:			       sizeof(mvm->csi_data_entries[idx]));
+vendor-cmd.c:	if (WARN_ON(mvm->csi_data_entries[idx].page)) {
+vendor-cmd.c:	mvm->csi_data_entries[idx].page = rxb_steal_page(rxb);
+vendor-cmd.c:	mvm->csi_data_entries[idx].page_order = rxb->_rx_page_order;
+vendor-cmd.c:	mvm->csi_data_entries[idx].offset = rxb->_offset;
+vendor-cmd.c:	struct iwl_csi_data_buffer *hdr_buf = &mvm->csi_data_entries[0];
+vendor-cmd.c:	BUILD_BUG_ON(ARRAY_SIZE(data) < ARRAY_SIZE(mvm->csi_data_entries));
+vendor-cmd.c:	BUILD_BUG_ON(ARRAY_SIZE(len) < ARRAY_SIZE(mvm->csi_data_entries));
+vendor-cmd.c:	if (WARN_ON(!hdr_buf->page || !mvm->csi_data_entries[1].page)) {
+vendor-cmd.c:	for (i = 1; i < ARRAY_SIZE(mvm->csi_data_entries); i++) {
+vendor-cmd.c:		struct iwl_csi_data_buffer *buf = &mvm->csi_data_entries[i];
+vendor-cmd.c:	switch (mvm->cmd_ver.csi_notif) {
+vendor-cmd.c:	if (WARN_ON_ONCE(idx >= ARRAY_SIZE(mvm->csi_data_entries) - 1))
+mac-ctxt.c:		mvm->hw, IEEE80211_IFACE_ITER_RESUME_ALL,
+mac-ctxt.c:	lockdep_assert_held(&mvm->mutex);
+mac-ctxt.c:		mvm->hw, IEEE80211_IFACE_ITER_RESUME_ALL,
+mac-ctxt.c:	if (WARN_ON_ONCE(test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)))
+mac-ctxt.c:	sband = mvm->hw->wiphy->bands[band];
+mac-ctxt.c:		if (mvm->p2p_opps_test_wa_vif)
+mac-ctxt.c:			sta = rcu_dereference(mvm->fw_id_to_mac_id[ap_sta_id]);
+mac-ctxt.c:	ctxt_sta->listen_interval = cpu_to_le32(mvm->hw->conf.listen_interval);
+mac-ctxt.c:	u32 tfd_queue_msk = BIT(mvm->snif_queue);
+mac-ctxt.c:	ieee80211_hw_set(mvm->hw, RX_INCLUDES_FCS);
+mac-ctxt.c:	ret = iwl_mvm_allocate_int_sta(mvm, &mvm->snif_sta, tfd_queue_msk,
+mac-ctxt.c:		mvm->hw, IEEE80211_IFACE_ITER_RESUME_ALL,
+mac-ctxt.c:	if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac-ctxt.c:		iwl_mvm_toggle_tx_ant(mvm, &mvm->mgmt_last_antenna_idx);
+mac-ctxt.c:			cpu_to_le32(BIT(mvm->mgmt_last_antenna_idx) <<
+mac-ctxt.c:	if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac-ctxt.c:	    fw_has_api(&mvm->fw->ucode_capa,
+mac-ctxt.c:	beacon = ieee80211_beacon_get_template(mvm->hw, vif, NULL);
+mac-ctxt.c:	if (mvm->beacon_inject_active)
+mac-ctxt.c:	if (mvmvif->ap_assoc_sta_count || !mvm->drop_bcn_ap_mode) {
+mac-ctxt.c:	if (!fw_has_api(&mvm->fw->ucode_capa,
+mac-ctxt.c:			mvm->hw, IEEE80211_IFACE_ITER_RESUME_ALL,
+mac-ctxt.c:		__clear_bit(IEEE80211_HW_RX_INCLUDES_FCS, mvm->hw->flags);
+mac-ctxt.c:		RCU_INIT_POINTER(mvm->csa_vif, NULL);
+mac-ctxt.c:	lockdep_assert_held(&mvm->mutex);
+mac-ctxt.c:	mvm->ap_last_beacon_gp2 = le32_to_cpu(beacon->gp2);
+mac-ctxt.c:		mvm->ibss_manager = beacon_v5->ibss_mgr_status != 0;
+mac-ctxt.c:			     mvm->ap_last_beacon_gp2,
+mac-ctxt.c:		mvm->ibss_manager = beacon->ibss_mgr_status != 0;
+mac-ctxt.c:			     mvm->ap_last_beacon_gp2);
+mac-ctxt.c:	csa_vif = rcu_dereference_protected(mvm->csa_vif,
+mac-ctxt.c:					    lockdep_is_held(&mvm->mutex));
+mac-ctxt.c:		iwl_mvm_csa_count_down(mvm, csa_vif, mvm->ap_last_beacon_gp2,
+mac-ctxt.c:	tx_blocked_vif = rcu_dereference_protected(mvm->csa_tx_blocked_vif,
+mac-ctxt.c:						lockdep_is_held(&mvm->mutex));
+mac-ctxt.c:		if (!mvm->csa_tx_block_bcn_timeout)
+mac-ctxt.c:			mvm->csa_tx_block_bcn_timeout =
+mac-ctxt.c:			mvm->csa_tx_block_bcn_timeout--;
+mac-ctxt.c:		if (mvm->csa_tx_block_bcn_timeout == 0) {
+mac-ctxt.c:			RCU_INIT_POINTER(mvm->csa_tx_blocked_vif, NULL);
+mac-ctxt.c:	iwl_dbg_tlv_time_point(&mvm->fwrt,
+mac-ctxt.c:	trigger = iwl_fw_dbg_trigger_on(&mvm->fwrt, ieee80211_vif_to_wdev(vif),
+mac-ctxt.c:		iwl_fw_dbg_collect_trig(&mvm->fwrt, trigger, NULL);
+mac-ctxt.c:	ieee80211_rx_napi(mvm->hw, NULL, skb, NULL);
+mac-ctxt.c:					lockdep_is_held(&mvmvif->mvm->mutex));
+mac-ctxt.c:	vif = rcu_dereference(mvm->vif_id_to_mac[mac_id]);
+mac-ctxt.c:		csa_vif = rcu_dereference(mvm->csa_vif);
+mac-ctxt.c:		schedule_delayed_work(&mvm->cs_tx_unblock_dwork,
+mac-ctxt.c:		RCU_INIT_POINTER(mvm->csa_vif, NULL);
+mac-ctxt.c:		if (!fw_has_capa(&mvm->fw->ucode_capa,
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:		    mvm->thermal_throttle.params.ct_kill_entry ||
+debugfs.c:		    backoff < mvm->thermal_throttle.min_backoff) {
+debugfs.c:	memcpy(mvm->thermal_throttle.params.tx_backoff, new_backoff_values,
+debugfs.c:	       sizeof(mvm->thermal_throttle.params.tx_backoff));
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	       mvm->thermal_throttle.params.tx_backoff;
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR)
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR)
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR)
+debugfs.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR)
+debugfs.c:		mutex_lock(&mvm->mutex);
+debugfs.c:		mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR)
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	img = &mvm->fw->img[mvm->fwrt.cur_fw_img];
+debugfs.c:	if (mvm->dbgfs_sram_len) {
+debugfs.c:		ofs = mvm->dbgfs_sram_offset;
+debugfs.c:		len = mvm->dbgfs_sram_len;
+debugfs.c:	iwl_trans_read_mem_bytes(mvm->trans, ofs, ptr, len);
+debugfs.c:	img = &mvm->fw->img[mvm->fwrt.cur_fw_img];
+debugfs.c:		mvm->dbgfs_sram_offset = offset;
+debugfs.c:		mvm->dbgfs_sram_len = len;
+debugfs.c:		mvm->dbgfs_sram_offset = 0;
+debugfs.c:		mvm->dbgfs_sram_len = 0;
+debugfs.c:	if (!mvm->temperature_test)
+debugfs.c:		pos = scnprintf(buf , sizeof(buf), "%d\n", mvm->temperature);
+debugfs.c:	if (!iwl_mvm_firmware_running(mvm) && !mvm->temperature_test)
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:		if (!mvm->temperature_test)
+debugfs.c:		mvm->temperature_test = false;
+debugfs.c:		mvm->temperature = 0;
+debugfs.c:		mvm->temperature_test = true;
+debugfs.c:		mvm->temperature = temperature;
+debugfs.c:		       mvm->temperature_test ? "En" : "Dis" ,
+debugfs.c:		       mvm->temperature);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:		mutex_unlock(&mvm->mutex);
+debugfs.c:		value = &mvm->fwrt.geo_profiles[tbl_idx - 1].values[0];
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+debugfs.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[i],
+debugfs.c:						lockdep_is_held(&mvm->mutex));
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:			 mvm->disable_power_off);
+debugfs.c:			 mvm->disable_power_off_d3);
+debugfs.c:		mvm->disable_power_off = val;
+debugfs.c:		mvm->disable_power_off_d3 = val;
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mvm->is_bar_enabled = cmd.enable ? false : true;
+debugfs.c:	struct iwl_bt_coex_profile_notif *notif = &mvm->last_bt_notif;
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	struct iwl_bt_coex_ci_cmd *cmd = &mvm->last_bt_ci_cmd;
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mvm->bt_tx_prio = bt_tx_prio;
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	if (mvm->bt_force_ant_mode == bt_force_ant_mode)
+debugfs.c:	mvm->bt_force_ant_mode = bt_force_ant_mode;
+debugfs.c:		       modes_str[mvm->bt_force_ant_mode]);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:			 mvm->trans->cfg->fw_name_pre);
+debugfs.c:			 mvm->fwrt.fw->human_readable);
+debugfs.c:			 mvm->fwrt.trans->cfg->name);
+debugfs.c:			 mvm->fwrt.dev->bus->name);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:		struct mvm_statistics_rx_phy_v2 *ofdm = &mvm->rx_stats_v3.ofdm;
+debugfs.c:		struct mvm_statistics_rx_phy *ofdm = &mvm->rx_stats.ofdm;
+debugfs.c:		struct mvm_statistics_rx_phy_v2 *cck = &mvm->rx_stats_v3.cck;
+debugfs.c:		struct mvm_statistics_rx_phy *cck = &mvm->rx_stats.cck;
+debugfs.c:			&mvm->rx_stats_v3.general;
+debugfs.c:			&mvm->rx_stats.general;
+debugfs.c:			&mvm->rx_stats_v3.ofdm_ht;
+debugfs.c:			&mvm->rx_stats.ofdm_ht;
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	spin_lock_bh(&mvm->drv_stats_lock);
+debugfs.c:	spin_unlock_bh(&mvm->drv_stats_lock);
+debugfs.c:					  &mvm->drv_rx_stats);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	if (mvm->fw_restart >= 0)
+debugfs.c:		mvm->fw_restart++;
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	iwl_force_nmi(mvm->trans);
+debugfs.c:	if (mvm->scan_rx_ant & ANT_A)
+debugfs.c:	if (mvm->scan_rx_ant & ANT_B)
+debugfs.c:	if (mvm->scan_rx_ant & ANT_C)
+debugfs.c:	pos += scnprintf(buf + pos, bufsz - pos, " (%hhx)\n", mvm->scan_rx_ant);
+debugfs.c:	if (mvm->scan_rx_ant != scan_rx_ant) {
+debugfs.c:		mvm->scan_rx_ant = scan_rx_ant;
+debugfs.c:		if (fw_has_capa(&mvm->fw->ucode_capa,
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	size_t mpdu_cmd_hdr_size = (mvm->trans->trans_cfg->device_family >=
+debugfs.c:	if (!mvm->trans->trans_cfg->mq_rx_supported)
+debugfs.c:	    !fw_has_api(&mvm->fw->ucode_capa,
+debugfs.c:	mvm->hw->extra_beacon_tailroom = len;
+debugfs.c:	beacon = ieee80211_beacon_get_template(mvm->hw, vif, NULL);
+debugfs.c:	mvm->beacon_inject_active = true;
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mvm->hw->extra_beacon_tailroom = 0;
+debugfs.c:	mvm->hw->extra_beacon_tailroom = 0;
+debugfs.c:	mvm->beacon_inject_active = false;
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	conf = mvm->fwrt.dump.conf;
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	ret = iwl_fw_start_dbg_conf(&mvm->fwrt, conf_id);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	iwl_dbg_tlv_time_point(&mvm->fwrt, IWL_FW_INI_TIME_POINT_USER_TRIGGER,
+debugfs.c:	iwl_fw_dbg_collect(&mvm->fwrt, FW_DBG_TRIGGER_USER, buf,
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:		mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	if (filter_id >= ARRAY_SIZE(mvm->dbgfs_bcast_filtering.cmd.filters) ||
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	memcpy(&mvm->dbgfs_bcast_filtering.cmd.filters[filter_id],
+debugfs.c:	    mvm->dbgfs_bcast_filtering.override &&
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:		mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	if (!mvm->bcast_filters)
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	memcpy(&mvm->dbgfs_bcast_filtering.cmd.macs[mac_id],
+debugfs.c:	    mvm->dbgfs_bcast_filtering.override &&
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	if (!mvm->dbgfs_prph_reg_addr)
+debugfs.c:		mvm->dbgfs_prph_reg_addr,
+debugfs.c:		iwl_read_prph(mvm->trans, mvm->dbgfs_prph_reg_addr));
+debugfs.c:	args = sscanf(buf, "%i %i", &mvm->dbgfs_prph_reg_addr, &value);
+debugfs.c:	iwl_write_prph(mvm->trans, mvm->dbgfs_prph_reg_addr, value);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	apply->mvm->cur_aid = cpu_to_le16(apply->aid);
+debugfs.c:	memcpy(apply->mvm->cur_bssid, apply->bssid,
+debugfs.c:	       sizeof(apply->mvm->cur_bssid));
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	 * still have mvm->cur_aid pointing to the old AID, and that
+debugfs.c:	 * get mvm->cur_aid correctly set to the new AID.
+debugfs.c:	iwl_init_notification_wait(&mvm->notif_wait, &wait,
+debugfs.c:	iwl_remove_notification(&mvm->notif_wait, &wait);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:			le16_to_cpu(mvm->cur_aid), mvm->cur_bssid[0],
+debugfs.c:			mvm->cur_bssid[1], mvm->cur_bssid[2], mvm->cur_bssid[3],
+debugfs.c:			mvm->cur_bssid[4], mvm->cur_bssid[5]);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:				 mvm->uapsd_noagg_bssids[i].addr);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	u32 mode = le32_to_cpu(mvm->txp_cmd.v5.v3.set_mode);
+debugfs.c:	u16 val_24 = le16_to_cpu(mvm->txp_cmd.v5.v3.dev_24);
+debugfs.c:	u16 val_52l = le16_to_cpu(mvm->txp_cmd.v5.v3.dev_52_low);
+debugfs.c:	u16 val_52h = le16_to_cpu(mvm->txp_cmd.v5.v3.dev_52_high);
+debugfs.c:		mvm->csi_cfg.flags & IWL_CHANNEL_ESTIMATION_ENABLE ? '1' : '0',
+debugfs.c:	if (!enabled && !(mvm->csi_cfg.flags & IWL_CHANNEL_ESTIMATION_ENABLE))
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mvm->csi_cfg.flags &= ~IWL_CHANNEL_ESTIMATION_ENABLE;
+debugfs.c:		mvm->csi_cfg.flags |= IWL_CHANNEL_ESTIMATION_ENABLE;
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	if (mvm->csi_cfg.flags & IWL_CHANNEL_ESTIMATION_COUNTER)
+debugfs.c:		ctr = mvm->csi_cfg.count;
+debugfs.c:		mvm->csi_cfg.flags &= ~IWL_CHANNEL_ESTIMATION_COUNTER;
+debugfs.c:		mvm->csi_cfg.count = 0;
+debugfs.c:		mvm->csi_cfg.flags |= IWL_CHANNEL_ESTIMATION_COUNTER;
+debugfs.c:		mvm->csi_cfg.count = ctr;
+debugfs.c:	if (mvm->csi_cfg.flags & IWL_CHANNEL_ESTIMATION_TIMER)
+debugfs.c:		timer = mvm->csi_cfg.timer;
+debugfs.c:		mvm->csi_cfg.flags &= ~IWL_CHANNEL_ESTIMATION_TIMER;
+debugfs.c:		mvm->csi_cfg.timer = 0;
+debugfs.c:		mvm->csi_cfg.flags |= IWL_CHANNEL_ESTIMATION_TIMER;
+debugfs.c:		mvm->csi_cfg.timer = timer;
+debugfs.c:	len = scnprintf(buf, sizeof(buf), "0x%llx\n", mvm->csi_cfg.frame_types);
+debugfs.c:	mvm->csi_cfg.frame_types = frame_types;
+debugfs.c:	len = scnprintf(buf, sizeof(buf), "%u\n", mvm->csi_cfg.interval);
+debugfs.c:	mvm->csi_cfg.interval = interval;
+debugfs.c:		mvm->csi_cfg.flags |= IWL_CHANNEL_ESTIMATION_INTERVAL;
+debugfs.c:		mvm->csi_cfg.flags &= ~IWL_CHANNEL_ESTIMATION_INTERVAL;
+debugfs.c:	for (i = 0; i < mvm->csi_cfg.num_filter_addrs; i++)
+debugfs.c:				 "%pM\n", mvm->csi_cfg.filter_addrs[i].addr);
+debugfs.c:	mvm->csi_cfg.num_filter_addrs = num;
+debugfs.c:		ether_addr_copy(mvm->csi_cfg.filter_addrs[i].addr,
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	mutex_lock(&mvm->mutex);
+debugfs.c:	mutex_unlock(&mvm->mutex);
+debugfs.c:	struct iwl_tt_params *tt_params = &mvm->thermal_throttle.params;
+debugfs.c:	spin_lock_init(&mvm->drv_stats_lock);
+debugfs.c:	mvm->debugfs_dir = dbgfs_dir;
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(tx_flush, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(sta_drain, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(sram, mvm->debugfs_dir, 0600);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(set_nic_temperature, mvm->debugfs_dir, 0600);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(disable_power_off, mvm->debugfs_dir, 0600);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(fw_ver, mvm->debugfs_dir, 0400);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(fw_rx_stats, mvm->debugfs_dir, 0400);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(drv_rx_stats, mvm->debugfs_dir, 0400);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(fw_restart, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(fw_nmi, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(bt_tx_prio, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(bt_force_ant, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(scan_ant_rxchain, mvm->debugfs_dir, 0600);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(prph_reg, mvm->debugfs_dir, 0600);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(fw_dbg_conf, mvm->debugfs_dir, 0600);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(fw_dbg_collect, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(send_echo_cmd, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(indirection_tbl, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(inject_packet, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(inject_beacon_ie, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(inject_beacon_ie_restore, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(debug_profile, mvm->debugfs_dir, 0200);
+debugfs.c:			     mvm->debugfs_dir, 0200);
+debugfs.c:			     mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(disable_tx_fifo_mask, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(ps_config, mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(tx_power_status, mvm->debugfs_dir, 0400);
+debugfs.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+debugfs.c:	    fw_has_capa(&mvm->fw->ucode_capa,
+debugfs.c:		MVM_DEBUGFS_ADD_FILE(csi_enabled, mvm->debugfs_dir, 0600);
+debugfs.c:		MVM_DEBUGFS_ADD_FILE(csi_count, mvm->debugfs_dir, 0600);
+debugfs.c:		MVM_DEBUGFS_ADD_FILE(csi_timeout, mvm->debugfs_dir, 0600);
+debugfs.c:		MVM_DEBUGFS_ADD_FILE(csi_frame_types, mvm->debugfs_dir, 0600);
+debugfs.c:				   mvm->debugfs_dir,
+debugfs.c:				   &mvm->csi_cfg.rate_n_flags_val);
+debugfs.c:				   mvm->debugfs_dir,
+debugfs.c:				   &mvm->csi_cfg.rate_n_flags_mask);
+debugfs.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+debugfs.c:		MVM_DEBUGFS_ADD_FILE(csi_interval, mvm->debugfs_dir, 0600);
+debugfs.c:		MVM_DEBUGFS_ADD_FILE(csi_addresses, mvm->debugfs_dir, 0600);
+debugfs.c:			     mvm->debugfs_dir, 0200);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(he_sniffer_params, mvm->debugfs_dir, 0600);
+debugfs.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_SET_LTR_GEN2))
+debugfs.c:		MVM_DEBUGFS_ADD_FILE(ltr_config, mvm->debugfs_dir, 0200);
+debugfs.c:			    mvm->debugfs_dir, &mvm->scan_iter_notif_enabled);
+debugfs.c:	debugfs_create_bool("drop_bcn_ap_mode", 0600, mvm->debugfs_dir,
+debugfs.c:			    &mvm->drop_bcn_ap_mode);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(uapsd_noagg_bssids, mvm->debugfs_dir, 0400);
+debugfs.c:	if (mvm->fw->ucode_capa.flags & IWL_UCODE_TLV_FLAGS_BCAST_FILTERING) {
+debugfs.c:					       mvm->debugfs_dir);
+debugfs.c:				    &mvm->dbgfs_bcast_filtering.override);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(quota_status, mvm->debugfs_dir, 0400);
+debugfs.c:	MVM_DEBUGFS_ADD_FILE(d3_test, mvm->debugfs_dir, 0400);
+debugfs.c:	debugfs_create_bool("d3_wake_sysassert", 0600, mvm->debugfs_dir,
+debugfs.c:			    &mvm->d3_wake_sysassert);
+debugfs.c:	debugfs_create_u32("last_netdetect_scans", 0400, mvm->debugfs_dir,
+debugfs.c:			   &mvm->last_netdetect_scans);
+debugfs.c:	debugfs_create_u8("ps_disabled", 0400, mvm->debugfs_dir,
+debugfs.c:			  &mvm->ps_disabled);
+debugfs.c:	debugfs_create_blob("nvm_hw", 0400, mvm->debugfs_dir,
+debugfs.c:			    &mvm->nvm_hw_blob);
+debugfs.c:	debugfs_create_blob("nvm_sw", 0400, mvm->debugfs_dir,
+debugfs.c:			    &mvm->nvm_sw_blob);
+debugfs.c:	debugfs_create_blob("nvm_calib", 0400, mvm->debugfs_dir,
+debugfs.c:			    &mvm->nvm_calib_blob);
+debugfs.c:	debugfs_create_blob("nvm_prod", 0400, mvm->debugfs_dir,
+debugfs.c:			    &mvm->nvm_prod_blob);
+debugfs.c:	debugfs_create_blob("nvm_phy_sku", 0400, mvm->debugfs_dir,
+debugfs.c:			    &mvm->nvm_phy_sku_blob);
+debugfs.c:			    mvm->debugfs_dir, &mvm->nvm_reg_blob);
+debugfs.c:			   mvm->debugfs_dir,
+debugfs.c:			   mvm->debugfs_dir,
+debugfs.c:			   mvm->debugfs_dir,
+debugfs.c:			   mvm->debugfs_dir,
+debugfs.c:			   mvm->debugfs_dir,
+debugfs.c:			   mvm->debugfs_dir,
+debugfs.c:			   mvm->debugfs_dir,
+debugfs.c:	debugfs_create_symlink("iwlwifi", mvm->hw->wiphy->debugfsdir, buf);
+Binary file iwlmvm.o matches
+binding.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+binding.c:	lockdep_assert_held(&mvm->mutex);
+binding.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+quota.c:	if (!mvm->p2p_opps_test_wa_vif ||
+quota.c:	    !mvm->p2p_opps_test_wa_vif->phy_ctxt)
+quota.c:	phy_id = mvm->p2p_opps_test_wa_vif->phy_ctxt->id;
+quota.c:	if (!mvm->noa_duration || !mvm->noa_vif)
+quota.c:	mvmvif = iwl_mvm_vif_from_mac80211(mvm->noa_vif);
+quota.c:	beacon_int = mvm->noa_vif->bss_conf.beacon_int;
+quota.c:		quota *= (beacon_int - mvm->noa_duration);
+quota.c:	lockdep_assert_held(&mvm->mutex);
+quota.c:	struct iwl_time_quota_cmd *last = &mvm->last_quota_cmd;
+quota.c:	lockdep_assert_held(&mvm->mutex);
+quota.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+quota.c:	if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status))
+quota.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+quota.c:	if (mvm->p2p_opps_test_wa_vif)
+quota.c:		mvm->last_quota_cmd = cmd;
+constants.h:#define IWL_MVM_DEFAULT_PS_TX_DATA_TIMEOUT	(mvm->trans->dbg_cfg.MVM_DEFAULT_PS_TX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_DEFAULT_PS_RX_DATA_TIMEOUT	(mvm->trans->dbg_cfg.MVM_DEFAULT_PS_RX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_WOWLAN_PS_TX_DATA_TIMEOUT	(mvm->trans->dbg_cfg.MVM_WOWLAN_PS_TX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_WOWLAN_PS_RX_DATA_TIMEOUT	(mvm->trans->dbg_cfg.MVM_WOWLAN_PS_RX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_SHORT_PS_TX_DATA_TIMEOUT	(mvm->trans->dbg_cfg.MVM_SHORT_PS_TX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_SHORT_PS_RX_DATA_TIMEOUT	(mvm->trans->dbg_cfg.MVM_SHORT_PS_RX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_P2P_LOWLATENCY_PS_ENABLE	(mvm->trans->dbg_cfg.MVM_P2P_LOWLATENCY_PS_ENABLE)
+constants.h:#define IWL_MVM_UAPSD_TX_DATA_TIMEOUT		(mvm->trans->dbg_cfg.MVM_UAPSD_TX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_UAPSD_RX_DATA_TIMEOUT		(mvm->trans->dbg_cfg.MVM_UAPSD_RX_DATA_TIMEOUT)
+constants.h:#define IWL_MVM_UAPSD_QUEUES			(mvm->trans->dbg_cfg.MVM_UAPSD_QUEUES)
+constants.h:#define IWL_MVM_PS_HEAVY_TX_THLD_PACKETS	(mvm->trans->dbg_cfg.MVM_PS_HEAVY_TX_THLD_PACKETS)
+constants.h:#define IWL_MVM_PS_HEAVY_RX_THLD_PACKETS	(mvm->trans->dbg_cfg.MVM_PS_HEAVY_RX_THLD_PACKETS)
+constants.h:#define IWL_MVM_PS_SNOOZE_HEAVY_TX_THLD_PACKETS	(mvm->trans->dbg_cfg.MVM_PS_SNOOZE_HEAVY_TX_THLD_PACKETS)
+constants.h:#define IWL_MVM_PS_SNOOZE_HEAVY_RX_THLD_PACKETS	(mvm->trans->dbg_cfg.MVM_PS_SNOOZE_HEAVY_RX_THLD_PACKETS)
+constants.h:#define IWL_MVM_PS_HEAVY_TX_THLD_PERCENT	(mvm->trans->dbg_cfg.MVM_PS_HEAVY_TX_THLD_PERCENT)
+constants.h:#define IWL_MVM_PS_HEAVY_RX_THLD_PERCENT	(mvm->trans->dbg_cfg.MVM_PS_HEAVY_RX_THLD_PERCENT)
+constants.h:#define IWL_MVM_PS_SNOOZE_INTERVAL		(mvm->trans->dbg_cfg.MVM_PS_SNOOZE_INTERVAL)
+constants.h:#define IWL_MVM_PS_SNOOZE_WINDOW		(mvm->trans->dbg_cfg.MVM_PS_SNOOZE_WINDOW)
+constants.h:#define IWL_MVM_WOWLAN_PS_SNOOZE_WINDOW		(mvm->trans->dbg_cfg.MVM_WOWLAN_PS_SNOOZE_WINDOW)
+constants.h:#define IWL_MVM_LOWLAT_QUOTA_MIN_PERCENT	(mvm->trans->dbg_cfg.MVM_LOWLAT_QUOTA_MIN_PERCENT)
+constants.h:#define IWL_MVM_BT_COEX_EN_RED_TXP_THRESH	(mvm->trans->dbg_cfg.MVM_BT_COEX_EN_RED_TXP_THRESH)
+constants.h:#define IWL_MVM_BT_COEX_DIS_RED_TXP_THRESH	(mvm->trans->dbg_cfg.MVM_BT_COEX_DIS_RED_TXP_THRESH)
+constants.h:#define IWL_MVM_BT_COEX_SYNC2SCO		(mvm->trans->dbg_cfg.MVM_BT_COEX_SYNC2SCO)
+constants.h:#define IWL_MVM_BT_COEX_MPLUT			(mvm->trans->dbg_cfg.MVM_BT_COEX_MPLUT)
+constants.h:#define IWL_MVM_BT_COEX_RRC			(mvm->trans->dbg_cfg.MVM_BT_COEX_RRC)
+constants.h:#define IWL_MVM_BT_COEX_TTC			(mvm->trans->dbg_cfg.MVM_BT_COEX_TTC)
+constants.h:#define IWL_MVM_BT_COEX_MPLUT_REG0		(mvm->trans->dbg_cfg.MVM_BT_COEX_MPLUT_REG0)
+constants.h:#define IWL_MVM_BT_COEX_MPLUT_REG1		(mvm->trans->dbg_cfg.MVM_BT_COEX_MPLUT_REG1)
+constants.h:#define IWL_MVM_BT_COEX_ANTENNA_COUPLING_THRS	(mvm->trans->dbg_cfg.MVM_BT_COEX_ANTENNA_COUPLING_THRS)
+constants.h:#define IWL_MVM_FW_MCAST_FILTER_PASS_ALL	(mvm->trans->dbg_cfg.MVM_FW_MCAST_FILTER_PASS_ALL)
+constants.h:#define IWL_MVM_FW_BCAST_FILTER_PASS_ALL	(mvm->trans->dbg_cfg.MVM_FW_BCAST_FILTER_PASS_ALL)
+constants.h:#define IWL_MVM_TOF_IS_RESPONDER		(mvm->trans->dbg_cfg.MVM_TOF_IS_RESPONDER)
+constants.h:#define IWL_MVM_SW_TX_CSUM_OFFLOAD		(mvm->trans->dbg_cfg.MVM_SW_TX_CSUM_OFFLOAD)
+constants.h:#define IWL_MVM_HW_CSUM_DISABLE			(mvm->trans->dbg_cfg.MVM_HW_CSUM_DISABLE)
+constants.h:#define IWL_MVM_PARSE_NVM			(mvm->trans->dbg_cfg.MVM_PARSE_NVM)
+constants.h:#define IWL_MVM_ADWELL_ENABLE			(mvm->trans->dbg_cfg.MVM_ADWELL_ENABLE)
+constants.h:#define IWL_MVM_ADWELL_MAX_BUDGET		(mvm->trans->dbg_cfg.MVM_ADWELL_MAX_BUDGET)
+constants.h:#define IWL_MVM_TCM_LOAD_MEDIUM_THRESH		(mvm->trans->dbg_cfg.MVM_TCM_LOAD_MEDIUM_THRESH)
+constants.h:#define IWL_MVM_TCM_LOAD_HIGH_THRESH		(mvm->trans->dbg_cfg.MVM_TCM_LOAD_HIGH_THRESH)
+constants.h:#define IWL_MVM_TCM_LOWLAT_ENABLE_THRESH	(mvm->trans->dbg_cfg.MVM_TCM_LOWLAT_ENABLE_THRESH)
+constants.h:#define IWL_MVM_UAPSD_NONAGG_PERIOD		(mvm->trans->dbg_cfg.MVM_UAPSD_NONAGG_PERIOD)
+constants.h:#define IWL_MVM_UAPSD_NOAGG_LIST_LEN		(mvm->trans->dbg_cfg.MVM_UAPSD_NOAGG_LIST_LEN)
+constants.h:#define IWL_MVM_NON_TRANSMITTING_AP		(mvm->trans->dbg_cfg.MVM_NON_TRANSMITTING_AP)
+constants.h:#define IWL_MVM_DYNQUOTA_DISABLED		(mvm->trans->dbg_cfg.MVM_DYNQUOTA_DISABLED)
+constants.h:#define IWL_MVM_DYNQUOTA_MIN_PERCENT		(mvm->trans->dbg_cfg.MVM_DYNQUOTA_MIN_PERCENT)
+constants.h:#define IWL_MVM_DYNQUOTA_GUARD_PERCENT		(mvm->trans->dbg_cfg.MVM_DYNQUOTA_GUARD_PERCENT)
+constants.h:#define IWL_MVM_DYNQUOTA_HIGH_WM_PERCENT	(mvm->trans->dbg_cfg.MVM_DYNQUOTA_HIGH_WM_PERCENT)
+constants.h:#define IWL_MVM_DYNQUOTA_LOW_WM_PERCENT		(mvm->trans->dbg_cfg.MVM_DYNQUOTA_LOW_WM_PERCENT)
+constants.h:#define IWL_MVM_DYNQUOTA_START_PERCENT		(mvm->trans->dbg_cfg.MVM_DYNQUOTA_START_PERCENT)
+constants.h:#define IWL_MVM_DYNQUOTA_INC_HIGH_PERCENT	(mvm->trans->dbg_cfg.MVM_DYNQUOTA_INC_HIGH_PERCENT)
+constants.h:#define IWL_MVM_LOWLAT_QUOTA_MIN_PCT_P2PCLIENT	(mvm->trans->dbg_cfg.MVM_LOWLAT_QUOTA_MIN_PCT_P2PCLIENT)
+constants.h:#define IWL_MVM_LOWLAT_QUOTA_MIN_PCT_P2PGO	(mvm->trans->dbg_cfg.MVM_LOWLAT_QUOTA_MIN_PCT_P2PGO)
+constants.h:#define IWL_MVM_QUOTA_THRESHOLD			(mvm->trans->dbg_cfg.MVM_QUOTA_THRESHOLD)
+constants.h:#define IWL_MVM_RS_RSSI_BASED_INIT_RATE         (mvm->trans->dbg_cfg.MVM_RS_RSSI_BASED_INIT_RATE)
+constants.h:#define IWL_MVM_RS_80_20_FAR_RANGE_TWEAK	(mvm->trans->dbg_cfg.MVM_RS_80_20_FAR_RANGE_TWEAK)
+constants.h:#define IWL_MVM_RS_NUM_TRY_BEFORE_ANT_TOGGLE    (mvm->trans->dbg_cfg.MVM_RS_NUM_TRY_BEFORE_ANT_TOGGLE)
+constants.h:#define IWL_MVM_RS_HT_VHT_RETRIES_PER_RATE      (mvm->trans->dbg_cfg.MVM_RS_HT_VHT_RETRIES_PER_RATE)
+constants.h:#define IWL_MVM_RS_HT_VHT_RETRIES_PER_RATE_TW   (mvm->trans->dbg_cfg.MVM_RS_HT_VHT_RETRIES_PER_RATE_TW)
+constants.h:#define IWL_MVM_RS_INITIAL_MIMO_NUM_RATES       (mvm->trans->dbg_cfg.MVM_RS_INITIAL_MIMO_NUM_RATES)
+constants.h:#define IWL_MVM_RS_INITIAL_SISO_NUM_RATES       (mvm->trans->dbg_cfg.MVM_RS_INITIAL_SISO_NUM_RATES)
+constants.h:#define IWL_MVM_RS_INITIAL_LEGACY_NUM_RATES     (mvm->trans->dbg_cfg.MVM_RS_INITIAL_LEGACY_NUM_RATES)
+constants.h:#define IWL_MVM_RS_INITIAL_LEGACY_RETRIES       (mvm->trans->dbg_cfg.MVM_RS_INITIAL_LEGACY_RETRIES)
+constants.h:#define IWL_MVM_RS_SECONDARY_LEGACY_RETRIES     (mvm->trans->dbg_cfg.MVM_RS_SECONDARY_LEGACY_RETRIES)
+constants.h:#define IWL_MVM_RS_SECONDARY_LEGACY_NUM_RATES   (mvm->trans->dbg_cfg.MVM_RS_SECONDARY_LEGACY_NUM_RATES)
+constants.h:#define IWL_MVM_RS_SECONDARY_SISO_NUM_RATES     (mvm->trans->dbg_cfg.MVM_RS_SECONDARY_SISO_NUM_RATES)
+constants.h:#define IWL_MVM_RS_SECONDARY_SISO_RETRIES       (mvm->trans->dbg_cfg.MVM_RS_SECONDARY_SISO_RETRIES)
+constants.h:#define IWL_MVM_RS_RATE_MIN_FAILURE_TH		(mvm->trans->dbg_cfg.MVM_RS_RATE_MIN_FAILURE_TH)
+constants.h:#define IWL_MVM_RS_RATE_MIN_SUCCESS_TH		(mvm->trans->dbg_cfg.MVM_RS_RATE_MIN_SUCCESS_TH)
+constants.h:#define IWL_MVM_RS_STAY_IN_COLUMN_TIMEOUT       (mvm->trans->dbg_cfg.MVM_RS_STAY_IN_COLUMN_TIMEOUT)
+constants.h:#define IWL_MVM_RS_IDLE_TIMEOUT                 (mvm->trans->dbg_cfg.MVM_RS_IDLE_TIMEOUT)
+constants.h:#define IWL_MVM_RS_MISSED_RATE_MAX		(mvm->trans->dbg_cfg.MVM_RS_MISSED_RATE_MAX)
+constants.h:#define IWL_MVM_RS_LEGACY_FAILURE_LIMIT		(mvm->trans->dbg_cfg.MVM_RS_LEGACY_FAILURE_LIMIT)
+constants.h:#define IWL_MVM_RS_LEGACY_SUCCESS_LIMIT		(mvm->trans->dbg_cfg.MVM_RS_LEGACY_SUCCESS_LIMIT)
+constants.h:#define IWL_MVM_RS_LEGACY_TABLE_COUNT		(mvm->trans->dbg_cfg.MVM_RS_LEGACY_TABLE_COUNT)
+constants.h:#define IWL_MVM_RS_NON_LEGACY_FAILURE_LIMIT	(mvm->trans->dbg_cfg.MVM_RS_NON_LEGACY_FAILURE_LIMIT)
+constants.h:#define IWL_MVM_RS_NON_LEGACY_SUCCESS_LIMIT	(mvm->trans->dbg_cfg.MVM_RS_NON_LEGACY_SUCCESS_LIMIT)
+constants.h:#define IWL_MVM_RS_NON_LEGACY_TABLE_COUNT	(mvm->trans->dbg_cfg.MVM_RS_NON_LEGACY_TABLE_COUNT)
+constants.h:#define IWL_MVM_RS_SR_FORCE_DECREASE		(mvm->trans->dbg_cfg.MVM_RS_SR_FORCE_DECREASE)
+constants.h:#define IWL_MVM_RS_SR_NO_DECREASE		(mvm->trans->dbg_cfg.MVM_RS_SR_NO_DECREASE)
+constants.h:#define IWL_MVM_RS_AGG_TIME_LIMIT	        (mvm->trans->dbg_cfg.MVM_RS_AGG_TIME_LIMIT)
+constants.h:#define IWL_MVM_RS_AGG_DISABLE_START	        (mvm->trans->dbg_cfg.MVM_RS_AGG_DISABLE_START)
+constants.h:#define IWL_MVM_RS_AGG_START_THRESHOLD	        (mvm->trans->dbg_cfg.MVM_RS_AGG_START_THRESHOLD)
+constants.h:#define IWL_MVM_RS_TPC_SR_FORCE_INCREASE	(mvm->trans->dbg_cfg.MVM_RS_TPC_SR_FORCE_INCREASE)
+constants.h:#define IWL_MVM_RS_TPC_SR_NO_INCREASE		(mvm->trans->dbg_cfg.MVM_RS_TPC_SR_NO_INCREASE)
+constants.h:#define IWL_MVM_RS_TPC_TX_POWER_STEP		(mvm->trans->dbg_cfg.MVM_RS_TPC_TX_POWER_STEP)
+constants.h:#define IWL_MVM_ENABLE_EBS			(mvm->trans->dbg_cfg.MVM_ENABLE_EBS)
+constants.h:#define IWL_MVM_FTM_RESP_TOA_OFFSET		(mvm->trans->dbg_cfg.MVM_FTM_RESP_TOA_OFFSET)
+constants.h:#define IWL_MVM_FTM_RESP_VALID			(mvm->trans->dbg_cfg.MVM_FTM_RESP_VALID)
+constants.h:#define IWL_MVM_FTM_RESP_FLAGS			(mvm->trans->dbg_cfg.MVM_FTM_RESP_FLAGS)
+constants.h:#define IWL_MVM_FTM_INITIATOR_ALGO		(mvm->trans->dbg_cfg.MVM_FTM_INITIATOR_ALGO)
+constants.h:#define IWL_MVM_FTM_INITIATOR_DYNACK		(mvm->trans->dbg_cfg.MVM_FTM_INITIATOR_DYNACK)
+constants.h:#define IWL_MVM_FTM_INITIATOR_MCSI_ENABLED	(mvm->trans->dbg_cfg.MVM_FTM_INITIATOR_MCSI_ENABLED)
+constants.h:#define IWL_MVM_FTM_INITIATOR_COMMON_CALIB	(mvm->trans->dbg_cfg.MVM_FTM_INITIATOR_COMMON_CALIB)
+constants.h:#define IWL_MVM_FTM_INITIATOR_FAST_ALGO_DISABLE (mvm->trans->dbg_cfg.MVM_FTM_INITIATOR_FAST_ALGO_DISABLE)
+constants.h:#define IWL_MVM_USE_TWT				(mvm->trans->dbg_cfg.MVM_USE_TWT)
+constants.h:#define IWL_MVM_AMPDU_CONSEC_DROPS_DELBA	(mvm->trans->dbg_cfg.MVM_AMPDU_CONSEC_DROPS_DELBA)
+tx.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, NULL, FW_DBG_TRIGGER_BA);
+tx.c:	iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+tx.c:	if (WARN_ONCE(!(mvm->hw->netdev_features & IWL_TX_CSUM_NETIF_FLAGS) ||
+tx.c:	if (ieee80211_is_data(fc) && len > mvm->rts_threshold &&
+tx.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+tx.c:		return mvm->cfg->non_shared_ant << RATE_MCS_ANT_POS;
+tx.c:	return BIT(mvm->mgmt_last_antenna_idx) << RATE_MCS_ANT_POS;
+tx.c:				&mvm->nvm_data->bands[info->band], sta);
+tx.c:	dev_cmd = iwl_trans_alloc_tx_cmd(mvm->trans);
+tx.c:		if (mvm->trans->trans_cfg->device_family >=
+tx.c:			return mvm->probe_queue;
+tx.c:		return mvm->probe_queue;
+tx.c:			return mvm->p2p_dev_queue;
+tx.c:		return mvm->p2p_dev_queue;
+tx.c:			queue = mvm->snif_queue;
+tx.c:			sta_id = mvm->snif_sta.sta_id;
+tx.c:			sta_id = mvm->aux_sta.sta_id;
+tx.c:			queue = mvm->aux_queue;
+tx.c:	if (iwl_trans_tx(mvm->trans, skb, dev_cmd, queue)) {
+tx.c:		iwl_trans_free_tx_cmd(mvm->trans, dev_cmd);
+tx.c:		     mvm->fwrt.smem_cfg.lmac[lmac].txfifo_size[txf] - 256);
+tx.c:	    mvm->trans->max_skb_frags)
+tx.c:	unsigned long queue_tid_bitmap = mvm->queue_info[txq_id].tid_bitmap;
+tx.c:		if (time_before(mvm->queue_info[txq_id].last_frame_time[tid] +
+tx.c:	mdata = &mvm->tcm.data[mac];
+tx.c:	if (mvm->tcm.paused)
+tx.c:	if (time_after(jiffies, mvm->tcm.ts + MVM_TCM_PERIOD))
+tx.c:		schedule_delayed_work(&mvm->tcm.work, 0);
+tx.c:	mdata = &mvm->tcm.data[mac];
+tx.c:		iwl_trans_free_tx_cmd(mvm->trans, dev_cmd);
+tx.c:		mvm->queue_info[txq_id].last_frame_time[tid] = jiffies;
+tx.c:		 * mvm->add_stream_wk can't ruin the state, and if we DON'T
+tx.c:		if (unlikely(mvm->queue_info[txq_id].status ==
+tx.c:			schedule_work(&mvm->add_stream_wk);
+tx.c:	if (iwl_trans_tx(mvm->trans, skb, dev_cmd, txq_id))
+tx.c:	iwl_trans_free_tx_cmd(mvm->trans, dev_cmd);
+tx.c:	if (mvm->trans->trans_cfg->gen2)
+tx.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, NULL,
+tx.c:		iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+tx.c:	iwl_trans_reclaim(mvm->trans, txq_id, ssn, &skbs);
+tx.c:		iwl_trans_free_tx_cmd(mvm->trans, info->driver_data[1]);
+tx.c:			iwl_mvm_toggle_tx_ant(mvm, &mvm->mgmt_last_antenna_idx);
+tx.c:		    !flushed && mvm->is_bar_enabled)
+tx.c:		ieee80211_tx_status(mvm->hw, skb);
+tx.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+tx.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+tx.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+tx.c:	iwl_trans_reclaim(mvm->trans, txq, index, &reclaimed_skbs);
+tx.c:		iwl_trans_free_tx_cmd(mvm->trans, info->driver_data[1]);
+tx.c:		ieee80211_tx_status(mvm->hw, skb);
+ftm-responder.c:	u8 cmd_ver = iwl_mvm_lookup_cmd_ver(mvm->fw, LOCATION_GROUP,
+ftm-responder.c:	lockdep_assert_held(&mvm->mutex);
+ftm-responder.c:	lockdep_assert_held(&mvm->mutex);
+ftm-responder.c:	lockdep_assert_held(&mvm->mutex);
+ftm-responder.c:	phy_ctxt = &mvm->phy_ctxts[*phy_ctxt_id];
+ftm-responder.c:	struct cfg80211_ftm_responder_stats *stats = &mvm->ftm_resp_stats;
+phy-ctxt.c:	if (unlikely(mvm->dbgfs_rx_phyinfo))
+phy-ctxt.c:		tail->rxchain_info = cpu_to_le32(mvm->dbgfs_rx_phyinfo);
+phy-ctxt.c:	WARN_ON(!test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) &&
+phy-ctxt.c:	lockdep_assert_held(&mvm->mutex);
+phy-ctxt.c:	lockdep_assert_held(&mvm->mutex);
+phy-ctxt.c:	lockdep_assert_held(&mvm->mutex);
+phy-ctxt.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+phy-ctxt.c:	lockdep_assert_held(&mvm->mutex);
+phy-ctxt.c:			sband = mvm->hw->wiphy->bands[band++];
+phy-ctxt.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+sf.c:	if (mvm->cfg->disable_dummy_notification)
+sf.c:	if (new_state != SF_FULL_ON && mvm->sf_state == new_state)
+sf.c:		sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+sf.c:		mvm->sf_state = new_state;
+sf.c:	if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) ||
+sf.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:			 mvm->tcm.result.load[mvmvif->id]);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:		mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	phy_ctxt = &mvm->phy_ctxts[*(u16 *)chanctx_conf->drv_priv];
+debugfs-vif.c:	mvm->dbgfs_rx_phyinfo = value;
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:			mvmvif->mvm->dbgfs_rx_phyinfo);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	ieee80211_iterate_interfaces(mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	mutex_lock(&mvm->mutex);
+debugfs-vif.c:	mutex_unlock(&mvm->mutex);
+debugfs-vif.c:	    mvmvif == mvm->bf_allowed_vif)
+debugfs-vif.c:						     mvm->debugfs_dir, buf);
+Binary file rs.o matches
+ftm-initiator.c:	mvm->ftm_initiator.req = NULL;
+ftm-initiator.c:	mvm->ftm_initiator.req_wdev = NULL;
+ftm-initiator.c:	memset(mvm->ftm_initiator.responses, 0,
+ftm-initiator.c:	       sizeof(mvm->ftm_initiator.responses));
+ftm-initiator.c:	list_for_each_entry_safe(e, t, &mvm->ftm_initiator.loc_list, list) {
+ftm-initiator.c:	lockdep_assert_held(&mvm->mutex);
+ftm-initiator.c:	if (!mvm->ftm_initiator.req)
+ftm-initiator.c:	for (i = 0; i < mvm->ftm_initiator.req->n_peers; i++) {
+ftm-initiator.c:		memcpy(result.addr, mvm->ftm_initiator.req->peers[i].addr,
+ftm-initiator.c:		result.ftm.burst_index = mvm->ftm_initiator.responses[i];
+ftm-initiator.c:		cfg80211_pmsr_report(mvm->ftm_initiator.req_wdev,
+ftm-initiator.c:				     mvm->ftm_initiator.req,
+ftm-initiator.c:	cfg80211_pmsr_complete(mvm->ftm_initiator.req_wdev,
+ftm-initiator.c:			       mvm->ftm_initiator.req, GFP_KERNEL);
+ftm-initiator.c:	bool new_api = fw_has_api(&mvm->fw->ucode_capa,
+ftm-initiator.c:	lockdep_assert_held(&mvm->mutex);
+ftm-initiator.c:	if (mvm->ftm_initiator.req)
+ftm-initiator.c:		u8 cmd_ver = iwl_mvm_lookup_cmd_ver(mvm->fw, LOCATION_GROUP,
+ftm-initiator.c:		mvm->ftm_initiator.req = req;
+ftm-initiator.c:		mvm->ftm_initiator.req_wdev = ieee80211_vif_to_wdev(vif);
+ftm-initiator.c:	lockdep_assert_held(&mvm->mutex);
+ftm-initiator.c:	if (req != mvm->ftm_initiator.req)
+ftm-initiator.c:	list_for_each_entry(entry, &mvm->ftm_initiator.loc_list, list) {
+ftm-initiator.c:	lockdep_assert_held(&mvm->mutex);
+ftm-initiator.c:	if (request_id != (u8)mvm->ftm_initiator.req->cookie) {
+ftm-initiator.c:			request_id, (u8)mvm->ftm_initiator.req->cookie);
+ftm-initiator.c:	if (num_of_aps > mvm->ftm_initiator.req->n_peers) {
+ftm-initiator.c:	bool new_api = fw_has_api(&mvm->fw->ucode_capa,
+ftm-initiator.c:	lockdep_assert_held(&mvm->mutex);
+ftm-initiator.c:	if (!mvm->ftm_initiator.req) {
+ftm-initiator.c:		       mvm->ftm_initiator.req->cookie, num_of_aps);
+ftm-initiator.c:			if (fw_has_api(&mvm->fw->ucode_capa,
+ftm-initiator.c:		peer_idx = iwl_mvm_ftm_find_peer(mvm->ftm_initiator.req,
+ftm-initiator.c:		result.ftm.burst_index = mvm->ftm_initiator.responses[peer_idx];
+ftm-initiator.c:		mvm->ftm_initiator.responses[peer_idx]++;
+ftm-initiator.c:		cfg80211_pmsr_report(mvm->ftm_initiator.req_wdev,
+ftm-initiator.c:				     mvm->ftm_initiator.req,
+ftm-initiator.c:		if (fw_has_api(&mvm->fw->ucode_capa,
+ftm-initiator.c:		cfg80211_pmsr_complete(mvm->ftm_initiator.req_wdev,
+ftm-initiator.c:				       mvm->ftm_initiator.req,
+ftm-initiator.c:	lockdep_assert_held(&mvm->mutex);
+ftm-initiator.c:	list_add_tail(&entry->list, &mvm->ftm_initiator.loc_list);
+offloading.c:	u32 capa_flags = mvm->fw->ucode_capa.flags;
+Makefile:iwlmvm-y += fw.o mac80211.o nvm.o ops.o phy-ctxt.o mac-ctxt.o
+Makefile:iwlmvm-y += utils.o rx.o rxmq.o tx.o binding.o quota.o sta.o sf.o
+Makefile:iwlmvm-y += scan.o time-event.o rs.o rs-fw.o
+Makefile:iwlmvm-y += power.o coex.o
+Makefile:iwlmvm-y += tt.o offloading.o tdls.o
+Makefile:iwlmvm-y += ftm-initiator.o
+Makefile:iwlmvm-y += ftm-responder.o
+Makefile:iwlmvm-y += nan.o
+Makefile:iwlmvm-$(CPTCFG_IWLWIFI_DEBUGFS) += debugfs.o debugfs-vif.o
+Makefile:iwlmvm-$(CPTCFG_IWLWIFI_LEDS) += led.o
+Makefile:iwlmvm-$(CONFIG_PM) += d3.o
+Makefile:iwlmvm-$(CPTCFG_IWLMVM_VENDOR_CMDS) += vendor-cmd.o
+Makefile:iwlmvm-$(CPTCFG_IWLMVM_ADVANCED_QUOTA_MGMT) += quota-adv.o
+Makefile:iwlmvm-$(CPTCFG_IWLMVM_AX_SOFTAP_TESTMODE) += ax-softap-testmode.o
+Makefile:iwlmvm-$(CPTCFG_IWLWIFI_TIMING_MEASUREMENT) += timing_measurement.o
+Makefile:iwlmvm-$(CPTCFG_IWLWIFI_TIMING_MEASUREMENT) += ptp.o
+nvm.c:			IWL_DEBUG_EEPROM(mvm->trans->dev,
+nvm.c:			IWL_DEBUG_EEPROM(mvm->trans->dev,
+nvm.c:					 ret, mvm->cfg->name);
+nvm.c:		    mvm->trans->trans_cfg->base_params->eeprom_size) {
+nvm.c:			IWL_DEBUG_EEPROM(mvm->trans->dev,
+nvm.c:	iwl_nvm_fixups(mvm->trans->hw_id, section, data, offset);
+nvm.c:	IWL_DEBUG_EEPROM(mvm->trans->dev,
+nvm.c:	struct iwl_nvm_section *sections = mvm->nvm_sections;
+nvm.c:	if (mvm->trans->cfg->nvm_type != IWL_NVM_EXT) {
+nvm.c:		if (!mvm->nvm_sections[NVM_SECTION_TYPE_SW].data ||
+nvm.c:		    !mvm->nvm_sections[mvm->cfg->nvm_hw_section_num].data) {
+nvm.c:		if (mvm->trans->cfg->nvm_type == IWL_NVM_SDP)
+nvm.c:		if (!mvm->nvm_sections[NVM_SECTION_TYPE_SW].data ||
+nvm.c:		    !mvm->nvm_sections[regulatory_type].data) {
+nvm.c:		if (!mvm->nvm_sections[mvm->cfg->nvm_hw_section_num].data &&
+nvm.c:		    !mvm->nvm_sections[NVM_SECTION_TYPE_MAC_OVERRIDE].data) {
+nvm.c:		if (!mvm->nvm_sections[NVM_SECTION_TYPE_PHY_SKU].data) {
+nvm.c:	hw = (const __be16 *)sections[mvm->cfg->nvm_hw_section_num].data;
+nvm.c:	regulatory = mvm->trans->cfg->nvm_type == IWL_NVM_SDP ?
+nvm.c:		      fw_has_capa(&mvm->fw->ucode_capa,
+nvm.c:	return iwl_parse_nvm_data(mvm->trans, mvm->cfg, hw, sw, calib,
+nvm.c:				  mvm->fw->valid_tx_ant, mvm->fw->valid_rx_ant,
+nvm.c:/* Loads the NVM data stored in mvm->nvm_sections into the NIC */
+nvm.c:	struct iwl_nvm_section *sections = mvm->nvm_sections;
+nvm.c:	IWL_DEBUG_EEPROM(mvm->trans->dev, "'Write to NVM\n");
+nvm.c:	for (i = 0; i < ARRAY_SIZE(mvm->nvm_sections); i++) {
+nvm.c:		if (!mvm->nvm_sections[i].data || !mvm->nvm_sections[i].length)
+nvm.c:	const char *nvm_file_C = mvm->cfg->default_nvm_file_C_step;
+nvm.c:	if (WARN_ON_ONCE(mvm->cfg->nvm_hw_section_num >= NVM_MAX_NUM_SECTIONS))
+nvm.c:	IWL_DEBUG_EEPROM(mvm->trans->dev, "Read from NVM\n");
+nvm.c:	nvm_buffer = kmalloc(mvm->trans->trans_cfg->base_params->eeprom_size,
+nvm.c:		iwl_nvm_fixups(mvm->trans->hw_id, section, temp, ret);
+nvm.c:		mvm->nvm_sections[section].data = temp;
+nvm.c:		mvm->nvm_sections[section].length = ret;
+nvm.c:			mvm->nvm_sw_blob.data = temp;
+nvm.c:			mvm->nvm_sw_blob.size  = ret;
+nvm.c:			mvm->nvm_calib_blob.data = temp;
+nvm.c:			mvm->nvm_calib_blob.size  = ret;
+nvm.c:			mvm->nvm_prod_blob.data = temp;
+nvm.c:			mvm->nvm_prod_blob.size  = ret;
+nvm.c:			mvm->nvm_phy_sku_blob.data = temp;
+nvm.c:			mvm->nvm_phy_sku_blob.size  = ret;
+nvm.c:			mvm->nvm_reg_blob.data = temp;
+nvm.c:			mvm->nvm_reg_blob.size  = ret;
+nvm.c:			if (section == mvm->cfg->nvm_hw_section_num) {
+nvm.c:				mvm->nvm_hw_blob.data = temp;
+nvm.c:				mvm->nvm_hw_blob.size = ret;
+nvm.c:	if (mvm->nvm_file_name) {
+nvm.c:		ret = iwl_read_external_nvm(mvm->trans, mvm->nvm_file_name,
+nvm.c:					    mvm->nvm_sections);
+nvm.c:			mvm->nvm_file_name = nvm_file_C;
+nvm.c:			    mvm->nvm_file_name) {
+nvm.c:				ret = iwl_read_external_nvm(mvm->trans,
+nvm.c:							    mvm->nvm_file_name,
+nvm.c:							    mvm->nvm_sections);
+nvm.c:	mvm->nvm_data = iwl_parse_nvm_sections(mvm);
+nvm.c:	if (!mvm->nvm_data)
+nvm.c:	IWL_DEBUG_EEPROM(mvm->trans->dev, "nvm version = %x\n",
+nvm.c:			 mvm->nvm_data->nvm_version);
+nvm.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+nvm.c:	if (mvm->cfg->nvm_type == IWL_NVM_EXT) {
+nvm.c:		tlv_lar = fw_has_capa(&mvm->fw->ucode_capa,
+nvm.c:		nvm_lar = mvm->nvm_data->lar_enabled;
+nvm.c:	mvm->lar_regdom_set = false;
+nvm.c:	    !iwl_acpi_get_mcc(mvm->dev, mcc)) {
+nvm.c:		regd = iwl_mvm_get_regdomain(mvm->hw->wiphy, mcc,
+nvm.c:	retval = regulatory_set_wiphy_regd_sync_rtnl(mvm->hw->wiphy, regd);
+nvm.c:	lockdep_assert_held(&mvm->mutex);
+nvm.c:	regd = iwl_mvm_get_regdomain(mvm->hw->wiphy, mcc, src, NULL);
+nvm.c:	regulatory_set_wiphy_regd(mvm->hw->wiphy, regd);
+coex.c:	 * Checking that we hold mvm->mutex is a good idea, but the rate
+coex.c:	if (mvm->cfg->bt_shared_single_ant) {
+coex.c:	primary_ch_phy_id = le32_to_cpu(mvm->last_bt_ci_cmd.primary_ch_phy_id);
+coex.c:		le32_to_cpu(mvm->last_bt_ci_cmd.secondary_ch_phy_id);
+coex.c:		ret = le32_to_cpu(mvm->last_bt_notif.primary_ch_lut);
+coex.c:		ret = le32_to_cpu(mvm->last_bt_notif.secondary_ch_lut);
+coex.c:	lockdep_assert_held(&mvm->mutex);
+coex.c:	if (unlikely(mvm->bt_force_ant_mode != BT_FORCE_ANT_DIS)) {
+coex.c:		switch (mvm->bt_force_ant_mode) {
+coex.c:	memset(&mvm->last_bt_notif, 0, sizeof(mvm->last_bt_notif));
+coex.c:	memset(&mvm->last_bt_ci_cmd, 0, sizeof(mvm->last_bt_ci_cmd));
+coex.c:	if (!time_after(now, mvm->bt_coex_last_tcm_ts + MVM_COEX_TCM_PERIOD))
+coex.c:	mvm->bt_coex_last_tcm_ts = now;
+coex.c:	lockdep_assert_held(&mvm->mutex);
+coex.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_COEX_SCHEMA_2))
+coex.c:	    (mvm->last_bt_notif.rrc_status & BIT(mvmvif->phy_ctxt->id)))
+coex.c:			data->primary_load = mvm->tcm.result.load[mvmvif->id];
+coex.c:			data->secondary_load = mvm->tcm.result.load[mvmvif->id];
+coex.c:		data->primary_load = mvm->tcm.result.load[mvmvif->id];
+coex.c:		data->secondary_load = mvm->tcm.result.load[mvmvif->id];
+coex.c:	    mvm->cfg->bt_shared_single_ant || !vif->bss_conf.assoc ||
+coex.c:	    le32_to_cpu(mvm->last_bt_notif.bt_activity_grading) == BT_OFF) {
+coex.c:		.notif = &mvm->last_bt_notif,
+coex.c:	if (unlikely(mvm->bt_force_ant_mode != BT_FORCE_ANT_DIS))
+coex.c:					mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+coex.c:	if (memcmp(&cmd, &mvm->last_bt_ci_cmd, sizeof(cmd))) {
+coex.c:		memcpy(&mvm->last_bt_ci_cmd, &cmd, sizeof(cmd));
+coex.c:	memcpy(&mvm->last_bt_notif, notif, sizeof(mvm->last_bt_notif));
+coex.c:	lockdep_assert_held(&mvm->mutex);
+coex.c:	if (unlikely(mvm->bt_force_ant_mode != BT_FORCE_ANT_DIS))
+coex.c:	if (le32_to_cpu(mvm->last_bt_notif.bt_activity_grading) == BT_OFF)
+coex.c:	if (rssi_event == RSSI_EVENT_LOW || mvm->cfg->bt_shared_single_ant ||
+coex.c:	if (mvm->last_bt_notif.ttc_status & BIT(phy_ctxt->id))
+coex.c:	if (le32_to_cpu(mvm->last_bt_notif.bt_activity_grading) <
+coex.c:	if (mvm->last_bt_notif.ttc_status & BIT(phy_ctxt->id))
+coex.c:	if (le32_to_cpu(mvm->last_bt_notif.bt_activity_grading) <
+coex.c:	if (mvm->cfg->bt_shared_single_ant)
+coex.c:	if (ant & mvm->cfg->non_shared_ant)
+coex.c:	return le32_to_cpu(mvm->last_bt_notif.bt_activity_grading) <
+coex.c:	if (mvm->cfg->bt_shared_single_ant)
+coex.c:	return le32_to_cpu(mvm->last_bt_notif.bt_activity_grading) < BT_HIGH_TRAFFIC;
+coex.c:	u32 bt_activity = le32_to_cpu(mvm->last_bt_notif.bt_activity_grading);
+coex.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_COEX_SCHEMA_2) &&
+coex.c:	    (mvm->cfg->non_shared_ant & enabled_ants))
+coex.c:		return mvm->cfg->non_shared_ant;
+coex.c:	if (unlikely(mvm->bt_tx_prio))
+coex.c:		return mvm->bt_tx_prio - 1;
+scan.c:	struct iwl_scan_req_umac *cmd = mvm->scan_cmd;
+scan.c:	struct iwl_scan_req_umac *cmd = mvm->scan_cmd;
+scan.c:	if (mvm->scan_rx_ant != ANT_NONE)
+scan.c:		return mvm->scan_rx_ant;
+scan.c:	iwl_mvm_toggle_tx_ant(mvm, &mvm->scan_last_antenna_idx);
+scan.c:	tx_ant = BIT(mvm->scan_last_antenna_idx) << RATE_MCS_ANT_POS;
+scan.c:	return mvm->tcm.result.global_load;
+scan.c:	return mvm->tcm.result.band_load[band];
+scan.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+scan.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+scan.c:			ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+scan.c:	return fw_has_capa(&mvm->fw->ucode_capa,
+scan.c:	if (mvm->sched_scan_pass_all == SCHED_SCAN_PASS_ALL_FOUND) {
+scan.c:		ieee80211_sched_scan_results(mvm->hw);
+scan.c:		mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_ENABLED;
+scan.c:	ieee80211_sched_scan_results(mvm->hw);
+scan.c:	if (WARN_ON_ONCE(fw_has_capa(&mvm->fw->ucode_capa,
+scan.c:	lockdep_assert_held(&mvm->mutex);
+scan.c:	if (mvm->scan_status & IWL_MVM_SCAN_STOPPING_SCHED) {
+scan.c:		WARN_ON_ONCE(mvm->scan_status & IWL_MVM_SCAN_STOPPING_REGULAR);
+scan.c:		mvm->scan_status &= ~IWL_MVM_SCAN_STOPPING_SCHED;
+scan.c:	} else if (mvm->scan_status & IWL_MVM_SCAN_STOPPING_REGULAR) {
+scan.c:		mvm->scan_status &= ~IWL_MVM_SCAN_STOPPING_REGULAR;
+scan.c:	} else if (mvm->scan_status & IWL_MVM_SCAN_SCHED) {
+scan.c:		WARN_ON_ONCE(mvm->scan_status & IWL_MVM_SCAN_REGULAR);
+scan.c:		mvm->scan_status &= ~IWL_MVM_SCAN_SCHED;
+scan.c:		ieee80211_sched_scan_stopped(mvm->hw);
+scan.c:		mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_DISABLED;
+scan.c:	} else if (mvm->scan_status & IWL_MVM_SCAN_REGULAR) {
+scan.c:		mvm->scan_status &= ~IWL_MVM_SCAN_REGULAR;
+scan.c:		ieee80211_scan_completed(mvm->hw, &info);
+scan.c:		cancel_delayed_work(&mvm->scan_timeout_dwork);
+scan.c:	mvm->last_ebs_successful =
+scan.c:	if (mvm->fw->ucode_capa.flags & IWL_UCODE_TLV_FLAGS_SHORT_BL)
+scan.c:		mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_DISABLED;
+scan.c:	mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_ENABLED;
+scan.c:	tx_cmd[0].sta_id = mvm->aux_sta.sta_id;
+scan.c:	tx_cmd[1].sta_id = mvm->aux_sta.sta_id;
+scan.c:	    !fw_has_capa(&mvm->fw->ucode_capa,
+scan.c:		(n_channels <= mvm->fw->ucode_capa.n_scan_channels) &
+scan.c:	const struct iwl_ucode_capabilities *capa = &mvm->fw->ucode_capa;
+scan.c:		mvm->last_ebs_successful && IWL_MVM_ENABLE_EBS &&
+scan.c:	    fw_has_capa(&mvm->fw->ucode_capa,
+scan.c:	if (mvm->scan_iter_notif_enabled)
+scan.c:	if (mvm->sched_scan_pass_all == SCHED_SCAN_PASS_ALL_ENABLED)
+scan.c:	struct iwl_scan_req_lmac *cmd = mvm->scan_cmd;
+scan.c:			 mvm->fw->ucode_capa.n_scan_channels);
+scan.c:	band = &mvm->nvm_data->bands[NL80211_BAND_2GHZ];
+scan.c:	band = &mvm->nvm_data->bands[NL80211_BAND_5GHZ];
+scan.c:	band = &mvm->nvm_data->bands[NL80211_BAND_2GHZ];
+scan.c:	band = &mvm->nvm_data->bands[NL80211_BAND_5GHZ];
+scan.c:	memcpy(&cfg->mac_addr, &mvm->addresses[0].addr, ETH_ALEN);
+scan.c:	cfg->bcast_sta_id = mvm->aux_sta.sta_id;
+scan.c:	memcpy(&cfg->mac_addr, &mvm->addresses[0].addr, ETH_ALEN);
+scan.c:	cfg->bcast_sta_id = mvm->aux_sta.sta_id;
+scan.c:		mvm->nvm_data->bands[NL80211_BAND_2GHZ].n_channels +
+scan.c:		mvm->nvm_data->bands[NL80211_BAND_5GHZ].n_channels;
+scan.c:	if (WARN_ON(num_channels > mvm->fw->ucode_capa.n_scan_channels))
+scan.c:		num_channels = mvm->fw->ucode_capa.n_scan_channels;
+scan.c:		if (type == mvm->scan_type && hb_type == mvm->hb_scan_type)
+scan.c:		if (type == mvm->scan_type)
+scan.c:		mvm->scan_type = type;
+scan.c:		mvm->hb_scan_type = hb_type;
+scan.c:	cfg.bcast_sta_id = mvm->aux_sta.sta_id;
+scan.c:	for (i = 0; i < mvm->max_scans; i++)
+scan.c:		if (mvm->scan_uid_status[i] == status)
+scan.c:	    mvm->sched_scan_pass_all == SCHED_SCAN_PASS_ALL_ENABLED)
+scan.c:	if (mvm->scan_iter_notif_enabled)
+scan.c:	    fw_has_capa(&mvm->fw->ucode_capa,
+scan.c:	if (mvm->scan_iter_notif_enabled)
+scan.c:	if (mvm->sched_scan_pass_all == SCHED_SCAN_PASS_ALL_ENABLED)
+scan.c:	struct iwl_scan_req_umac *cmd = mvm->scan_cmd;
+scan.c:		mvm->fw->ucode_capa.n_scan_channels;
+scan.c:	mvm->scan_uid_status[uid] = type;
+scan.c:	struct iwl_scan_req_umac_v12 *cmd = mvm->scan_cmd;
+scan.c:	mvm->scan_uid_status[uid] = type;
+scan.c:	struct iwl_scan_req_umac_v13 *cmd = mvm->scan_cmd;
+scan.c:	mvm->scan_uid_status[uid] = type;
+scan.c:	return hweight32(mvm->scan_status & IWL_MVM_SCAN_MASK);
+scan.c:	bool unified_image = fw_has_capa(&mvm->fw->ucode_capa,
+scan.c:	    mvm->scan_status & (IWL_MVM_SCAN_SCHED | IWL_MVM_SCAN_NETDETECT))
+scan.c:	if (iwl_mvm_num_scans(mvm) < mvm->max_scans)
+scan.c:		if (mvm->scan_status & IWL_MVM_SCAN_REGULAR_MASK)
+scan.c:		if (mvm->scan_status & IWL_MVM_SCAN_SCHED_MASK)
+scan.c:		if (mvm->scan_status & IWL_MVM_SCAN_REGULAR_MASK)
+scan.c:		if (mvm->scan_status & IWL_MVM_SCAN_SCHED_MASK)
+scan.c:	iwl_force_nmi(mvm->trans);
+scan.c:	lockdep_assert_held(&mvm->mutex);
+scan.c:	memset(mvm->scan_cmd, 0, ksize(mvm->scan_cmd));
+scan.c:	if (!fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN)) {
+scan.c:	scan_ver = iwl_mvm_lookup_cmd_ver(mvm->fw, IWL_ALWAYS_LONG_GROUP,
+scan.c:		.data = { mvm->scan_cmd, },
+scan.c:	lockdep_assert_held(&mvm->mutex);
+scan.c:	if (iwl_mvm_is_lar_supported(mvm) && !mvm->lar_regdom_set) {
+scan.c:	if (WARN_ON(!mvm->scan_cmd))
+scan.c:	mvm->scan_status |= IWL_MVM_SCAN_REGULAR;
+scan.c:	mvm->scan_vif = iwl_mvm_vif_from_mac80211(vif);
+scan.c:	schedule_delayed_work(&mvm->scan_timeout_dwork,
+scan.c:		.data = { mvm->scan_cmd, },
+scan.c:	lockdep_assert_held(&mvm->mutex);
+scan.c:	if (iwl_mvm_is_lar_supported(mvm) && !mvm->lar_regdom_set) {
+scan.c:	if (WARN_ON(!mvm->scan_cmd))
+scan.c:		mvm->scan_status |= type;
+scan.c:	if (WARN_ON(!(mvm->scan_uid_status[uid] & mvm->scan_status)))
+scan.c:	if (mvm->scan_uid_status[uid] == IWL_MVM_SCAN_REGULAR) {
+scan.c:			.scan_start_tsf = mvm->scan_start,
+scan.c:		memcpy(info.tsf_bssid, mvm->scan_vif->bssid, ETH_ALEN);
+scan.c:		ieee80211_scan_completed(mvm->hw, &info);
+scan.c:		mvm->scan_vif = NULL;
+scan.c:		cancel_delayed_work(&mvm->scan_timeout_dwork);
+scan.c:	} else if (mvm->scan_uid_status[uid] == IWL_MVM_SCAN_SCHED) {
+scan.c:		ieee80211_sched_scan_stopped(mvm->hw);
+scan.c:		mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_DISABLED;
+scan.c:	mvm->scan_status &= ~mvm->scan_uid_status[uid];
+scan.c:		       uid, mvm->scan_uid_status[uid],
+scan.c:		mvm->last_ebs_successful = false;
+scan.c:	mvm->scan_uid_status[uid] = 0;
+scan.c:	mvm->scan_start = le64_to_cpu(notif->start_tsf);
+scan.c:	if (mvm->sched_scan_pass_all == SCHED_SCAN_PASS_ALL_FOUND) {
+scan.c:		ieee80211_sched_scan_results(mvm->hw);
+scan.c:		mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_ENABLED;
+scan.c:		       mvm->scan_start);
+scan.c:	lockdep_assert_held(&mvm->mutex);
+scan.c:		mvm->scan_uid_status[uid] = type << IWL_MVM_SCAN_STOPPING_SHIFT;
+scan.c:	lockdep_assert_held(&mvm->mutex);
+scan.c:	iwl_init_notification_wait(&mvm->notif_wait, &wait_scan_done,
+scan.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN))
+scan.c:		iwl_remove_notification(&mvm->notif_wait, &wait_scan_done);
+scan.c:	return iwl_wait_notification(&mvm->notif_wait, &wait_scan_done,
+scan.c:	u8 scan_ver = iwl_mvm_lookup_cmd_ver(mvm->fw, IWL_ALWAYS_LONG_GROUP,
+scan.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN)) {
+scan.c:				mvm->fw->ucode_capa.n_scan_channels +
+scan.c:		mvm->fw->ucode_capa.n_scan_channels +
+scan.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN)) {
+scan.c:			ieee80211_scan_completed(mvm->hw, &info);
+scan.c:			mvm->scan_uid_status[uid] = 0;
+scan.c:		if (uid >= 0 && !mvm->fw_restart) {
+scan.c:			ieee80211_sched_scan_stopped(mvm->hw);
+scan.c:			mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_DISABLED;
+scan.c:			mvm->scan_uid_status[uid] = 0;
+scan.c:		for (i = 0; i < mvm->max_scans; i++) {
+scan.c:			if (WARN_ONCE(mvm->scan_uid_status[i],
+scan.c:				mvm->scan_uid_status[i] = 0;
+scan.c:		if (mvm->scan_status & IWL_MVM_SCAN_REGULAR) {
+scan.c:			ieee80211_scan_completed(mvm->hw, &info);
+scan.c:		if ((mvm->scan_status & IWL_MVM_SCAN_SCHED) &&
+scan.c:		    !mvm->fw_restart) {
+scan.c:			ieee80211_sched_scan_stopped(mvm->hw);
+scan.c:			mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_DISABLED;
+scan.c:	if (!(mvm->scan_status & type))
+scan.c:		mvm->scan_status |= type << IWL_MVM_SCAN_STOPPING_SHIFT;
+scan.c:	mvm->scan_status &= ~type;
+scan.c:		cancel_delayed_work(&mvm->scan_timeout_dwork);
+scan.c:			ieee80211_scan_completed(mvm->hw, &info);
+scan.c:		ieee80211_sched_scan_stopped(mvm->hw);
+scan.c:		mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_DISABLED;
+sta.h: * %mvm->add_stream_wk later allocates the queues and TXes the deferred frames.
+ptp.c:	while (mvm->firmware_operation_done != 0) {
+ptp.c:	spin_lock_irqsave(&mvm->systim_lock, flags);
+ptp.c:	mvm->firmware_operation_done = 1; /* firmware operation ongoing */
+ptp.c:	        mvm->firmware_operation_done = 0; /* ready for firmware operation */
+ptp.c:	        spin_unlock_irqrestore(&mvm->systim_lock, flags);
+ptp.c:	while (mvm->firmware_operation_done != 2) {
+ptp.c:	                mvm->firmware_operation_done = 0; /* ready for firmware operation */
+ptp.c:	                spin_unlock_irqrestore(&mvm->systim_lock, flags);
+ptp.c:	mvm->firmware_operation_done = 0; /* ready for firmware operation */
+ptp.c:	spin_unlock_irqrestore(&mvm->systim_lock, flags);
+ptp.c:	*device = mvm->GP2_ns;
+ptp.c:	/* *device = ns_to_ktime(timecounter_cyc2time(&mvm->tc, mvm->GP2_ns)); */
+ptp.c:	*system = convert_art_to_tsc(mvm->ART_ns);
+ptp.c:	/* *system = convert_art__ns_to_tsc(mvm->ART_ns); */
+ptp.c:	if (mvm->trans->cfg->integrated == true) { /* CNVi */
+ptp.c:	   while (mvm->firmware_operation_done != 0) {
+ptp.c:	   xtstamp->device = mvm->GP2_ns; 
+ptp.c:	   xtstamp->sys_realtime = mvm->sys_realtime_ns; 
+ptp.c:	   xtstamp->sys_monoraw = mvm->sys_monoraw_ns; 
+ptp.c:	if ( mvm->last_GP2_ns != 0 ) {
+ptp.c:		device_delta = xtstamp->device - mvm->last_GP2_ns ; /* in nsec units */
+ptp.c:		system_delta = xtstamp->sys_realtime - mvm->last_system_time_ns; /* in  nsec units */
+ptp.c:	mvm->error = error;
+ptp.c:	mvm->last_GP2_ns = xtstamp->device; /* in nsec units */
+ptp.c:	mvm->last_system_time_ns = xtstamp->sys_realtime; /* in  nsec units */
+ptp.c:				mvm->last_GP2_ns, mvm->last_system_time_ns, xtstamp->device, xtstamp->sys_realtime, device_delta, system_delta, error);
+ptp.c:	while (mvm->firmware_operation_done != 0) {
+ptp.c:	spin_lock_irqsave(&mvm->systim_lock, flags);
+ptp.c:	mvm->firmware_operation_done = 1; /* firmware operation ongoing */
+ptp.c:	        mvm->firmware_operation_done = 0; /* ready for firmware operation */
+ptp.c:	        spin_unlock_irqrestore(&mvm->systim_lock, flags);
+ptp.c:	while (mvm->firmware_operation_done != 2) {
+ptp.c:	                mvm->firmware_operation_done = 0; /* ready for firmware operation */
+ptp.c:	                spin_unlock_irqrestore(&mvm->systim_lock, flags);
+ptp.c:	mvm->firmware_operation_done = 0; /* ready for firmware operation */
+ptp.c:	spin_unlock_irqrestore(&mvm->systim_lock, flags);
+ptp.c:	printk(KERN_DEBUG "iwl_mvm_get_cyclecounter_read(): Device Time %llu\n", mvm->GP2_ns);
+ptp.c:	return(mvm->GP2_ns);
+ptp.c:        if(&mvm->tc == NULL){
+ptp.c:	ns = timecounter_read(&mvm->tc);
+ptp.c:	mvm->ptp_clock_info.gettime64(&mvm->ptp_clock_info, &ts);
+ptp.c:	schedule_delayed_work(&mvm->systim_overflow_work,
+ptp.c:	if (mvm->ptp_clock)
+ptp.c:	mvm->ptp_clock = NULL;
+ptp.c:	if (mvm->trans->cfg->integrated == true) { /* CNVi */
+ptp.c:	   INIT_DELAYED_WORK(&mvm->systim_overflow_work,
+ptp.c:	   schedule_delayed_work(&mvm->systim_overflow_work,
+ptp.c:        mvm->ptp_clock_info = iwlmvm_ptp_clock_info;
+ptp.c:        snprintf(mvm->ptp_clock_info.name,
+ptp.c:                   sizeof(mvm->ptp_clock_info.name), "%s",
+ptp.c:	mvm->ptp_clock_info.max_adj = 0; 
+ptp.c:	mvm->ptp_clock = ptp_clock_register(&mvm->ptp_clock_info,
+ptp.c:						mvm->dev);
+ptp.c:	if (IS_ERR(mvm->ptp_clock)) {
+ptp.c:		mvm->ptp_clock = NULL;
+ptp.c:	} else if (mvm->ptp_clock) {
+ptp.c:				mvm->ptp_clock_info.name, 
+ptp.c:				ptp_clock_index(mvm->ptp_clock));
+ptp.c:	if (mvm->trans->cfg->integrated == true)  /* CNVi */
+ptp.c:	   cancel_delayed_work_sync(&mvm->systim_overflow_work);
+ptp.c:	if (mvm->ptp_clock) {
+ptp.c:				mvm->ptp_clock_info.name, 
+ptp.c:				ptp_clock_index(mvm->ptp_clock));
+ptp.c:		ptp_clock_unregister(mvm->ptp_clock);
+ptp.c:		mvm->ptp_clock = NULL;
+rs.c:	if (mvm->nvm_data->sku_cap_mimo_disabled)
+rs.c:		  rate->ant, lq_sta->pers.chains, mvm->fw->valid_tx_ant,
+rs.c:		  mvm->nvm_data ? mvm->nvm_data->valid_tx_ant : ANT_INVALID);
+rs.c:	if (mvm->cfg->ht_params->ldpc &&
+rs.c:	if (mvm->cfg->ht_params->stbc &&
+rs.c:	if (mvm->cfg->ht_params->ldpc &&
+rs.c:	if (mvm->cfg->ht_params->stbc &&
+rs.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_BEAMFORMER) &&
+rs.c:	spin_lock_bh(&mvm->drv_stats_lock);
+rs.c:	memset(&mvm->drv_rx_stats, 0, sizeof(mvm->drv_rx_stats));
+rs.c:	spin_unlock_bh(&mvm->drv_stats_lock);
+rs.c:	spin_lock(&mvm->drv_stats_lock);
+rs.c:		mvm->drv_rx_stats.agg_frames++;
+rs.c:	mvm->drv_rx_stats.success_frames++;
+rs.c:		mvm->drv_rx_stats.bw_20_frames++;
+rs.c:		mvm->drv_rx_stats.bw_40_frames++;
+rs.c:		mvm->drv_rx_stats.bw_80_frames++;
+rs.c:		mvm->drv_rx_stats.bw_160_frames++;
+rs.c:		mvm->drv_rx_stats.ht_frames++;
+rs.c:		mvm->drv_rx_stats.vht_frames++;
+rs.c:		mvm->drv_rx_stats.legacy_frames++;
+rs.c:		mvm->drv_rx_stats.siso_frames++;
+rs.c:		mvm->drv_rx_stats.mimo2_frames++;
+rs.c:		mvm->drv_rx_stats.sgi_frames++;
+rs.c:		mvm->drv_rx_stats.ngi_frames++;
+rs.c:	mvm->drv_rx_stats.last_rates[mvm->drv_rx_stats.last_frame_idx] = rate;
+rs.c:	mvm->drv_rx_stats.last_frame_idx =
+rs.c:		(mvm->drv_rx_stats.last_frame_idx + 1) %
+rs.c:			ARRAY_SIZE(mvm->drv_rx_stats.last_rates);
+rs.c:	spin_unlock(&mvm->drv_stats_lock);
+rs.c:	struct ieee80211_hw *hw = mvm->hw;
+rs.c:	if (!mvm->trans->trans_cfg->gen2)
+rs.c:	if (!fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_LQ_SS_PARAMS) &&
+rs.c:	ieee80211_iterate_stations_atomic(mvm->hw,
+rs.c:	if (fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_LQ_SS_PARAMS))
+rs.c:	if (!fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_COEX_SCHEMA_2) &&
+rs.c:	lockdep_assert_held(&mvm->mutex);
+Binary file ops.o matches
+time-event.c:	lockdep_assert_held(&mvm->time_event_lock);
+time-event.c:	clear_bit(IWL_MVM_STATUS_ROC_RUNNING, &mvm->status);
+time-event.c:	clear_bit(IWL_MVM_STATUS_ROC_AUX_RUNNING, &mvm->status);
+time-event.c:	iwl_mvm_flush_sta(mvm, &mvm->aux_sta, true, CMD_ASYNC);
+time-event.c:	if (test_and_clear_bit(IWL_MVM_STATUS_NEED_FLUSH_P2P, &mvm->status)) {
+time-event.c:		if (!WARN_ON(!mvm->p2p_device_vif)) {
+time-event.c:			mvmvif = iwl_mvm_vif_from_mac80211(mvm->p2p_device_vif);
+time-event.c:	schedule_work(&mvm->roc_done_wk);
+time-event.c:	csa_vif = rcu_dereference(mvm->csa_vif);
+time-event.c:	RCU_INIT_POINTER(mvm->csa_vif, NULL);
+time-event.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt,
+time-event.c:		iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+time-event.c:	lockdep_assert_held(&mvm->time_event_lock);
+time-event.c:			ieee80211_remain_on_channel_expired(mvm->hw);
+time-event.c:			set_bit(IWL_MVM_STATUS_NEED_FLUSH_P2P, &mvm->status);
+time-event.c:			set_bit(IWL_MVM_STATUS_ROC_RUNNING, &mvm->status);
+time-event.c:			ieee80211_ready_on_channel(mvm->hw);
+time-event.c:	list_for_each_entry_safe(te_data, tmp, &mvm->aux_roc_te_list, list) {
+time-event.c:		ieee80211_remain_on_channel_expired(mvm->hw);
+time-event.c:		set_bit(IWL_MVM_STATUS_ROC_AUX_RUNNING, &mvm->status);
+time-event.c:		ieee80211_ready_on_channel(mvm->hw); /* Start TE */
+time-event.c:	spin_lock_bh(&mvm->time_event_lock);
+time-event.c:	list_for_each_entry_safe(te_data, tmp, &mvm->time_event_list, list) {
+time-event.c:	spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:	spin_lock_bh(&mvm->time_event_lock);
+time-event.c:		spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	list_add_tail(&te_data->list, &mvm->time_event_list);
+time-event.c:	spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	iwl_init_notification_wait(&mvm->notif_wait, &wait_time_event,
+time-event.c:		iwl_remove_notification(&mvm->notif_wait, &wait_time_event);
+time-event.c:	ret = iwl_wait_notification(&mvm->notif_wait, &wait_time_event, 1);
+time-event.c:		spin_lock_bh(&mvm->time_event_lock);
+time-event.c:		spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:	iwl_init_notification_wait(&mvm->notif_wait, &wait_te_notif,
+time-event.c:		iwl_remove_notification(&mvm->notif_wait, &wait_te_notif);
+time-event.c:	} else if (iwl_wait_notification(&mvm->notif_wait, &wait_te_notif,
+time-event.c:	spin_lock_bh(&mvm->time_event_lock);
+time-event.c:	spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:	spin_lock_bh(&mvm->time_event_lock);
+time-event.c:	spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:			spin_lock_bh(&mvm->time_event_lock);
+time-event.c:			spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:		ieee80211_remain_on_channel_expired(mvm->hw);
+time-event.c:		set_bit(IWL_MVM_STATUS_NEED_FLUSH_P2P, &mvm->status);
+time-event.c:		set_bit(IWL_MVM_STATUS_ROC_RUNNING, &mvm->status);
+time-event.c:		ieee80211_ready_on_channel(mvm->hw); /* Start TE */
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:	spin_lock_bh(&mvm->time_event_lock);
+time-event.c:	list_for_each_entry(te_data, &mvm->time_event_list, list) {
+time-event.c:	te_data = list_first_entry_or_null(&mvm->aux_roc_te_list,
+time-event.c:	spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+time-event.c:			set_bit(IWL_MVM_STATUS_NEED_FLUSH_P2P, &mvm->status);
+time-event.c:		set_bit(IWL_MVM_STATUS_NEED_FLUSH_P2P, &mvm->status);
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:		spin_lock_bh(&mvm->time_event_lock);
+time-event.c:		spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	lockdep_assert_held(&mvm->mutex);
+time-event.c:	spin_lock_bh(&mvm->time_event_lock);
+time-event.c:		spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:	spin_unlock_bh(&mvm->time_event_lock);
+time-event.c:		spin_lock_bh(&mvm->time_event_lock);
+time-event.c:		spin_unlock_bh(&mvm->time_event_lock);
+rs-fw.c:	if (mvm->cfg->ht_params->stbc &&
+rs-fw.c:	if (mvm->cfg->ht_params->ldpc &&
+rs-fw.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[notif->sta_id]);
+rs-fw.c:	struct ieee80211_hw *hw = mvm->hw;
+rs-fw.c:	if (mvm->trans->dbg_cfg.tx_siso_80bw_like_160bw &&
+tdls.c:	lockdep_assert_held(&mvm->mutex);
+tdls.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+tdls.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[i],
+tdls.c:						lockdep_is_held(&mvm->mutex));
+tdls.c:	lockdep_assert_held(&mvm->mutex);
+tdls.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+tdls.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[i],
+tdls.c:						lockdep_is_held(&mvm->mutex));
+tdls.c:	lockdep_assert_held(&mvm->mutex);
+tdls.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+tdls.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[i],
+tdls.c:						lockdep_is_held(&mvm->mutex));
+tdls.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+tdls.c:	mutex_lock(&mvm->mutex);
+tdls.c:	mutex_unlock(&mvm->mutex);
+tdls.c:	if (mvm->tdls_cs.state == state)
+tdls.c:		       iwl_mvm_tdls_cs_state_str(mvm->tdls_cs.state),
+tdls.c:	mvm->tdls_cs.state = state;
+tdls.c:		mvm->tdls_cs.peer.sent_timestamp = iwl_mvm_get_systime(mvm);
+tdls.c:		mvm->tdls_cs.cur_sta_id = IWL_MVM_INVALID_STA;
+tdls.c:	lockdep_assert_held(&mvm->mutex);
+tdls.c:	sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[sta_id],
+tdls.c:					lockdep_is_held(&mvm->mutex));
+tdls.c:	mod_delayed_work(system_wq, &mvm->tdls_cs.dwork,
+tdls.c:	if (mvm->tdls_cs.state != IWL_MVM_TDLS_SW_IDLE &&
+tdls.c:	    mvm->tdls_cs.cur_sta_id != IWL_MVM_INVALID_STA) {
+tdls.c:		if (mvm->tdls_cs.cur_sta_id >= IWL_MVM_STATION_COUNT)
+tdls.c:                        mvm->tdls_cs.cur_sta_id = (IWL_MVM_STATION_COUNT - 1);
+tdls.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[mvm->tdls_cs.cur_sta_id],
+tdls.c:				lockdep_is_held(&mvm->mutex));
+tdls.c:	switch (mvm->tdls_cs.state) {
+tdls.c:		else if (timestamp <= mvm->tdls_cs.peer.sent_timestamp)
+tdls.c:			       type, mvm->tdls_cs.state, peer, same_peer,
+tdls.c:	lockdep_assert_held(&mvm->mutex);
+tdls.c:		if (mvm->tdls_cs.state == IWL_MVM_TDLS_SW_REQ_SENT &&
+tdls.c:		    mvm->tdls_cs.peer.chandef.chan) {
+tdls.c:			chandef = &mvm->tdls_cs.peer.chandef;
+tdls.c:		} else if (mvm->tdls_cs.state == IWL_MVM_TDLS_SW_ACTIVE &&
+tdls.c:		mvm->tdls_cs.cur_sta_id = mvmsta->sta_id;
+tdls.c:	mutex_lock(&mvm->mutex);
+tdls.c:	if (mvm->tdls_cs.peer.sta_id == IWL_MVM_INVALID_STA)
+tdls.c:	if (mvm->tdls_cs.peer.sta_id >= IWL_MVM_STATION_COUNT)
+tdls.c:		mvm->tdls_cs.peer.sta_id = (IWL_MVM_STATION_COUNT - 1);
+tdls.c:				mvm->fw_id_to_mac_id[mvm->tdls_cs.peer.sta_id],
+tdls.c:				lockdep_is_held(&mvm->mutex));
+tdls.c:						 mvm->tdls_cs.peer.initiator,
+tdls.c:						 mvm->tdls_cs.peer.op_class,
+tdls.c:						 &mvm->tdls_cs.peer.chandef,
+tdls.c:						 mvm->tdls_cs.peer.skb,
+tdls.c:						 mvm->tdls_cs.peer.ch_sw_tm_ie);
+tdls.c:	schedule_delayed_work(&mvm->tdls_cs.dwork, msecs_to_jiffies(delay));
+tdls.c:	mutex_unlock(&mvm->mutex);
+tdls.c:	mutex_lock(&mvm->mutex);
+tdls.c:	if (mvm->tdls_cs.peer.sta_id != IWL_MVM_INVALID_STA) {
+tdls.c:	mvm->tdls_cs.peer.skb = skb_copy(tmpl_skb, GFP_KERNEL);
+tdls.c:	if (!mvm->tdls_cs.peer.skb) {
+tdls.c:	mvm->tdls_cs.peer.sta_id = mvmsta->sta_id;
+tdls.c:	mvm->tdls_cs.peer.chandef = *chandef;
+tdls.c:	mvm->tdls_cs.peer.initiator = sta->tdls_initiator;
+tdls.c:	mvm->tdls_cs.peer.op_class = oper_class;
+tdls.c:	mvm->tdls_cs.peer.ch_sw_tm_ie = ch_sw_tm_ie;
+tdls.c:	mod_delayed_work(system_wq, &mvm->tdls_cs.dwork,
+tdls.c:	mutex_unlock(&mvm->mutex);
+tdls.c:	mutex_lock(&mvm->mutex);
+tdls.c:	if (mvm->tdls_cs.peer.sta_id == IWL_MVM_INVALID_STA) {
+tdls.c:	if (mvm->tdls_cs.peer.sta_id >= IWL_MVM_STATION_COUNT)
+tdls.c:		mvm->tdls_cs.peer.sta_id = (IWL_MVM_STATION_COUNT - 1);
+tdls.c:				mvm->fw_id_to_mac_id[mvm->tdls_cs.peer.sta_id],
+tdls.c:				lockdep_is_held(&mvm->mutex));
+tdls.c:	if (mvm->tdls_cs.cur_sta_id == mvm->tdls_cs.peer.sta_id &&
+tdls.c:	    mvm->tdls_cs.state != IWL_MVM_TDLS_SW_IDLE)
+tdls.c:	mvm->tdls_cs.peer.sta_id = IWL_MVM_INVALID_STA;
+tdls.c:	dev_kfree_skb(mvm->tdls_cs.peer.skb);
+tdls.c:	mvm->tdls_cs.peer.skb = NULL;
+tdls.c:	mutex_unlock(&mvm->mutex);
+tdls.c:	flush_delayed_work(&mvm->tdls_cs.dwork);
+tdls.c:	mutex_lock(&mvm->mutex);
+tdls.c:	    mvm->tdls_cs.state == IWL_MVM_TDLS_SW_REQ_SENT &&
+tdls.c:	    mvm->tdls_cs.cur_sta_id != IWL_MVM_INVALID_STA) {
+tdls.c:		if (mvm->tdls_cs.cur_sta_id >= IWL_MVM_STATION_COUNT)
+tdls.c:			mvm->tdls_cs.cur_sta_id = (IWL_MVM_STATION_COUNT - 1);
+tdls.c:				mvm->fw_id_to_mac_id[mvm->tdls_cs.cur_sta_id],
+tdls.c:				lockdep_is_held(&mvm->mutex));
+tdls.c:	mod_delayed_work(system_wq, &mvm->tdls_cs.dwork,
+tdls.c:	mutex_unlock(&mvm->mutex);
+tdls.c:	if (list_empty(&mvm->tdls_peer_cache_list))
+tdls.c:	list_for_each_entry_rcu(cnt, &mvm->tdls_peer_cache_list, list)
+tdls.c:	 * mvm->mutex is held or the HW is already unregistered, barring
+tdls.c:	list_for_each_entry_safe(cnt, tmp, &mvm->tdls_peer_cache_list, list) {
+tdls.c:		mvm->tdls_peer_cache_cnt--;
+tdls.c:	list_for_each_entry_rcu(cnt, &mvm->tdls_peer_cache_list, list)
+tdls.c:	if (&cnt->list == &mvm->tdls_peer_cache_list)
+rx.c: * Copies the phy information in mvm->last_phy_info, it will be used when the
+rx.c:	memcpy(&mvm->last_phy_info, pkt->data, sizeof(mvm->last_phy_info));
+rx.c:	mvm->ampdu_ref++;
+rx.c:	if (mvm->last_phy_info.phy_flags & cpu_to_le16(RX_RES_PHY_FLAGS_AGG)) {
+rx.c:		spin_lock(&mvm->drv_stats_lock);
+rx.c:		mvm->drv_rx_stats.ampdu_count++;
+rx.c:		spin_unlock(&mvm->drv_stats_lock);
+rx.c:	ieee80211_rx_napi(mvm->hw, sta, skb, napi);
+rx.c:		if (!fw_has_api(&mvm->fw->ucode_capa,
+rx.c:		if (!mvm->monitor_on)
+rx.c:	if (time_after(jiffies, mvm->tcm.ts + MVM_TCM_PERIOD))
+rx.c:		schedule_delayed_work(&mvm->tcm.work, 0);
+rx.c:	mdata = &mvm->tcm.data[mac];
+rx.c:	if (mdata->rx.last_ampdu_ref != mvm->ampdu_ref) {
+rx.c:		mdata->rx.last_ampdu_ref = mvm->ampdu_ref;
+rx.c:	phy_info = &mvm->last_phy_info;
+rx.c:		if (!WARN_ON_ONCE(id >= ARRAY_SIZE(mvm->fw_id_to_mac_id))) {
+rx.c:			sta = rcu_dereference(mvm->fw_id_to_mac_id[id]);
+rx.c:		sta = ieee80211_find_sta_by_ifaddr(mvm->hw, hdr->addr2, NULL);
+rx.c:			rcu_dereference(mvm->csa_tx_blocked_vif);
+rx.c:		trig = iwl_fw_dbg_trigger_on(&mvm->fwrt,
+rx.c:				iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+rx.c:		if (!mvm->tcm.paused && len >= sizeof(*hdr) &&
+rx.c:		rx_status->ampdu_reference = mvm->ampdu_ref;
+rx.c:		     mvm->sched_scan_pass_all == SCHED_SCAN_PASS_ALL_ENABLED))
+rx.c:		mvm->sched_scan_pass_all = SCHED_SCAN_PASS_ALL_FOUND;
+rx.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, NULL, FW_DBG_TRIGGER_STATS);
+rx.c:	iwl_fw_dbg_collect_trig(&mvm->fwrt, trig, NULL);
+rx.c:		mvm->rx_stats_v3 = stats->rx;
+rx.c:		mvm->radio_stats.rx_time =
+rx.c:		mvm->radio_stats.tx_time =
+rx.c:		mvm->radio_stats.on_time_rf =
+rx.c:		mvm->radio_stats.on_time_scan =
+rx.c:		mvm->rx_stats = stats->rx;
+rx.c:		mvm->radio_stats.rx_time =
+rx.c:		mvm->radio_stats.tx_time =
+rx.c:		mvm->radio_stats.on_time_rf =
+rx.c:		mvm->radio_stats.on_time_scan =
+rx.c:	ieee80211_iterate_active_interfaces(mvm->hw,
+rx.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+rx.c:	spin_lock(&mvm->tcm.lock);
+rx.c:		struct iwl_mvm_tcm_mac *mdata = &mvm->tcm.data[i];
+rx.c:	spin_unlock(&mvm->tcm.lock);
+rx.c:		sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+mac80211.c:	memset(mvm->phy_ctxts, 0, sizeof(mvm->phy_ctxts));
+mac80211.c:		mvm->phy_ctxts[i].id = i;
+mac80211.c:		mvm->phy_ctxts[i].ref = 0;
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	regd = iwl_parse_nvm_mcc_info(mvm->trans->dev, mvm->cfg,
+mac80211.c:	mvm->lar_regdom_set = true;
+mac80211.c:	mvm->mcc_src = src_id;
+mac80211.c:			regulatory_set_wiphy_regd(mvm->hw->wiphy, regd);
+mac80211.c:	return iwl_mvm_get_regdomain(mvm->hw->wiphy, "ZZ",
+mac80211.c:			rtnl_dereference(mvm->hw->wiphy->regd);
+mac80211.c:	used_src = mvm->mcc_src;
+mac80211.c:	regd = iwl_mvm_get_regdomain(mvm->hw->wiphy, r->alpha2, used_src,
+mac80211.c:		ret = regulatory_set_wiphy_regd_sync_rtnl(mvm->hw->wiphy, regd);
+mac80211.c:	struct ieee80211_hw *hw = mvm->hw;
+mac80211.c:	bool unified = fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_9000)
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (mvm->trans->num_rx_queues > 1)
+mac80211.c:	if (mvm->trans->max_skb_frags)
+mac80211.c:	hw->max_tx_fragments = mvm->trans->max_skb_frags;
+mac80211.c:	BUILD_BUG_ON(ARRAY_SIZE(mvm->ciphers) < ARRAY_SIZE(mvm_ciphers) + 6);
+mac80211.c:	memcpy(mvm->ciphers, mvm_ciphers, sizeof(mvm_ciphers));
+mac80211.c:	hw->wiphy->cipher_suites = mvm->ciphers;
+mac80211.c:		mvm->ciphers[hw->wiphy->n_cipher_suites] =
+mac80211.c:		mvm->ciphers[hw->wiphy->n_cipher_suites] =
+mac80211.c:		mvm->ciphers[hw->wiphy->n_cipher_suites] =
+mac80211.c:			mvm->ciphers[hw->wiphy->n_cipher_suites] =
+mac80211.c:			mvm->ciphers[hw->wiphy->n_cipher_suites] =
+mac80211.c:	if (mvm->fw->cs[0].cipher) {
+mac80211.c:		const struct iwl_fw_cipher_scheme *fwcs = &mvm->fw->cs[0];
+mac80211.c:		struct ieee80211_cipher_scheme *cs = &mvm->cs[0];
+mac80211.c:		mvm->hw->n_cipher_schemes = 1;
+mac80211.c:		mvm->hw->cipher_schemes = mvm->cs;
+mac80211.c:		mvm->ciphers[hw->wiphy->n_cipher_suites] = cs->cipher;
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:		if (mvm->nvm_data->bands[NL80211_BAND_5GHZ].n_channels)
+mac80211.c:	memcpy(mvm->addresses[0].addr, mvm->nvm_data->hw_addr, ETH_ALEN);
+mac80211.c:	hw->wiphy->addresses = mvm->addresses;
+mac80211.c:	num_mac = (mvm->nvm_data->n_hw_addrs > 1) ?
+mac80211.c:		min(IWL_MVM_MAX_ADDRESSES, mvm->nvm_data->n_hw_addrs) : 1;
+mac80211.c:	if (mvm->trans->dbg_cfg.hw_address.len)
+mac80211.c:		memcpy(mvm->addresses[i].addr, mvm->addresses[i-1].addr,
+mac80211.c:		mvm->addresses[i].addr[5]++;
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN))
+mac80211.c:		mvm->max_scans = IWL_MVM_MAX_UMAC_SCANS;
+mac80211.c:		mvm->max_scans = IWL_MVM_MAX_LMAC_SCANS;
+mac80211.c:	if (mvm->nvm_data->bands[NL80211_BAND_2GHZ].n_channels)
+mac80211.c:			&mvm->nvm_data->bands[NL80211_BAND_2GHZ];
+mac80211.c:	if (mvm->nvm_data->bands[NL80211_BAND_5GHZ].n_channels) {
+mac80211.c:			&mvm->nvm_data->bands[NL80211_BAND_5GHZ];
+mac80211.c:		if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:		    fw_has_api(&mvm->fw->ucode_capa,
+mac80211.c:	if (mvm->nvm_data->bands[NL80211_BAND_6GHZ].n_channels)
+mac80211.c:			&mvm->nvm_data->bands[NL80211_BAND_6GHZ];
+mac80211.c:	hw->wiphy->hw_version = mvm->trans->hw_id;
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+mac80211.c:	if (mvm->nvm_data->sku_cap_11ax_enable &&
+mac80211.c:	mvm->rts_threshold = IEEE80211_MAX_RTS_THRESHOLD;
+mac80211.c:	if ((unified || mvm->fw->img[IWL_UCODE_WOWLAN].num_sec) &&
+mac80211.c:	    mvm->trans->ops->d3_suspend &&
+mac80211.c:	    mvm->trans->ops->d3_resume &&
+mac80211.c:	    device_can_wakeup(mvm->trans->dev)) {
+mac80211.c:		mvm->wowlan.flags |= WIPHY_WOWLAN_MAGIC_PKT |
+mac80211.c:			mvm->wowlan.flags |= WIPHY_WOWLAN_SUPPORTS_GTK_REKEY |
+mac80211.c:		mvm->wowlan.n_patterns = IWL_WOWLAN_MAX_PATTERNS;
+mac80211.c:		mvm->wowlan.pattern_min_len = IWL_WOWLAN_MIN_PATTERN_LEN;
+mac80211.c:		mvm->wowlan.pattern_max_len = IWL_WOWLAN_MAX_PATTERN_LEN;
+mac80211.c:		mvm->wowlan.max_nd_match_sets = IWL_SCAN_MAX_PROFILES;
+mac80211.c:		hw->wiphy->wowlan = &mvm->wowlan;
+mac80211.c:	mvm->bcast_filters = iwl_mvm_default_bcast_filters;
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	hw->netdev_features |= mvm->cfg->features;
+mac80211.c:	if (mvm->cfg->vht_mu_mimo_supported)
+mac80211.c:	ret = ieee80211_register_hw(mvm->hw);
+mac80211.c:	    !test_bit(IWL_MVM_STATUS_ROC_RUNNING, &mvm->status) &&
+mac80211.c:	    !test_bit(IWL_MVM_STATUS_ROC_AUX_RUNNING, &mvm->status))
+mac80211.c:			sta = rcu_dereference(mvm->fw_id_to_mac_id[ap_sta_id]);
+mac80211.c:			      (mvm->trans->system_pm_mode ==
+mac80211.c:	list_add_tail(&mvmtxq->list, &mvm->add_stream_txqs);
+mac80211.c:	schedule_work(&mvm->add_stream_wk);
+mac80211.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, ieee80211_vif_to_wdev(vif),
+mac80211.c:	if (!(mvm->nvm_data->sku_cap_11n_enable))
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:			struct iwl_mvm_tcm_mac *mdata = &mvm->tcm.data[macid];
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	spin_lock_bh(&mvm->time_event_lock);
+mac80211.c:	spin_unlock_bh(&mvm->time_event_lock);
+mac80211.c:	mvm->cur_aid = 0;
+mac80211.c:	mvm->scan_status = 0;
+mac80211.c:	mvm->ps_disabled = false;
+mac80211.c:	mvm->rfkill_safe_init_done = false;
+mac80211.c:	ieee80211_remain_on_channel_expired(mvm->hw);
+mac80211.c:	ieee80211_iterate_interfaces(mvm->hw, 0, iwl_mvm_cleanup_iterator, mvm);
+mac80211.c:	mvm->p2p_device_vif = NULL;
+mac80211.c:	memset(mvm->fw_key_table, 0, sizeof(mvm->fw_key_table));
+mac80211.c:	memset(&mvm->last_bt_notif, 0, sizeof(mvm->last_bt_notif));
+mac80211.c:	memset(&mvm->last_bt_ci_cmd, 0, sizeof(mvm->last_bt_ci_cmd));
+mac80211.c:	ieee80211_wake_queues(mvm->hw);
+mac80211.c:	mvm->vif_count = 0;
+mac80211.c:	mvm->rx_ba_sessions = 0;
+mac80211.c:	mvm->fwrt.dump.conf = FW_DBG_INVALID;
+mac80211.c:	mvm->monitor_on = false;
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	if (test_bit(IWL_MVM_STATUS_HW_RESTART_REQUESTED, &mvm->status)) {
+mac80211.c:		set_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status);
+mac80211.c:		clear_bit(IWL_MVM_STATUS_HW_RESTART_REQUESTED, &mvm->status);
+mac80211.c:	iwl_dbg_tlv_time_point(&mvm->fwrt, IWL_FW_INI_TIME_POINT_POST_INIT,
+mac80211.c:	iwl_dbg_tlv_time_point(&mvm->fwrt, IWL_FW_INI_TIME_POINT_PERIODIC,
+mac80211.c:	if (ret && test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)) {
+mac80211.c:		clear_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	if (mvm->trans->cfg->integrated == true) { /* CNVi */
+mac80211.c:	   mvm->cc.read = iwl_mvm_cyclecounter_read;
+mac80211.c:	   mvm->cc.mask = CYCLECOUNTER_MASK(32);
+mac80211.c:	   mvm->cc.mult = 10;
+mac80211.c:	   mvm->cc.shift = 0;
+mac80211.c:	   timecounter_init(&mvm->tc, &mvm->cc, ktime_to_ns(ktime_get_real()));
+mac80211.c:	   mvm->cc.read = NULL;
+mac80211.c:	   mvm->cc.mult = 0;
+mac80211.c:	   mvm->cc.shift = 0;
+mac80211.c:	mvm->last_GP2_ns = 0;
+mac80211.c:	mvm->last_system_time_ns = 0;
+mac80211.c:	mvm->sys_realtime_ns = 0; 
+mac80211.c:	mvm->sys_monoraw_ns = 0; 
+mac80211.c:	mvm->firmware_operation_done = 0;
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	clear_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status);
+mac80211.c:	if (mvm->csi_cfg.flags & IWL_CHANNEL_ESTIMATION_ENABLE)
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	memset(&mvm->accu_radio_stats, 0, sizeof(mvm->accu_radio_stats));
+mac80211.c:	flush_work(&mvm->roc_done_wk);
+mac80211.c:	if (test_and_clear_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) ||
+mac80211.c:			       &mvm->status))
+mac80211.c:		ieee80211_iterate_interfaces(mvm->hw, 0,
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN)) {
+mac80211.c:		for (i = 0; i < mvm->max_scans; i++) {
+mac80211.c:			if (WARN_ONCE(mvm->scan_uid_status[i],
+mac80211.c:				mvm->scan_uid_status[i] = 0;
+mac80211.c:	flush_work(&mvm->async_handlers_wk);
+mac80211.c:	flush_work(&mvm->add_stream_wk);
+mac80211.c:	clear_bit(IWL_MVM_STATUS_FIRMWARE_RUNNING, &mvm->status);
+mac80211.c:	cancel_delayed_work_sync(&mvm->tx_latency_watchdog_wk);
+mac80211.c:	cancel_delayed_work_sync(&mvm->cs_tx_unblock_dwork);
+mac80211.c:	cancel_delayed_work_sync(&mvm->scan_timeout_dwork);
+mac80211.c:	iwl_fw_free_dump_desc(&mvm->fwrt);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	cancel_work_sync(&mvm->async_handlers_wk);
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:		if (!mvm->phy_ctxts[i].ref)
+mac80211.c:			return &mvm->phy_ctxts[i];
+mac80211.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+mac80211.c:	else if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:		if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:		if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	iwl_mvm_abort_channel_switch(mvm->hw, vif);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status))
+mac80211.c:	rcu_assign_pointer(mvm->vif_id_to_mac[mvmvif->id], vif);
+mac80211.c:		mvm->vif_count++;
+mac80211.c:	if (!mvm->bf_allowed_vif &&
+mac80211.c:		mvm->bf_allowed_vif = mvmvif;
+mac80211.c:		mvm->p2p_device_vif = vif;
+mac80211.c:		mvm->monitor_on = true;
+mac80211.c:	if (mvm->bf_allowed_vif == mvmvif) {
+mac80211.c:		mvm->bf_allowed_vif = NULL;
+mac80211.c:		mvm->vif_count--;
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:		flush_work(&mvm->roc_done_wk);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:					       lockdep_is_held(&mvm->mutex));
+mac80211.c:	if (mvm->bf_allowed_vif == mvmvif) {
+mac80211.c:		mvm->bf_allowed_vif = NULL;
+mac80211.c:		memset(&mvm->ftm_resp_stats, 0, sizeof(mvm->ftm_resp_stats));
+mac80211.c:		if (vif == mvm->noa_vif) {
+mac80211.c:			mvm->noa_vif = NULL;
+mac80211.c:			mvm->noa_duration = 0;
+mac80211.c:	if (mvmvif == mvm->p2p_opps_test_wa_vif)
+mac80211.c:		mvm->p2p_opps_test_wa_vif = NULL;
+mac80211.c:		mvm->p2p_device_vif = NULL;
+mac80211.c:	if (mvm->vif_count && vif->type != NL80211_IFTYPE_P2P_DEVICE)
+mac80211.c:		mvm->vif_count--;
+mac80211.c:	RCU_INIT_POINTER(mvm->vif_id_to_mac[mvmvif->id], NULL);
+mac80211.c:		mvm->monitor_on = false;
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	struct iwl_mcast_filter_cmd *cmd = mvm->mcast_filter_cmd;
+mac80211.c:	if (!(mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_EINVAL) &&
+mac80211.c:	    mvm->mcast_active_filter_cmd)
+mac80211.c:		cmd = mvm->mcast_active_filter_cmd;
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	if (WARN_ON_ONCE(!mvm->mcast_filter_cmd))
+mac80211.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	kfree(mvm->mcast_filter_cmd);
+mac80211.c:	mvm->mcast_filter_cmd = cmd;
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	for (i = 0; mvm->bcast_filters[i].attrs[0].mask; i++) {
+mac80211.c:					 &mvm->bcast_filters[i],
+mac80211.c:	if (mvm->dbgfs_bcast_filtering.override) {
+mac80211.c:		memcpy(cmd->filters, &mvm->dbgfs_bcast_filtering.cmd.filters,
+mac80211.c:		memcpy(cmd->macs, &mvm->dbgfs_bcast_filtering.cmd.macs,
+mac80211.c:	if (!mvm->bcast_filters)
+mac80211.c:	if (!(mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_EINVAL) &&
+mac80211.c:	    mvm->rx_filters & IWL_MVM_VENDOR_RXFILTER_BCAST) {
+mac80211.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+mac80211.c:	if (!(mvm->fw->ucode_capa.flags & IWL_UCODE_TLV_FLAGS_BCAST_FILTERING))
+mac80211.c:			mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+mac80211.c:	int size = fw_has_api(&mvm->fw->ucode_capa,
+mac80211.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_ctxt_cmd.sta_id]);
+mac80211.c:	if (mvm->trans->dbg_cfg.no_ack_en & 0x2)
+mac80211.c:	if (mvm->trans->dbg_cfg.mu_edca) {
+mac80211.c:		u32 mu_edca = mvm->trans->dbg_cfg.mu_edca;
+mac80211.c:				     &mvm->status) &&
+mac80211.c:			    !fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:					    &mvm->status),
+mac80211.c:				      &mvm->status)) {
+mac80211.c:		if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) &&
+mac80211.c:		if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:		if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	if (fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE)) {
+mac80211.c:	if (vif->p2p && mvm->p2p_device_vif)
+mac80211.c:		iwl_mvm_mac_ctxt_changed(mvm, mvm->p2p_device_vif, false, NULL);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	if (rcu_access_pointer(mvm->csa_vif) == vif) {
+mac80211.c:		RCU_INIT_POINTER(mvm->csa_vif, NULL);
+mac80211.c:	if (rcu_access_pointer(mvm->csa_tx_blocked_vif) == vif) {
+mac80211.c:		RCU_INIT_POINTER(mvm->csa_tx_blocked_vif, NULL);
+mac80211.c:		mvm->csa_tx_block_bcn_timeout = 0;
+mac80211.c:	mvm->ap_last_beacon_gp2 = 0;
+mac80211.c:	if (vif->p2p && mvm->p2p_device_vif)
+mac80211.c:		iwl_mvm_mac_ctxt_changed(mvm, mvm->p2p_device_vif, false, NULL);
+mac80211.c:	if (!fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE))
+mac80211.c:	if (fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE))
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	    hw_req->req.n_channels > mvm->fw->ucode_capa.n_scan_channels)
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	if (mvm->scan_status & IWL_MVM_SCAN_REGULAR)
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:			iwl_trans_freeze_txq_timer(mvm->trans, txqs, true);
+mac80211.c:			iwl_trans_freeze_txq_timer(mvm->trans, txqs, false);
+mac80211.c:	if (WARN_ON(notif->sta_id >= ARRAY_SIZE(mvm->fw_id_to_mac_id)))
+mac80211.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[notif->sta_id]);
+mac80211.c:		__iwl_mvm_mac_sta_notify(mvm->hw,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	if (sta == rcu_access_pointer(mvm->fw_id_to_mac_id[mvm_sta->sta_id]))
+mac80211.c:		rcu_assign_pointer(mvm->fw_id_to_mac_id[mvm_sta->sta_id],
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	if (!test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)) {
+mac80211.c:		mdata = &mvm->tcm.data[iwl_mvm_vif_from_mac80211(vif)->id];
+mac80211.c:	if (!(mvm->fw->ucode_capa.flags & IWL_UCODE_TLV_FLAGS_UAPSD_SUPPORT))
+mac80211.c:		if (ether_addr_equal(mvm->uapsd_noagg_bssids[i].addr, bssid)) {
+mac80211.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, ieee80211_vif_to_wdev(vif),
+mac80211.c:	iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+mac80211.c:		flush_work(&mvm->add_stream_wk);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:		mvm->last_ebs_successful = true;
+mac80211.c:				  &mvm->status));
+mac80211.c:				      &mvm->status)))
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mvm->rts_threshold = value;
+mac80211.c:		mutex_lock(&mvm->mutex);
+mac80211.c:		mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	if (!(mvm->scan_status & IWL_MVM_SCAN_SCHED)) {
+mac80211.c:		mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:		if (!mvm->trans->trans_cfg->gen2) {
+mac80211.c:		if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) &&
+mac80211.c:		if (!test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) &&
+mac80211.c:						     mvm->trans->num_rx_queues),
+mac80211.c:				for (q = 0; q < mvm->trans->num_rx_queues; q++)
+mac80211.c:		if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status))
+mac80211.c:						lockdep_is_held(&mvm->mutex));
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	spin_lock_bh(&mvm->time_event_lock);
+mac80211.c:	list_add_tail(&te_data->list, &mvm->aux_roc_te_list);
+mac80211.c:	spin_unlock_bh(&mvm->time_event_lock);
+mac80211.c:		.sta_id_and_color = cpu_to_le32(mvm->aux_sta.sta_id),
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	spin_lock_bh(&mvm->time_event_lock);
+mac80211.c:		spin_unlock_bh(&mvm->time_event_lock);
+mac80211.c:	spin_unlock_bh(&mvm->time_event_lock);
+mac80211.c:	iwl_init_notification_wait(&mvm->notif_wait, &wait_time_event,
+mac80211.c:		iwl_remove_notification(&mvm->notif_wait, &wait_time_event);
+mac80211.c:	res = iwl_wait_notification(&mvm->notif_wait, &wait_time_event, 1);
+mac80211.c:		spin_lock_bh(&mvm->time_event_lock);
+mac80211.c:		spin_unlock_bh(&mvm->time_event_lock);
+mac80211.c:	flush_work(&mvm->roc_done_wk);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:		if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:		phy_ctxt = &mvm->phy_ctxts[i];
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	struct iwl_mvm_phy_ctxt *phy_ctxt = &mvm->phy_ctxts[*phy_ctxt_id];
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	struct iwl_mvm_phy_ctxt *phy_ctxt = &mvm->phy_ctxts[*phy_ctxt_id];
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	struct iwl_mvm_phy_ctxt *phy_ctxt = &mvm->phy_ctxts[*phy_ctxt_id];
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:		if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:		rcu_assign_pointer(mvm->csa_tx_blocked_vif, vif);
+mac80211.c:		if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	return mvm->ibss_manager;
+mac80211.c:		mvm->noa_duration = noa_duration;
+mac80211.c:		mvm->noa_vif = vif;
+mac80211.c:		if (fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	lockdep_assert_held(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	iwl_fw_dbg_trigger_simple_stop(&mvm->fwrt,
+mac80211.c:			rcu_dereference_protected(mvm->csa_vif,
+mac80211.c:						  lockdep_is_held(&mvm->mutex));
+mac80211.c:		if (rcu_dereference_protected(mvm->csa_tx_blocked_vif,
+mac80211.c:					      lockdep_is_held(&mvm->mutex))) {
+mac80211.c:		rcu_assign_pointer(mvm->csa_vif, vif);
+mac80211.c:		if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	if (!fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_CS_MODIFY))
+mac80211.c:			mutex_lock(&mvm->mutex);
+mac80211.c:			mutex_unlock(&mvm->mutex);
+mac80211.c:			iwl_trans_wait_tx_queues_empty(mvm->trans, queues);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+mac80211.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[i],
+mac80211.c:						lockdep_is_held(&mvm->mutex));
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	flush_work(&mvm->add_stream_wk);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+mac80211.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[i],
+mac80211.c:						lockdep_is_held(&mvm->mutex));
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:		iwl_trans_wait_tx_queues_empty(mvm->trans, msk);
+mac80211.c:	if (!fw_has_capa(&mvm->fw->ucode_capa,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	survey->time = mvm->accu_radio_stats.on_time_rf +
+mac80211.c:		       mvm->radio_stats.on_time_rf;
+mac80211.c:	survey->time_rx = mvm->accu_radio_stats.rx_time +
+mac80211.c:			  mvm->radio_stats.rx_time;
+mac80211.c:	survey->time_tx = mvm->accu_radio_stats.tx_time +
+mac80211.c:			  mvm->radio_stats.tx_time;
+mac80211.c:	survey->time_scan = mvm->accu_radio_stats.on_time_scan +
+mac80211.c:			    mvm->radio_stats.on_time_scan;
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, ieee80211_vif_to_wdev(vif),
+mac80211.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, ieee80211_vif_to_wdev(vif),
+mac80211.c:	iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	struct ieee80211_tx_latency_event *tx_lat = &mvm->last_tx_lat_event;
+mac80211.c:	struct ieee80211_tx_latency_event *max = &mvm->round_max_tx_lat;
+mac80211.c:	mvm->start_round_ts = 0;
+mac80211.c:		trace_iwlwifi_dev_tx_latency_thrshld(mvm->dev, max->msrmnt,
+mac80211.c:						     mvm->max_tx_latency_gp2,
+mac80211.c:	trig = iwl_fw_dbg_get_trigger(mvm->fw, FW_DBG_TRIGGER_TX_LATENCY);
+mac80211.c:	trace_iwlwifi_dev_tx_latency_thrshld(mvm->dev, max->msrmnt,
+mac80211.c:					     mvm->max_tx_latency_gp2, 1);
+mac80211.c:	iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+mac80211.c:	struct ieee80211_tx_latency_event *tx_lat = &mvm->last_tx_lat_event;
+mac80211.c:	struct ieee80211_tx_latency_event *max = &mvm->round_max_tx_lat;
+mac80211.c:	if (!iwl_fw_dbg_trigger_enabled(mvm->fw, FW_DBG_TRIGGER_TX_LATENCY))
+mac80211.c:	trig = iwl_fw_dbg_get_trigger(mvm->fw, FW_DBG_TRIGGER_TX_LATENCY);
+mac80211.c:	if (!mvm->start_round_ts) {
+mac80211.c:		mvm->start_round_ts = ts;
+mac80211.c:		mvm->max_tx_latency_gp2 = gp2;
+mac80211.c:			schedule_delayed_work(&mvm->tx_latency_watchdog_wk,
+mac80211.c:		mvm->max_tx_latency_gp2 = gp2;
+mac80211.c:		trace_iwlwifi_dev_tx_latency_thrshld(mvm->dev, tx_lat->msrmnt,
+mac80211.c:	trace_iwlwifi_dev_tx_latency_thrshld(mvm->dev, tx_lat->msrmnt,
+mac80211.c:		iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+mac80211.c:	memcpy(&mvm->last_tx_lat_event, &event->u.tx_lat,
+mac80211.c:	schedule_work(&mvm->tx_latency_wk);
+mac80211.c:	u32 qmask = BIT(mvm->trans->num_rx_queues) - 1;
+mac80211.c:		notif->cookie = mvm->queue_sync_cookie;
+mac80211.c:		atomic_set(&mvm->queue_sync_counter,
+mac80211.c:			   mvm->trans->num_rx_queues);
+mac80211.c:		lockdep_assert_held(&mvm->mutex);
+mac80211.c:		ret = wait_event_timeout(mvm->rx_sync_waitq,
+mac80211.c:					 atomic_read(&mvm->queue_sync_counter) == 0 ||
+mac80211.c:	atomic_set(&mvm->queue_sync_counter, 0);
+mac80211.c:		mvm->queue_sync_cookie++;
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	*stats = mvm->ftm_resp_stats;
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+mac80211.c:	mutex_lock(&mvm->mutex);
+mac80211.c:	mutex_unlock(&mvm->mutex);
+ax-softap-testmode.c:	mutex_lock(&mvm->mutex);
+ax-softap-testmode.c:	mutex_unlock(&mvm->mutex);
+ax-softap-testmode.c:	mutex_lock(&mvm->mutex);
+ax-softap-testmode.c:	mutex_unlock(&mvm->mutex);
+ax-softap-testmode.c:	mutex_lock(&mvm->mutex);
+ax-softap-testmode.c:	mutex_unlock(&mvm->mutex);
+timing_measurement.c:    if (mvm->last_GP2_ns > time_stamp) { 
+timing_measurement.c:       retval = mvm->last_system_time_ns + 
+timing_measurement.c:                (time_stamp + (0xFFFFFFFFFFFFFFFF - mvm->last_GP2_ns)) + mvm->error;
+timing_measurement.c:       retval = mvm->last_system_time_ns + (time_stamp - mvm->last_GP2_ns) + mvm->error;
+timing_measurement.c:    ieee80211_iterate_stations_atomic(mvm->hw,
+timing_measurement.c:    ieee80211_rx(mvm->hw, skb);
+timing_measurement.c:    bool ps_disabled = mvm->ps_disabled;
+timing_measurement.c:    while (mvm->firmware_operation_done != 0) {
+timing_measurement.c:       mvm->ps_disabled = true;
+timing_measurement.c:       mutex_lock(&mvm->mutex);
+timing_measurement.c:       mutex_unlock(&mvm->mutex);
+timing_measurement.c:    mutex_lock(&mvm->mutex);
+timing_measurement.c:    mvm->firmware_operation_done = 1; /* firmware operation ongoing */
+timing_measurement.c:    GP2 = iwl_read_prph(mvm->trans, DEVICE_SYSTEM_TIME_REG); 
+timing_measurement.c:    mutex_unlock(&mvm->mutex);
+timing_measurement.c:    mvm->firmware_operation_done = 2; /* firmware operation done */
+timing_measurement.c:       mvm->ps_disabled = false;
+timing_measurement.c:       mutex_lock(&mvm->mutex);
+timing_measurement.c:       mutex_unlock(&mvm->mutex);
+timing_measurement.c:    mvm->sys_realtime_ns = (time_of_day_ts.tv_sec * NS_PER_SEC + time_of_day_ts.tv_nsec) + 
+timing_measurement.c:	s_cumulative_gp2 = mvm->sys_realtime_ns;
+timing_measurement.c:    mvm->GP2_ns = u64_GP2;
+timing_measurement.c:    /*mvm->sys_realtime_ns = (time_of_day_ts.tv_sec * NS_PER_SEC + time_of_day_ts.tv_nsec) + 
+timing_measurement.c:    mvm->sys_monoraw_ns = monotonic_ts.tv_sec * NS_PER_SEC + monotonic_ts.tv_nsec;
+timing_measurement.c:       error_in_change = (mvm->sys_realtime_ns - mvm->last_system_time_ns) - delta; 
+timing_measurement.c:				  error_in_change, mvm->sys_realtime_ns, mvm->last_system_time_ns);
+timing_measurement.c:			  mvm->sys_realtime_ns, mvm->last_system_time_ns, u64_GP2, (u64)s_last_GP2*1000L);
+timing_measurement.c:	       good_sys_realtime_ns = mvm->sys_realtime_ns;
+timing_measurement.c:		     delta, min_error_in_change, mvm->GP2_ns, mvm->sys_realtime_ns);
+timing_measurement.c:                mvm->sys_realtime_ns = good_sys_realtime_ns;
+timing_measurement.c:                mvm->GP2_ns = good_GP2_ns;
+timing_measurement.c:				  min_error_in_change, mvm->sys_realtime_ns, mvm->last_system_time_ns);
+timing_measurement.c:    mvm->firmware_operation_done = 0; /* ready for firmware operation */
+timing_measurement.c:		     delta, error_in_change, mvm->GP2_ns, mvm->sys_realtime_ns);
+timing_measurement.c:      mvm->GP2_ns = 0;
+timing_measurement.c:      mvm->ART_ns = 0;
+timing_measurement.c:      mvm->firmware_operation_done = 2;
+timing_measurement.c:   mvm->GP2_ns = get_64bit_ts(le32_to_cpu(gct->gp2_timestamp_hi), 
+timing_measurement.c:      mvm->ART_ns = get_64bit_ts(le32_to_cpu(gct->platform_timestamp_hi), 
+timing_measurement.c:   mvm->firmware_operation_done = 2;
+timing_measurement.c:    ieee80211_rx(mvm->hw, skb);
+timing_measurement.c:       ieee80211_rx(mvm->hw, skb);
+tt.c:	struct iwl_mvm_tt_mgmt *tt = &mvm->thermal_throttle;
+tt.c:	if (test_bit(IWL_MVM_STATUS_HW_CTKILL, &mvm->status))
+tt.c:	if (!mvm->temperature_test)
+tt.c:	if (!test_bit(IWL_MVM_STATUS_HW_CTKILL, &mvm->status))
+tt.c:	if (mvm->temperature_test)
+tt.c:	if (mvm->temperature == temp)
+tt.c:	mvm->temperature = temp;
+tt.c:	if (test_bit(IWL_MVM_STATUS_HW_CTKILL, &mvm->status))
+tt.c:	if (mvm->tz_device.tzone) {
+tt.c:		struct iwl_mvm_thermal_device *tz_dev = &mvm->tz_device;
+tt.c:	if (!fw_has_capa(&mvm->fw->ucode_capa,
+tt.c:	lockdep_assert_held(&mvm->mutex);
+tt.c:	iwl_init_notification_wait(&mvm->notif_wait, &wait_temp_notif,
+tt.c:		iwl_remove_notification(&mvm->notif_wait, &wait_temp_notif);
+tt.c:	ret = iwl_wait_notification(&mvm->notif_wait, &wait_temp_notif,
+tt.c:	mutex_lock(&mvm->mutex);
+tt.c:		mutex_unlock(&mvm->mutex);
+tt.c:	mutex_unlock(&mvm->mutex);
+tt.c:	schedule_delayed_work(&mvm->thermal_throttle.ct_kill_exit,
+tt.c:	lockdep_assert_held(&mvm->mutex);
+tt.c:	if (mvm->thermal_throttle.dynamic_smps)
+tt.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+tt.c:	backoff = max(backoff, mvm->thermal_throttle.min_backoff);
+tt.c:		mvm->thermal_throttle.tx_backoff = backoff;
+tt.c:	struct iwl_tt_params *params = &mvm->thermal_throttle.params;
+tt.c:	struct iwl_mvm_tt_mgmt *tt = &mvm->thermal_throttle;
+tt.c:	s32 temperature = mvm->temperature;
+tt.c:	IWL_DEBUG_TEMP(mvm, "NIC temperature: %d\n", mvm->temperature);
+tt.c:					mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+tt.c:					mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+tt.c:	lockdep_assert_held(&mvm->mutex);
+tt.c:		mvm->cooling_dev.cur_state = state;
+tt.c:	lockdep_assert_held(&mvm->mutex);
+tt.c:	if (!mvm->tz_device.tzone)
+tt.c:		if (mvm->tz_device.temp_trips[i] != S16_MIN) {
+tt.c:				cpu_to_le16(mvm->tz_device.temp_trips[i]);
+tt.c:				mvm->tz_device.temp_trips[j])
+tt.c:				mvm->tz_device.fw_trips_index[i] = j;
+tt.c:	mutex_lock(&mvm->mutex);
+tt.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR) {
+tt.c:	mutex_unlock(&mvm->mutex);
+tt.c:	*temp = mvm->tz_device.temp_trips[trip] * 1000;
+tt.c:	mutex_lock(&mvm->mutex);
+tt.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR) {
+tt.c:	tzone = &mvm->tz_device;
+tt.c:	mutex_unlock(&mvm->mutex);
+tt.c:		mvm->tz_device.tzone = NULL;
+tt.c:	mvm->tz_device.tzone = thermal_zone_device_register(name,
+tt.c:	if (IS_ERR(mvm->tz_device.tzone)) {
+tt.c:			       PTR_ERR(mvm->tz_device.tzone));
+tt.c:		mvm->tz_device.tzone = NULL;
+tt.c:		mvm->tz_device.temp_trips[i] = S16_MIN;
+tt.c:	*state = mvm->cooling_dev.cur_state;
+tt.c:	mutex_lock(&mvm->mutex);
+tt.c:	    mvm->fwrt.cur_fw_img != IWL_UCODE_REGULAR) {
+tt.c:	mutex_unlock(&mvm->mutex);
+tt.c:	mvm->cooling_dev.cdev =
+tt.c:	if (IS_ERR(mvm->cooling_dev.cdev)) {
+tt.c:			       PTR_ERR(mvm->cooling_dev.cdev));
+tt.c:		mvm->cooling_dev.cdev = NULL;
+tt.c:	if (!iwl_mvm_is_tt_in_fw(mvm) || !mvm->tz_device.tzone)
+tt.c:	if (mvm->tz_device.tzone) {
+tt.c:		thermal_zone_device_unregister(mvm->tz_device.tzone);
+tt.c:		mvm->tz_device.tzone = NULL;
+tt.c:	if (!iwl_mvm_is_ctdp_supported(mvm) || !mvm->cooling_dev.cdev)
+tt.c:	if (mvm->cooling_dev.cdev) {
+tt.c:		thermal_cooling_device_unregister(mvm->cooling_dev.cdev);
+tt.c:		mvm->cooling_dev.cdev = NULL;
+tt.c:	struct iwl_mvm_tt_mgmt *tt = &mvm->thermal_throttle;
+tt.c:	if (mvm->cfg->thermal_params)
+tt.c:		tt->params = *mvm->cfg->thermal_params;
+tt.c:	mvm->init_status |= IWL_MVM_INIT_STATUS_THERMAL_INIT_COMPLETE;
+tt.c:	if (!(mvm->init_status & IWL_MVM_INIT_STATUS_THERMAL_INIT_COMPLETE))
+tt.c:	cancel_delayed_work_sync(&mvm->thermal_throttle.ct_kill_exit);
+tt.c:	mvm->init_status &= ~IWL_MVM_INIT_STATUS_THERMAL_INIT_COMPLETE;
+sta.c:	    fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE))
+sta.c:	WARN_ON_ONCE(test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status));
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	/* Don't take rcu_read_lock() since we are protected by mvm->mutex */
+sta.c:	for (sta_id = 0; sta_id < ARRAY_SIZE(mvm->fw_id_to_mac_id); sta_id++) {
+sta.c:		if (!rcu_dereference_protected(mvm->fw_id_to_mac_id[sta_id],
+sta.c:					       lockdep_is_held(&mvm->mutex)))
+sta.c:	if (fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE))
+sta.c:	sta = rcu_dereference(ba_data->mvm->fw_id_to_mac_id[ba_data->sta_id]);
+sta.c:	sta_id = mvm->queue_info[queue].ra_sta_id;
+sta.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+sta.c:		iwl_trans_txq_free(mvm->trans, queue);
+sta.c:	if (WARN_ON(mvm->queue_info[queue].tid_bitmap == 0))
+sta.c:	mvm->queue_info[queue].tid_bitmap &= ~BIT(tid);
+sta.c:	cmd.action = mvm->queue_info[queue].tid_bitmap ?
+sta.c:		mvm->queue_info[queue].status = IWL_MVM_QUEUE_FREE;
+sta.c:			    mvm->queue_info[queue].tid_bitmap);
+sta.c:	cmd.sta_id = mvm->queue_info[queue].ra_sta_id;
+sta.c:	cmd.tid = mvm->queue_info[queue].txq_tid;
+sta.c:	WARN(mvm->queue_info[queue].tid_bitmap,
+sta.c:	     queue, mvm->queue_info[queue].tid_bitmap);
+sta.c:	mvm->queue_info[queue].tid_bitmap = 0;
+sta.c:	mvm->queue_info[queue].reserved = false;
+sta.c:	iwl_trans_txq_disable(mvm->trans, queue, false);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	sta_id = mvm->queue_info[queue].ra_sta_id;
+sta.c:	tid_bitmap = mvm->queue_info[queue].tid_bitmap;
+sta.c:	sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[sta_id],
+sta.c:					lockdep_is_held(&mvm->mutex));
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	sta_id = mvm->queue_info[queue].ra_sta_id;
+sta.c:	tid_bitmap = mvm->queue_info[queue].tid_bitmap;
+sta.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	sta_id = mvm->queue_info[queue].ra_sta_id;
+sta.c:	tid = mvm->queue_info[queue].txq_tid;
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		ac_to_queue[mvm->queue_info[i].mac80211_ac] = i;
+sta.c:	if (ac <= mvm->queue_info[queue].mac80211_ac && !force) {
+sta.c:	cmd.sta_id = mvm->queue_info[queue].ra_sta_id;
+sta.c:	cmd.tx_fifo = iwl_mvm_ac_to_tx_fifo[mvm->queue_info[queue].mac80211_ac];
+sta.c:	cmd.tid = mvm->queue_info[queue].txq_tid;
+sta.c:	shared_queue = hweight16(mvm->queue_info[queue].tid_bitmap) > 1;
+sta.c:	ret = iwl_trans_wait_tx_queues_empty(mvm->trans, BIT(queue));
+sta.c:	iwl_trans_txq_disable(mvm->trans, queue, false);
+sta.c:	iwl_trans_txq_enable_cfg(mvm->trans, queue, ssn, NULL, wdg_timeout);
+sta.c:	mvm->queue_info[queue].txq_tid = tid;
+sta.c:	mvm->queue_info[queue].mac80211_ac = ac;
+sta.c:		iwl_trans_txq_set_shared_mode(mvm->trans, queue, true);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		if (mvm->queue_info[i].tid_bitmap == 0 &&
+sta.c:		    mvm->queue_info[i].status == IWL_MVM_QUEUE_FREE)
+sta.c:				mvm->trans->cfg->min_256_ba_txq_size);
+sta.c:			     mvm->trans->cfg->min_txq_size);
+sta.c:	queue = iwl_trans_txq_alloc(mvm->trans,
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	mvm->tvqm_info[queue].txq_tid = tid;
+sta.c:	mvm->tvqm_info[queue].sta_id = mvmsta->sta_id;
+sta.c:	if (mvm->queue_info[queue].tid_bitmap & BIT(tid)) {
+sta.c:	if (mvm->queue_info[queue].tid_bitmap)
+sta.c:	mvm->queue_info[queue].tid_bitmap |= BIT(tid);
+sta.c:	mvm->queue_info[queue].ra_sta_id = sta_id;
+sta.c:			mvm->queue_info[queue].mac80211_ac =
+sta.c:			mvm->queue_info[queue].mac80211_ac = IEEE80211_AC_VO;
+sta.c:		mvm->queue_info[queue].txq_tid = tid;
+sta.c:			    queue, mvm->queue_info[queue].tid_bitmap);
+sta.c:	inc_ssn = iwl_trans_txq_enable_cfg(mvm->trans, queue, ssn,
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	tid_bitmap = mvm->queue_info[queue].tid_bitmap;
+sta.c:	mvm->queue_info[queue].txq_tid = tid;
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	sta_id = mvm->queue_info[queue].ra_sta_id;
+sta.c:	tid_bitmap = mvm->queue_info[queue].tid_bitmap;
+sta.c:	sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[sta_id],
+sta.c:					lockdep_is_held(&mvm->mutex));
+sta.c:			iwl_trans_txq_set_shared_mode(mvm->trans, queue, false);
+sta.c:	mvm->queue_info[queue].status = IWL_MVM_QUEUE_READY;
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	if (tid_bitmap == mvm->queue_info[queue].tid_bitmap) {
+sta.c:		mvm->queue_info[queue].tid_bitmap &= ~BIT(tid);
+sta.c:		tid_bitmap = mvm->queue_info[queue].tid_bitmap;
+sta.c:		if (!(tid_bitmap & BIT(mvm->queue_info[queue].txq_tid)))
+sta.c:			    mvm->queue_info[queue].tid_bitmap);
+sta.c:	tid_bitmap = mvm->queue_info[queue].tid_bitmap;
+sta.c:	if (hweight16(mvm->queue_info[queue].tid_bitmap) == 1 &&
+sta.c:	    mvm->queue_info[queue].status == IWL_MVM_QUEUE_SHARED) {
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		queue_tid_bitmap = mvm->queue_info[i].tid_bitmap;
+sta.c:		if (mvm->queue_info[i].status != IWL_MVM_QUEUE_READY &&
+sta.c:		    mvm->queue_info[i].status != IWL_MVM_QUEUE_SHARED)
+sta.c:			if (time_after(mvm->queue_info[i].last_frame_time[tid] +
+sta.c:		sta_id = mvm->queue_info[i].ra_sta_id;
+sta.c:		sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	    (mvm->queue_info[mvmsta->reserved_queue].status ==
+sta.c:		mvm->queue_info[queue].reserved = true;
+sta.c:			mvm->queue_info[queue].status = IWL_MVM_QUEUE_SHARED;
+sta.c:		mvm->queue_info[queue].status = IWL_MVM_QUEUE_READY;
+sta.c:		iwl_trans_txq_set_shared_mode(mvm->trans, queue, true);
+sta.c:	mutex_lock(&mvm->mutex);
+sta.c:	while (!list_empty(&mvm->add_stream_txqs)) {
+sta.c:		mvmtxq = list_first_entry(&mvm->add_stream_txqs,
+sta.c:		iwl_mvm_mac_itxq_xmit(mvm->hw, txq);
+sta.c:	mutex_unlock(&mvm->mutex);
+sta.c:	    !mvm->queue_info[IWL_MVM_DQA_BSS_CLIENT_QUEUE].tid_bitmap &&
+sta.c:	    (mvm->queue_info[IWL_MVM_DQA_BSS_CLIENT_QUEUE].status ==
+sta.c:	mvm->queue_info[queue].status = IWL_MVM_QUEUE_RESERVED;
+sta.c:		mvm->queue_info[mvm_sta->reserved_queue].status =
+sta.c:			mvm->queue_info[txq_id].status = IWL_MVM_QUEUE_READY;
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	if (fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE))
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	if (!test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status))
+sta.c:	if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)) {
+sta.c:	if (!mvm->trans->trans_cfg->gen2)
+sta.c:	    !test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)) {
+sta.c:		dup_data = kcalloc(mvm->trans->num_rx_queues,
+sta.c:		for (q = 0; q < mvm->trans->num_rx_queues; q++)
+sta.c:	rcu_assign_pointer(mvm->fw_id_to_mac_id[sta_id], sta);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[sta_id],
+sta.c:					lockdep_is_held(&mvm->mutex));
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		ret = iwl_trans_wait_txq_empty(mvm->trans, txq_id);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		ret = iwl_trans_wait_tx_queues_empty(mvm->trans,
+sta.c:		status = &mvm->queue_info[reserved_txq].status;
+sta.c:	if (WARN_ON_ONCE(mvm->tdls_cs.peer.sta_id == sta_id)) {
+sta.c:		mvm->tdls_cs.peer.sta_id = IWL_MVM_INVALID_STA;
+sta.c:		cancel_delayed_work(&mvm->tdls_cs.dwork);
+sta.c:	RCU_INIT_POINTER(mvm->fw_id_to_mac_id[mvm_sta->sta_id], NULL);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		RCU_INIT_POINTER(mvm->fw_id_to_mac_id[sta_id], NULL);
+sta.c:	if (!test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status) ||
+sta.c:	rcu_assign_pointer(mvm->fw_id_to_mac_id[sta->sta_id], ERR_PTR(-EINVAL));
+sta.c:	RCU_INIT_POINTER(mvm->fw_id_to_mac_id[sta->sta_id], NULL);
+sta.c:		mvm->trans->trans_cfg->base_params->wd_timeout :
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	ret = iwl_mvm_allocate_int_sta(mvm, &mvm->aux_sta, BIT(mvm->aux_queue),
+sta.c:		iwl_mvm_enable_aux_snif_queue(mvm, &mvm->aux_queue,
+sta.c:					      mvm->aux_sta.sta_id,
+sta.c:	ret = iwl_mvm_add_int_sta_common(mvm, &mvm->aux_sta, NULL,
+sta.c:		iwl_mvm_dealloc_int_sta(mvm, &mvm->aux_sta);
+sta.c:		iwl_mvm_enable_aux_snif_queue(mvm, &mvm->aux_queue,
+sta.c:					      mvm->aux_sta.sta_id,
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		iwl_mvm_enable_aux_snif_queue(mvm, &mvm->snif_queue,
+sta.c:					      mvm->snif_sta.sta_id,
+sta.c:	ret = iwl_mvm_add_int_sta_common(mvm, &mvm->snif_sta, vif->addr,
+sta.c:		iwl_mvm_enable_aux_snif_queue(mvm, &mvm->snif_queue,
+sta.c:					      mvm->snif_sta.sta_id,
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	iwl_mvm_disable_txq(mvm, NULL, mvm->snif_queue, IWL_MAX_TID_COUNT, 0);
+sta.c:	ret = iwl_mvm_rm_sta_common(mvm, mvm->snif_sta.sta_id);
+sta.c:	iwl_mvm_dealloc_int_sta(mvm, &mvm->snif_sta);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	iwl_mvm_dealloc_int_sta(mvm, &mvm->aux_sta);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:			queue = mvm->probe_queue;
+sta.c:			queue = mvm->p2p_dev_queue;
+sta.c:			mvm->probe_queue = queue;
+sta.c:			mvm->p2p_dev_queue = queue;
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		queue = mvm->probe_queue;
+sta.c:		queue = mvm->p2p_dev_queue;
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	    fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE)) {
+sta.c:	} else if (!fw_has_api(&mvm->fw->ucode_capa,
+sta.c:	bool new_api = fw_has_api(&mvm->fw->ucode_capa,
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	for (i = 0; i < mvm->trans->num_rx_queues; i++) {
+sta.c:	for (i = 0; i < mvm->trans->num_rx_queues; i++) {
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	if (start && mvm->rx_ba_sessions >= IWL_MAX_RX_BA_SESSIONS) {
+sta.c:				    mvm->trans->num_rx_queues *
+sta.c:		mvm->rx_ba_sessions++;
+sta.c:		baid_data->rcu_ptr = &mvm->baid_map[baid];
+sta.c:		WARN_ON(rcu_access_pointer(mvm->baid_map[baid]));
+sta.c:		rcu_assign_pointer(mvm->baid_map[baid], baid_data);
+sta.c:		if (mvm->rx_ba_sessions > 0)
+sta.c:			mvm->rx_ba_sessions--;
+sta.c:		baid_data = rcu_access_pointer(mvm->baid_map[baid]);
+sta.c:		RCU_INIT_POINTER(mvm->baid_map[baid], NULL);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		mvm->queue_info[txq_id].status = IWL_MVM_QUEUE_RESERVED;
+sta.c:	} else if (unlikely(mvm->queue_info[txq_id].status ==
+sta.c:	if (mvm->trans->trans_cfg->gen2)
+sta.c:	queue_status = mvm->queue_info[queue].status;
+sta.c:	if (mvm->queue_info[queue].status == IWL_MVM_QUEUE_READY)
+sta.c:		ret = iwl_trans_wait_tx_queues_empty(mvm->trans,
+sta.c:	mvm->queue_info[queue].status = IWL_MVM_QUEUE_READY;
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	if (mvm->queue_info[txq_id].status == IWL_MVM_QUEUE_RESERVED) {
+sta.c:		mvm->queue_info[txq_id].status = IWL_MVM_QUEUE_FREE;
+sta.c:	if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)) {
+sta.c:		lockdep_assert_held(&mvm->mutex);
+sta.c:			iwl_trans_wait_txq_empty(mvm->trans, txq_id);
+sta.c:			iwl_trans_wait_tx_queues_empty(mvm->trans, BIT(txq_id));
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:		if (test_bit(i, mvm->fw_key_table))
+sta.c:		if (mvm->fw_key_deleted[i] > max) {
+sta.c:			max = mvm->fw_key_deleted[i];
+sta.c:		sta = rcu_dereference_check(mvm->fw_id_to_mac_id[sta_id],
+sta.c:					    lockdep_is_held(&mvm->mutex));
+sta.c:	bool new_api = fw_has_api(&mvm->fw->ucode_capa,
+sta.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[sta_id],
+sta.c:						lockdep_is_held(&mvm->mutex));
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:				mvm->fw_id_to_mac_id[sta_id],
+sta.c:				lockdep_is_held(&mvm->mutex));
+sta.c:	__set_bit(key_offset, mvm->fw_key_table);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	if (!__test_and_clear_bit(keyconf->hw_key_idx, mvm->fw_key_table)) {
+sta.c:		if (mvm->fw_key_deleted[i] < U8_MAX)
+sta.c:			mvm->fw_key_deleted[i]++;
+sta.c:	mvm->fw_key_deleted[keyconf->hw_key_idx] = 0;
+sta.c:	iwl_trans_block_txq_ptrs(mvm->trans, true);
+sta.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+sta.c:	ieee80211_sta_block_awake(mvm->hw, sta, disable);
+sta.c:	lockdep_assert_held(&mvm->mutex);
+sta.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++) {
+sta.c:		sta = rcu_dereference_protected(mvm->fw_id_to_mac_id[i],
+sta.c:						lockdep_is_held(&mvm->mutex));
+sta.c:	if (!fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_STA_TYPE))
+sta.c:	if (mvm->trans->trans_cfg->gen2)
+fw.c:	cmd.device_type = (mvm->trans->cfg->integrated) ?
+fw.c:	cmd.soc_latency = cpu_to_le32(mvm->trans->cfg->soc_latency);
+fw.c:	if (mvm->trans->num_rx_queues == 1)
+fw.c:			1 + (i % (mvm->trans->num_rx_queues - 1));
+fw.c:	num_queues = mvm->trans->num_rx_queues - 1;
+fw.c:		iwl_trans_get_rxq_dma_data(mvm->trans, i + 1, &data);
+fw.c:	iwl_fw_lmac1_set_alive_err_table(mvm->trans, lmac_error_event_table);
+fw.c:		mvm->trans->dbg.lmac_error_event_table[1] =
+fw.c:		mvm->support_umac_log = false;
+fw.c:		   mvm->trans->cfg->min_umac_error_event_table) {
+fw.c:		mvm->support_umac_log = true;
+fw.c:			(mvm->fwrt.cur_fw_img == IWL_UCODE_INIT) ?
+fw.c:		mvm->support_umac_log = false;
+fw.c:	if (mvm->support_umac_log)
+fw.c:		iwl_fw_umac_set_alive_err_table(mvm->trans,
+fw.c:	iwl_tm_set_fw_ver(mvm->trans, le32_to_cpu(lmac1->ucode_major),
+fw.c:	iwl_fwrt_update_fw_versions(&mvm->fwrt, lmac1, umac);
+fw.c:	enum iwl_ucode_type old_type = mvm->fwrt.cur_fw_img;
+fw.c:	    iwl_fw_dbg_conf_usniffer(mvm->fw, FW_DBG_START_FROM_ALIVE) &&
+fw.c:	    !(fw_has_capa(&mvm->fw->ucode_capa,
+fw.c:		fw = iwl_get_ucode_image(mvm->fw, IWL_UCODE_REGULAR_USNIFFER);
+fw.c:		fw = iwl_get_ucode_image(mvm->fw, ucode_type);
+fw.c:	iwl_fw_set_current_image(&mvm->fwrt, ucode_type);
+fw.c:	clear_bit(IWL_MVM_STATUS_FIRMWARE_RUNNING, &mvm->status);
+fw.c:	iwl_init_notification_wait(&mvm->notif_wait, &alive_wait,
+fw.c:	ret = iwl_trans_start_fw(mvm->trans, fw, run_in_rfkill);
+fw.c:		iwl_fw_set_current_image(&mvm->fwrt, old_type);
+fw.c:		iwl_remove_notification(&mvm->notif_wait, &alive_wait);
+fw.c:	ret = iwl_wait_notification(&mvm->notif_wait, &alive_wait,
+fw.c:		struct iwl_trans *trans = mvm->trans;
+fw.c:			iwl_fw_dbg_error_collect(&mvm->fwrt,
+fw.c:		iwl_fw_set_current_image(&mvm->fwrt, old_type);
+fw.c:		iwl_fw_set_current_image(&mvm->fwrt, old_type);
+fw.c:	iwl_trans_fw_alive(mvm->trans, alive_data.scd_base_addr);
+fw.c:	memset(&mvm->queue_info, 0, sizeof(mvm->queue_info));
+fw.c:	mvm->queue_info[IWL_MVM_DQA_CMD_QUEUE].tid_bitmap =
+fw.c:	set_bit(IWL_MVM_STATUS_FIRMWARE_RUNNING, &mvm->status);
+fw.c:	iwl_fw_set_dbg_rec_on(&mvm->fwrt);
+fw.c:	if (mvm->trans->cfg->tx_with_siso_diversity)
+fw.c:	lockdep_assert_held(&mvm->mutex);
+fw.c:	mvm->rfkill_safe_init_done = false;
+fw.c:	iwl_init_notification_wait(&mvm->notif_wait,
+fw.c:	iwl_dbg_tlv_time_point(&mvm->fwrt, IWL_FW_INI_TIME_POINT_EARLY, NULL);
+fw.c:	iwl_dbg_tlv_time_point(&mvm->fwrt, IWL_FW_INI_TIME_POINT_AFTER_ALIVE,
+fw.c:	if (mvm->nvm_file_name) {
+fw.c:		iwl_read_external_nvm(mvm->trans, mvm->nvm_file_name,
+fw.c:				      mvm->nvm_sections);
+fw.c:	ret = iwl_wait_notification(&mvm->notif_wait, &init_wait,
+fw.c:		mvm->nvm_data = iwl_get_nvm(mvm->trans, mvm->fw);
+fw.c:		if (IS_ERR(mvm->nvm_data)) {
+fw.c:			ret = PTR_ERR(mvm->nvm_data);
+fw.c:			mvm->nvm_data = NULL;
+fw.c:	mvm->rfkill_safe_init_done = true;
+fw.c:	iwl_remove_notification(&mvm->notif_wait, &init_wait);
+fw.c:	enum iwl_ucode_type ucode_type = mvm->fwrt.cur_fw_img;
+fw.c:		&mvm->fw->default_calib[ucode_type];
+fw.c:	    !mvm->trans->cfg->tx_with_siso_diversity
+fw.c:	    && !mvm->trans->dbg_cfg.MVM_CALIB_OVERRIDE_CONTROL
+fw.c:	if (mvm->trans->cfg->tx_with_siso_diversity) {
+fw.c:	phy_cfg_cmd.phy_cfg |= cpu_to_le32(mvm->cfg->extra_phy_cfg_flags);
+fw.c:		mvm->fw->default_calib[ucode_type].event_trigger;
+fw.c:		mvm->fw->default_calib[ucode_type].flow_trigger;
+fw.c:	override_mask = mvm->trans->dbg_cfg.MVM_CALIB_OVERRIDE_CONTROL;
+fw.c:			flow_override = mvm->trans->dbg_cfg.MVM_CALIB_INIT_FLOW;
+fw.c:				mvm->trans->dbg_cfg.MVM_CALIB_INIT_EVENT;
+fw.c:			flow_override = mvm->trans->dbg_cfg.MVM_CALIB_D0_FLOW;
+fw.c:			event_override = mvm->trans->dbg_cfg.MVM_CALIB_D0_EVENT;
+fw.c:			flow_override = mvm->trans->dbg_cfg.MVM_CALIB_D3_FLOW;
+fw.c:			event_override = mvm->trans->dbg_cfg.MVM_CALIB_D3_EVENT;
+fw.c:	lockdep_assert_held(&mvm->mutex);
+fw.c:	mvm->rfkill_safe_init_done = false;
+fw.c:	iwl_init_notification_wait(&mvm->notif_wait,
+fw.c:				   mvm->phy_db);
+fw.c:	iwl_dnt_start(mvm->trans);
+fw.c:	if (mvm->trans->trans_cfg->device_family < IWL_DEVICE_FAMILY_8000) {
+fw.c:	if (mvm->nvm_file_name)
+fw.c:	WARN_ONCE(mvm->nvm_data->nvm_version < mvm->trans->cfg->nvm_ver,
+fw.c:		  mvm->nvm_data->nvm_version, mvm->trans->cfg->nvm_ver);
+fw.c:	mvm->rfkill_safe_init_done = true;
+fw.c:	ret = iwl_wait_notification(&mvm->notif_wait, &calib_wait,
+fw.c:	iwl_remove_notification(&mvm->notif_wait, &calib_wait);
+fw.c:	mvm->rfkill_safe_init_done = false;
+fw.c:	if (iwlmvm_mod_params.init_dbg && !mvm->nvm_data) {
+fw.c:		mvm->nvm_data = kzalloc(sizeof(struct iwl_nvm_data) +
+fw.c:		if (!mvm->nvm_data)
+fw.c:		mvm->nvm_data->bands[0].channels = mvm->nvm_data->channels;
+fw.c:		mvm->nvm_data->bands[0].n_channels = 1;
+fw.c:		mvm->nvm_data->bands[0].n_bitrates = 1;
+fw.c:		mvm->nvm_data->bands[0].bitrates =
+fw.c:			(void *)mvm->nvm_data->channels + 1;
+fw.c:		mvm->nvm_data->bands[0].bitrates->hw_value = 10;
+fw.c:	if (!mvm->trans->ltr_enabled)
+fw.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+fw.c:	else if (fw_has_capa(&mvm->fw->ucode_capa,
+fw.c:	if (iwl_sar_select_profile(&mvm->fwrt, cmd.v5.v3.per_chain_restriction,
+fw.c:	if (fw_has_api(&mvm->fwrt.fw->ucode_capa,
+fw.c:	if (!iwl_sar_geo_support(&mvm->fwrt))
+fw.c:	ret = iwl_validate_sar_geo_profile(&mvm->fwrt, &cmd);
+fw.c:	iwl_sar_geo_init(&mvm->fwrt, cmd.geo_cmd.table);
+fw.c:	cmd.geo_cmd.table_revision = cpu_to_le32(mvm->fwrt.geo_rev);
+fw.c:	if (!fw_has_api(&mvm->fwrt.fw->ucode_capa,
+fw.c:	mvm->fwrt.ppag_table.enabled = cpu_to_le32(0);
+fw.c:	data = iwl_acpi_get_object(mvm->dev, ACPI_PPAG_METHOD);
+fw.c:	wifi_pkg = iwl_acpi_get_wifi_pkg(mvm->dev, data,
+fw.c:	mvm->fwrt.ppag_table.enabled = cpu_to_le32(enabled->integer.value);
+fw.c:	if (!mvm->fwrt.ppag_table.enabled) {
+fw.c:				mvm->fwrt.ppag_table.enabled = cpu_to_le32(0);
+fw.c:			mvm->fwrt.ppag_table.gain[i][j] = ent->integer.value;
+fw.c:	if (!fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_SET_PPAG)) {
+fw.c:			mvm->fwrt.ppag_table.enabled ? "enabled" : "disabled");
+fw.c:					i, j, mvm->fwrt.ppag_table.gain[i][j]);
+fw.c:				   0, sizeof(mvm->fwrt.ppag_table),
+fw.c:				   &mvm->fwrt.ppag_table);
+fw.c:	u32 error_log_size = mvm->fw->ucode_capa.error_log_size;
+fw.c:		if (!mvm->error_recovery_buf)
+fw.c:		host_cmd.data[1] = mvm->error_recovery_buf;
+fw.c:	kfree(mvm->error_recovery_buf);
+fw.c:	mvm->error_recovery_buf = NULL;
+fw.c:	ret = iwl_sar_get_wrds_table(&mvm->fwrt);
+fw.c:	ret = iwl_sar_get_ewrd_table(&mvm->fwrt);
+fw.c:	if (mvm->fwrt.sar_chain_a_profile && mvm->fwrt.sar_chain_b_profile)
+fw.c:						 mvm->fwrt.sar_chain_a_profile,
+fw.c:						 mvm->fwrt.sar_chain_b_profile);
+fw.c:	iwl_fw_dbg_stop_sync(&mvm->fwrt);
+fw.c:	iwl_trans_stop_device(mvm->trans);
+fw.c:	ret = iwl_trans_start_hw(mvm->trans);
+fw.c:	iwl_dbg_tlv_time_point(&mvm->fwrt, IWL_FW_INI_TIME_POINT_EARLY, NULL);
+fw.c:	mvm->rfkill_safe_init_done = false;
+fw.c:	mvm->rfkill_safe_init_done = true;
+fw.c:	iwl_dbg_tlv_time_point(&mvm->fwrt, IWL_FW_INI_TIME_POINT_AFTER_ALIVE,
+fw.c:	return iwl_init_paging(&mvm->fwrt, mvm->fwrt.cur_fw_img);
+fw.c:	lockdep_assert_held(&mvm->mutex);
+fw.c:	ret = iwl_trans_start_hw(mvm->trans);
+fw.c:			iwl_fw_dbg_error_collect(&mvm->fwrt,
+fw.c:	iwl_get_shared_mem_conf(&mvm->fwrt);
+fw.c:	iwl_dnt_start(mvm->trans);
+fw.c:	if (!iwl_trans_dbg_ini_valid(mvm->trans)) {
+fw.c:		mvm->fwrt.dump.conf = FW_DBG_INVALID;
+fw.c:		if (mvm->fw->dbg.dest_tlv)
+fw.c:			mvm->fwrt.dump.conf = FW_DBG_START_FROM_ALIVE;
+fw.c:		iwl_fw_start_dbg_conf(&mvm->fwrt, FW_DBG_START_FROM_ALIVE);
+fw.c:	if (iwl_fw_dbg_trigger_enabled(mvm->fw, FW_DBG_TRIGGER_TX_LATENCY)) {
+fw.c:		trig = iwl_fw_dbg_get_trigger(mvm->fw,
+fw.c:		ieee80211_tx_lat_thrshld_cfg(mvm->hw, thrshld,
+fw.c:		ret = iwl_send_phy_db_data(mvm->phy_db);
+fw.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+fw.c:	if (mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_22000) {
+fw.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++)
+fw.c:		RCU_INIT_POINTER(mvm->fw_id_to_mac_id[i], NULL);
+fw.c:	mvm->tdls_cs.peer.sta_id = IWL_MVM_INVALID_STA;
+fw.c:	memset(&mvm->last_quota_cmd, 0xff, sizeof(mvm->last_quota_cmd));
+fw.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_DQA_SUPPORT)) {
+fw.c:		sband = mvm->hw->wiphy->bands[i++];
+fw.c:		ret = iwl_mvm_phy_ctxt_add(mvm, &mvm->phy_ctxts[i],
+fw.c:					   mvm->cooling_dev.cur_state);
+fw.c:	if (!fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_SET_LTR_GEN2))
+fw.c:	if (!test_bit(IWL_MVM_STATUS_HW_CTKILL, &mvm->status)) {
+fw.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN)) {
+fw.c:		mvm->scan_type = IWL_SCAN_TYPE_NOT_SET;
+fw.c:		mvm->hb_scan_type = IWL_SCAN_TYPE_NOT_SET;
+fw.c:	if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status))
+fw.c:	if (le32_to_cpu(mvm->txp_cmd.v5.v3.set_mode) ==
+fw.c:		if (fw_has_api(&mvm->fw->ucode_capa,
+fw.c:			len = sizeof(mvm->txp_cmd.v5);
+fw.c:		else if (fw_has_capa(&mvm->fw->ucode_capa,
+fw.c:			len = sizeof(mvm->txp_cmd.v4);
+fw.c:			len = sizeof(mvm->txp_cmd.v4.v3);
+fw.c:					 len, &mvm->txp_cmd))
+fw.c:	if (iwl_acpi_get_eckv(mvm->dev, &mvm->ext_clock_valid))
+fw.c:	if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status))
+fw.c:	if (iwl_acpi_get_eckv(mvm->dev, &mvm->ext_clock_valid))
+fw.c:	} else if (ret > 0 && !iwl_sar_get_wgds_table(&mvm->fwrt)) {
+fw.c:	lockdep_assert_held(&mvm->mutex);
+fw.c:	ret = iwl_trans_start_hw(mvm->trans);
+fw.c:	iwl_dnt_start(mvm->trans);
+fw.c:	ret = iwl_send_phy_db_data(mvm->phy_db);
+fw.c:	for (i = 0; i < ARRAY_SIZE(mvm->fw_id_to_mac_id); i++)
+fw.c:		RCU_INIT_POINTER(mvm->fw_id_to_mac_id[i], NULL);
+power.c:	if (fw_has_api(&mvm->fw->ucode_capa,
+power.c:	if (mvm->trans->dbg_cfg.MVM_USE_PS_POLL) {
+power.c:		if (!test_bit(IWL_MVM_STATUS_IN_D3, &mvm->status))
+power.c:			test_bit(IWL_MVM_STATUS_IN_D3, &mvm->status) ?
+power.c:	cmd->uapsd_max_sp = mvm->hw->uapsd_max_sp_len;
+power.c:	if (test_bit(IWL_MVM_STATUS_IN_D3, &mvm->status) ||
+power.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+power.c:	if (!test_bit(IWL_MVM_STATUS_IN_D3, &mvm->status)) {
+power.c:	if (mvm->ps_disabled)
+power.c:	    (!fw_has_capa(&mvm->fw->ucode_capa,
+power.c:	if (test_bit(IWL_MVM_STATUS_IN_D3, &mvm->status)) {
+power.c:		   fw_has_capa(&mvm->fw->ucode_capa,
+power.c:		mvm->ps_disabled = true;
+power.c:	if (!mvm->ps_disabled)
+power.c:	if (test_bit(IWL_MVM_STATUS_IN_D3, &mvm->status) ?
+power.c:			mvm->disable_power_off_d3 : mvm->disable_power_off)
+power.c:	if (mvm->ext_clock_valid)
+power.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+power.c:	lockdep_assert_held(&mvm->mutex);
+power.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+power.c:	mutex_lock(&mvm->mutex);
+power.c:	mutex_unlock(&mvm->mutex);
+power.c:	if (mvmvif != mvm->bf_allowed_vif || !vif->bss_conf.dtim_period ||
+power.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+power.c:	if (mvm->ps_disabled != disable_ps) {
+power.c:		bool old_ps_disabled = mvm->ps_disabled;
+power.c:		mvm->ps_disabled = disable_ps;
+power.c:			mvm->ps_disabled = old_ps_disabled;
+power.c:	if (test_bit(IWL_MVM_STATUS_IN_D3, &mvm->status))
+power.c:				       mvm->ps_disabled ||
+power.c:	lockdep_assert_held(&mvm->mutex);
+power.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+power.c:	lockdep_assert_held(&mvm->mutex);
+power.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+led.c:	if (fw_has_capa(&mvm->fw->ucode_capa,
+led.c:	iwl_write32(mvm->trans, CSR_LED_REG,
+led.c:	mvm->led.name = kasprintf(GFP_KERNEL, "%s-led",
+led.c:				   wiphy_name(mvm->hw->wiphy));
+led.c:	mvm->led.brightness_set = iwl_led_brightness_set;
+led.c:	mvm->led.max_brightness = 1;
+led.c:		mvm->led.default_trigger =
+led.c:			ieee80211_get_radio_led_name(mvm->hw);
+led.c:	ret = led_classdev_register(mvm->trans->dev, &mvm->led);
+led.c:		kfree(mvm->led.name);
+led.c:	mvm->init_status |= IWL_MVM_INIT_STATUS_LEDS_INIT_COMPLETE;
+led.c:	if (!(mvm->init_status & IWL_MVM_INIT_STATUS_LEDS_INIT_COMPLETE))
+led.c:	if (mvm->trans->trans_cfg->device_family < IWL_DEVICE_FAMILY_8000)
+led.c:	iwl_mvm_led_set(mvm, mvm->led.brightness > 0);
+led.c:	if (!(mvm->init_status & IWL_MVM_INIT_STATUS_LEDS_INIT_COMPLETE))
+led.c:	led_classdev_unregister(&mvm->led);
+led.c:	kfree(mvm->led.name);
+led.c:	mvm->init_status &= ~IWL_MVM_INIT_STATUS_LEDS_INIT_COMPLETE;
+rs.h:#define RS_NAME "iwl-mvm-rs"
+utils.c:	if (WARN_ON(mvm->d3_test_active))
+utils.c:		lockdep_assert_held(&mvm->mutex);
+utils.c:	ret = iwl_trans_send_cmd(mvm->trans, cmd);
+utils.c:	lockdep_assert_held(&mvm->mutex);
+utils.c:	if (WARN_ON(mvm->d3_test_active))
+utils.c:	ret = iwl_trans_send_cmd(mvm->trans, cmd);
+utils.c:	struct iwl_trans *trans = mvm->trans;
+utils.c:	u32 base = mvm->trans->dbg.umac_error_event_table;
+utils.c:	if (!mvm->support_umac_log &&
+utils.c:	    !(mvm->trans->dbg.error_event_table_tlv_status &
+utils.c:		mvm->fwrt.dump.umac_err_id = table.error_id;
+utils.c:			mvm->status, table.valid);
+utils.c:	struct iwl_trans *trans = mvm->trans;
+utils.c:	u32 val, base = mvm->trans->dbg.lmac_error_event_table[lmac_num];
+utils.c:	if (mvm->fwrt.cur_fw_img == IWL_UCODE_INIT) {
+utils.c:			base = mvm->fw->init_errlog_ptr;
+utils.c:			base = mvm->fw->inst_errlog_ptr;
+utils.c:			(mvm->fwrt.cur_fw_img == IWL_UCODE_INIT)
+utils.c:		mvm->fwrt.dump.lmac_err_id[lmac_num] = table.error_id;
+utils.c:			mvm->status, table.valid);
+utils.c:	IWL_ERR(mvm, "Loaded firmware version: %s\n", mvm->fw->fw_version);
+utils.c:	if (!test_bit(STATUS_DEVICE_ENABLED, &mvm->trans->status)) {
+utils.c:	if (mvm->trans->dbg.lmac_error_event_table[1])
+utils.c:	iwl_fw_error_print_fseq_regs(&mvm->fwrt);
+utils.c:	if (WARN(mvm->queue_info[queue].tid_bitmap == 0,
+utils.c:	lockdep_assert_held(&mvm->mutex);
+utils.c:	mvm->accu_radio_stats.rx_time += mvm->radio_stats.rx_time;
+utils.c:	mvm->accu_radio_stats.tx_time += mvm->radio_stats.tx_time;
+utils.c:	mvm->accu_radio_stats.on_time_rf += mvm->radio_stats.on_time_rf;
+utils.c:	mvm->accu_radio_stats.on_time_scan += mvm->radio_stats.on_time_scan;
+utils.c:	lockdep_assert_held(&mvm->mutex);
+utils.c:	if (mvm->cfg->rx_with_siso_diversity)
+utils.c:			mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+utils.c:	if (!fw_has_capa(&mvm->fw->ucode_capa,
+utils.c:	lockdep_assert_held(&mvm->mutex);
+utils.c:			mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+utils.c:			mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+utils.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+utils.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+utils.c:		mvm->trans->trans_cfg->base_params->wd_timeout;
+utils.c:	if (!iwl_fw_dbg_trigger_enabled(mvm->fw, FW_DBG_TRIGGER_TXQ_TIMERS)) {
+utils.c:		if (fw_has_capa(&mvm->fw->ucode_capa,
+utils.c:	trigger = iwl_fw_dbg_get_trigger(mvm->fw, FW_DBG_TRIGGER_TXQ_TIMERS);
+utils.c:		return mvm->trans->trans_cfg->base_params->wd_timeout;
+utils.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, ieee80211_vif_to_wdev(vif),
+utils.c:	iwl_fw_dbg_collect_trig(&mvm->fwrt, trig, "%s", errmsg);
+utils.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, ieee80211_vif_to_wdev(vif),
+utils.c:	iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+utils.c:	low_latency = mvm->tcm.result.low_latency[mvmvif->id];
+utils.c:	if (!mvm->tcm.result.change[mvmvif->id] &&
+utils.c:	mutex_lock(&mvm->mutex);
+utils.c:		mvm->hw, IEEE80211_IFACE_ITER_NORMAL,
+utils.c:	if (mvm->tcm.result.global_change && !data.any_sent)
+utils.c:	if (fw_has_capa(&mvm->fw->ucode_capa, IWL_UCODE_TLV_CAPA_UMAC_SCAN))
+utils.c:	mutex_unlock(&mvm->mutex);
+utils.c:	if (mvm->tcm.data[mvmvif->id].opened_rx_ba_sessions)
+utils.c:	memcpy(mvm->uapsd_noagg_bssids[mvm->uapsd_noagg_bssid_write_idx].addr,
+utils.c:	mvm->uapsd_noagg_bssid_write_idx++;
+utils.c:	if (mvm->uapsd_noagg_bssid_write_idx >= IWL_MVM_UAPSD_NOAGG_LIST_LEN)
+utils.c:		mvm->uapsd_noagg_bssid_write_idx = 0;
+utils.c:	if (mvm->tcm.data[mvmvif->id].uapsd_nonagg_detect.detected)
+utils.c:	mvm->tcm.data[mvmvif->id].uapsd_nonagg_detect.detected = true;
+utils.c:	u64 bytes = mvm->tcm.data[mac].uapsd_nonagg_detect.rx_bytes;
+utils.c:	rate = ewma_rate_read(&mvm->tcm.data[mac].uapsd_nonagg_detect.rate);
+utils.c:	if (!rate || mvm->tcm.data[mac].opened_rx_ba_sessions ||
+utils.c:	    mvm->tcm.data[mac].uapsd_nonagg_detect.detected)
+utils.c:	vif = rcu_dereference(mvm->vif_id_to_mac[mac]);
+utils.c:	unsigned int elapsed = jiffies_to_msecs(ts - mvm->tcm.ts);
+utils.c:		jiffies_to_msecs(ts - mvm->tcm.uapsd_nonagg_ts);
+utils.c:	bool handle_ll = time_after(ts, mvm->tcm.ll_ts + MVM_LL_PERIOD);
+utils.c:		mvm->tcm.ll_ts = ts;
+utils.c:		mvm->tcm.uapsd_nonagg_ts = ts;
+utils.c:	mvm->tcm.result.elapsed = elapsed;
+utils.c:	ieee80211_iterate_active_interfaces_atomic(mvm->hw,
+utils.c:		struct iwl_mvm_tcm_mac *mdata = &mvm->tcm.data[mac];
+utils.c:		mvm->tcm.result.change[mac] = load != mvm->tcm.result.load[mac];
+utils.c:		mvm->tcm.result.load[mac] = load;
+utils.c:		mvm->tcm.result.airtime[mac] = airtime;
+utils.c:			mvm->tcm.result.low_latency[mac] = true;
+utils.c:			mvm->tcm.result.low_latency[mac] = false;
+utils.c:		low_latency |= mvm->tcm.result.low_latency[mac];
+utils.c:		if (!mvm->tcm.result.low_latency[mac] && handle_uapsd)
+utils.c:	mvm->tcm.result.global_change = load != mvm->tcm.result.global_load;
+utils.c:	mvm->tcm.result.global_load = load;
+utils.c:		mvm->tcm.result.band_load[i] = band_load;
+utils.c:		time_after(ts, mvm->tcm.uapsd_nonagg_ts +
+utils.c:	spin_lock(&mvm->tcm.lock);
+utils.c:	if (mvm->tcm.paused || !time_after(ts, mvm->tcm.ts + MVM_TCM_PERIOD)) {
+utils.c:		spin_unlock(&mvm->tcm.lock);
+utils.c:	spin_unlock(&mvm->tcm.lock);
+utils.c:		mutex_lock(&mvm->mutex);
+utils.c:		mutex_unlock(&mvm->mutex);
+utils.c:	spin_lock(&mvm->tcm.lock);
+utils.c:	if (!mvm->tcm.paused && time_after(ts, mvm->tcm.ts + MVM_TCM_PERIOD)) {
+utils.c:		mvm->tcm.ts = ts;
+utils.c:			schedule_delayed_work(&mvm->tcm.work, work_delay);
+utils.c:	spin_unlock(&mvm->tcm.lock);
+utils.c:	spin_lock_bh(&mvm->tcm.lock);
+utils.c:	mvm->tcm.paused = true;
+utils.c:	spin_unlock_bh(&mvm->tcm.lock);
+utils.c:		cancel_delayed_work_sync(&mvm->tcm.work);
+utils.c:	spin_lock_bh(&mvm->tcm.lock);
+utils.c:	mvm->tcm.ts = jiffies;
+utils.c:	mvm->tcm.ll_ts = jiffies;
+utils.c:		struct iwl_mvm_tcm_mac *mdata = &mvm->tcm.data[mac];
+utils.c:		if (mvm->tcm.result.low_latency[mac])
+utils.c:	mvm->tcm.paused = false;
+utils.c:	if (mvm->tcm.result.global_load > IWL_MVM_TRAFFIC_LOW)
+utils.c:		schedule_delayed_work(&mvm->tcm.work, MVM_TCM_PERIOD);
+utils.c:		schedule_delayed_work(&mvm->tcm.work, MVM_LL_PERIOD);
+utils.c:	spin_unlock_bh(&mvm->tcm.lock);
+utils.c:	if (mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_22000 &&
+utils.c:	    mvm->trans->cfg->gp2_reg_addr)
+utils.c:		reg_addr = mvm->trans->cfg->gp2_reg_addr;
+utils.c:	return iwl_read_prph(mvm->trans, reg_addr);
+utils.c:	lockdep_assert_held(&mvm->mutex);
+utils.c:	ps_disabled = mvm->ps_disabled;
+utils.c:		mvm->ps_disabled = true;
+utils.c:		mvm->ps_disabled = ps_disabled;
+utils.c:		.flags = cpu_to_le32(mvm->csi_cfg.flags),
+utils.c:		.timer = cpu_to_le32(mvm->csi_cfg.timer),
+utils.c:		.count = cpu_to_le32(mvm->csi_cfg.count),
+utils.c:		.frame_types = cpu_to_le64(mvm->csi_cfg.frame_types),
+utils.c:		.rate_n_flags_val = cpu_to_le32(mvm->csi_cfg.rate_n_flags_val),
+utils.c:			cpu_to_le32(mvm->csi_cfg.rate_n_flags_mask),
+utils.c:			cpu_to_le32(mvm->csi_cfg.interval),
+utils.c:		.num_filter_addrs = cpu_to_le32(mvm->csi_cfg.num_filter_addrs),
+utils.c:	for (i = 0; i < mvm->csi_cfg.num_filter_addrs; i++)
+utils.c:				mvm->csi_cfg.filter_addrs[i].addr);
+utils.c:	if (!fw_has_capa(&mvm->fw->ucode_capa,
+nan.c:	return fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_NAN2_VER2);
+nan.c:	mutex_lock(&mvm->mutex);
+nan.c:	umac_cfg->sta_id = cpu_to_le32(mvm->aux_sta.sta_id);
+nan.c:		mvm->nan_vif = vif;
+nan.c:	mutex_unlock(&mvm->mutex);
+nan.c:	mutex_lock(&mvm->mutex);
+nan.c:		mvm->nan_vif = NULL;
+nan.c:	mutex_unlock(&mvm->mutex);
+nan.c:	mutex_lock(&mvm->mutex);
+nan.c:	mutex_unlock(&mvm->mutex);
+nan.c:	mutex_lock(&mvm->mutex);
+nan.c:	mutex_unlock(&mvm->mutex);
+nan.c:	if (WARN_ON_ONCE(!mvm->nan_vif)) {
+nan.c:	ieee80211_nan_func_match(mvm->nan_vif, &match,
+nan.c:	if (WARN_ONCE(!mvm->nan_vif, "NAN vif is NULL"))
+nan.c:		ieee80211_nan_func_match(mvm->nan_vif, &match,
+nan.c:	if (fw_has_api(&mvm->fw->ucode_capa, IWL_UCODE_TLV_API_NAN_NOTIF_V2))
+nan.c:	if (WARN_ON_ONCE(!mvm->nan_vif)) {
+nan.c:	ieee80211_nan_func_terminated(mvm->nan_vif, ev->instance_id, nl_reason,
+nan.c:	if (WARN_ON(!mvm->nan_vif))
+nan.c:	mutex_lock(&mvm->mutex);
+nan.c:	mvmvif = iwl_mvm_vif_from_mac80211(mvm->nan_vif);
+nan.c:	mutex_unlock(&mvm->mutex);
+Binary file mac80211.o matches
+ops.c:	iwl_dnt_dispatch_collect_ucode_message(mvm->trans, rxb);
+ops.c:	reg_val |= CSR_HW_REV_STEP(mvm->trans->hw_rev) <<
+ops.c:	reg_val |= CSR_HW_REV_DASH(mvm->trans->hw_rev) <<
+ops.c:	if (mvm->trans->trans_cfg->device_family < IWL_DEVICE_FAMILY_8000)
+ops.c:	if (iwl_fw_dbg_is_d3_debug_enabled(&mvm->fwrt))
+ops.c:	iwl_trans_set_bits_mask(mvm->trans, CSR_HW_IF_CONFIG_REG,
+ops.c:	if (!mvm->trans->cfg->apmg_not_supported)
+ops.c:		iwl_set_bits_mask_prph(mvm->trans, APMG_PS_CTRL_REG,
+ops.c: *	which can't acquire mvm->mutex.
+ops.c: * @RX_HANDLER_ASYNC_LOCKED : If the handler needs to hold mvm->mutex
+ops.c: *	it will be called from a worker with mvm->mutex held.
+ops.c: *	mutex itself, it will be called from a worker without mvm->mutex held.
+ops.c:	const struct iwl_pwr_tx_backoff *backoff = mvm->cfg->pwr_tx_backoffs;
+ops.c:	dflt_pwr_limit = iwl_acpi_get_pwr_limit(mvm->dev);
+ops.c:	mutex_lock(&mvm->mutex);
+ops.c:		rcu_dereference_protected(mvm->csa_tx_blocked_vif,
+ops.c:					  lockdep_is_held(&mvm->mutex));
+ops.c:	RCU_INIT_POINTER(mvm->csa_tx_blocked_vif, NULL);
+ops.c:	mutex_unlock(&mvm->mutex);
+ops.c:	if (mvm->trans->dbg_cfg.__mvm_mod_param_##n)	\
+ops.c:		iwlmvm_mod_params.n = mvm->trans->dbg_cfg.mvm_##n;
+ops.c:	mutex_lock(&mvm->mutex);
+ops.c:	mutex_unlock(&mvm->mutex);
+ops.c:	mutex_lock(&mvm->mutex);
+ops.c:	mutex_unlock(&mvm->mutex);
+ops.c:	if (!mvm->fw->ucode_capa.cmd_versions ||
+ops.c:	    !mvm->fw->ucode_capa.n_cmd_versions)
+ops.c:	entry = mvm->fw->ucode_capa.cmd_versions;
+ops.c:	for (i = 0; i < mvm->fw->ucode_capa.n_cmd_versions; i++, entry++) {
+ops.c:	BUILD_BUG_ON(ARRAY_SIZE(mvm->fw_id_to_mac_id) != IWL_MVM_STATION_COUNT);
+ops.c:	mvm->dev = trans->dev;
+ops.c:	mvm->trans = trans;
+ops.c:	mvm->cfg = cfg;
+ops.c:	mvm->fw = fw;
+ops.c:	mvm->hw = hw;
+ops.c:	iwl_fw_runtime_init(&mvm->fwrt, trans, fw, &iwl_mvm_fwrt_ops, mvm,
+ops.c:	mvm->init_status = 0;
+ops.c:	mvm->fw_restart = iwlwifi_mod_params.fw_restart ? -1 : 0;
+ops.c:	mvm->aux_queue = IWL_MVM_DQA_AUX_QUEUE;
+ops.c:	mvm->snif_queue = IWL_MVM_DQA_INJECT_MONITOR_QUEUE;
+ops.c:	mvm->probe_queue = IWL_MVM_DQA_AP_PROBE_RESP_QUEUE;
+ops.c:	mvm->p2p_dev_queue = IWL_MVM_DQA_P2P_DEVICE_QUEUE;
+ops.c:	mvm->sf_state = SF_UNINIT;
+ops.c:		iwl_fw_set_current_image(&mvm->fwrt, IWL_UCODE_REGULAR);
+ops.c:		iwl_fw_set_current_image(&mvm->fwrt, IWL_UCODE_INIT);
+ops.c:	mvm->drop_bcn_ap_mode = true;
+ops.c:	mutex_init(&mvm->mutex);
+ops.c:	spin_lock_init(&mvm->async_handlers_lock);
+ops.c:	INIT_LIST_HEAD(&mvm->time_event_list);
+ops.c:	INIT_LIST_HEAD(&mvm->aux_roc_te_list);
+ops.c:	INIT_LIST_HEAD(&mvm->async_handlers_list);
+ops.c:	spin_lock_init(&mvm->time_event_lock);
+ops.c:	INIT_LIST_HEAD(&mvm->ftm_initiator.loc_list);
+ops.c:	INIT_WORK(&mvm->async_handlers_wk, iwl_mvm_async_handlers_wk);
+ops.c:	INIT_WORK(&mvm->roc_done_wk, iwl_mvm_roc_done_wk);
+ops.c:	INIT_WORK(&mvm->tx_latency_wk, iwl_mvm_tx_latency_wk);
+ops.c:	INIT_DELAYED_WORK(&mvm->tx_latency_watchdog_wk,
+ops.c:	INIT_DELAYED_WORK(&mvm->tdls_cs.dwork, iwl_mvm_tdls_ch_switch_work);
+ops.c:	INIT_DELAYED_WORK(&mvm->scan_timeout_dwork, iwl_mvm_scan_timeout_wk);
+ops.c:	INIT_WORK(&mvm->add_stream_wk, iwl_mvm_add_new_dqa_stream_wk);
+ops.c:	INIT_LIST_HEAD(&mvm->add_stream_txqs);
+ops.c:	init_waitqueue_head(&mvm->rx_sync_waitq);
+ops.c:	mvm->csi_cfg.frame_types = ~0ULL;
+ops.c:	atomic_set(&mvm->queue_sync_counter, 0);
+ops.c:	SET_IEEE80211_DEV(mvm->hw, mvm->trans->dev);
+ops.c:	spin_lock_init(&mvm->tcm.lock);
+ops.c:	INIT_DELAYED_WORK(&mvm->tcm.work, iwl_mvm_tcm_work);
+ops.c:	mvm->tcm.ts = jiffies;
+ops.c:	mvm->tcm.ll_ts = jiffies;
+ops.c:	mvm->tcm.uapsd_nonagg_ts = jiffies;
+ops.c:	INIT_LIST_HEAD(&mvm->tdls_peer_cache_list);
+ops.c:	mvm->rx_filters = IWL_MVM_VENDOR_RXFILTER_EINVAL;
+ops.c:	INIT_DELAYED_WORK(&mvm->cs_tx_unblock_dwork, iwl_mvm_tx_unblock_dwork);
+ops.c:	mvm->cmd_ver.csi_notif =
+ops.c:	if (WARN_ON_ONCE(mvm->cmd_ver.csi_notif > 2))
+ops.c:	mvm->cmd_ver.d0i3_resp =
+ops.c:	if (WARN_ON_ONCE(mvm->cmd_ver.d0i3_resp > 1))
+ops.c:	if (mvm->trans->trans_cfg->device_family >= IWL_DEVICE_FAMILY_AX210)
+ops.c:		mvm->trans->trans_cfg->device_family < IWL_DEVICE_FAMILY_AX210;
+ops.c:	snprintf(mvm->hw->wiphy->fw_version,
+ops.c:		 sizeof(mvm->hw->wiphy->fw_version),
+ops.c:	iwl_trans_configure(mvm->trans, &trans_cfg);
+ops.c:	trans->dbg.dest_tlv = mvm->fw->dbg.dest_tlv;
+ops.c:	trans->dbg.n_dest_reg = mvm->fw->dbg.n_dest_reg;
+ops.c:	memcpy(trans->dbg.conf_tlv, mvm->fw->dbg.conf_tlv,
+ops.c:	trans->dbg.trigger_tlv = mvm->fw->dbg.trigger_tlv;
+ops.c:	trans->iml = mvm->fw->iml;
+ops.c:	trans->iml_len = mvm->fw->iml_len;
+ops.c:	iwl_notification_wait_init(&mvm->notif_wait);
+ops.c:	iwl_dnt_init(mvm->trans, dbgfs_dir);
+ops.c:	iwl_tm_init(trans, mvm->fw, &mvm->mutex, mvm);
+ops.c:	mvm->phy_db = iwl_phy_db_init(trans);
+ops.c:	if (!mvm->phy_db) {
+ops.c:		 mvm->cfg->name, mvm->trans->hw_rev);
+ops.c:		mvm->nvm_file_name = iwlwifi_mod_params.nvm_file;
+ops.c:		mvm->nvm_file_name = trans->dbg_cfg.nvm_file;
+ops.c:		IWL_DEBUG_EEPROM(mvm->trans->dev,
+ops.c:	err = iwl_trans_start_hw(mvm->trans);
+ops.c:	mutex_lock(&mvm->mutex);
+ops.c:		iwl_fw_dbg_error_collect(&mvm->fwrt, FW_DBG_TRIGGER_DRIVER);
+ops.c:	mutex_unlock(&mvm->mutex);
+ops.c:	mvm->scan_cmd = kmalloc(scan_size, GFP_KERNEL);
+ops.c:	if (!mvm->scan_cmd)
+ops.c:	mvm->last_ebs_successful = true;
+ops.c:	mvm->hw_registered = true;
+ops.c:		memset(&mvm->rx_stats_v3, 0,
+ops.c:		memset(&mvm->rx_stats, 0, sizeof(struct mvm_statistics_rx));
+ops.c:	mvm->is_bar_enabled = true;
+ops.c:	iwl_mvm_toggle_tx_ant(mvm, &mvm->mgmt_last_antenna_idx);
+ops.c:	iwl_fw_flush_dumps(&mvm->fwrt);
+ops.c:	iwl_fw_runtime_free(&mvm->fwrt);
+ops.c:	iwl_phy_db_free(mvm->phy_db);
+ops.c:	kfree(mvm->scan_cmd);
+ops.c:	ieee80211_free_hw(mvm->hw);
+ops.c:	ieee80211_unregister_hw(mvm->hw);
+ops.c:	kfree(mvm->scan_cmd);
+ops.c:	kfree(mvm->mcast_filter_cmd);
+ops.c:	mvm->mcast_filter_cmd = NULL;
+ops.c:	kfree(mvm->error_recovery_buf);
+ops.c:	mvm->error_recovery_buf = NULL;
+ops.c:	kfree(mvm->mcast_active_filter_cmd);
+ops.c:	mvm->mcast_active_filter_cmd = NULL;
+ops.c:	iwl_trans_op_mode_leave(mvm->trans);
+ops.c:	iwl_phy_db_free(mvm->phy_db);
+ops.c:	mvm->phy_db = NULL;
+ops.c:	iwl_dnt_free(mvm->trans);
+ops.c:	kfree(mvm->nvm_data);
+ops.c:		kfree(mvm->nvm_sections[i].data);
+ops.c:	cancel_delayed_work_sync(&mvm->tcm.work);
+ops.c:	iwl_fw_runtime_free(&mvm->fwrt);
+ops.c:	mutex_destroy(&mvm->mutex);
+ops.c:	ieee80211_free_hw(mvm->hw);
+ops.c:	spin_lock_bh(&mvm->async_handlers_lock);
+ops.c:	list_for_each_entry_safe(entry, tmp, &mvm->async_handlers_list, list) {
+ops.c:	spin_unlock_bh(&mvm->async_handlers_lock);
+ops.c:	spin_lock_bh(&mvm->async_handlers_lock);
+ops.c:	list_splice_init(&mvm->async_handlers_list, &local_list);
+ops.c:	spin_unlock_bh(&mvm->async_handlers_lock);
+ops.c:			mutex_lock(&mvm->mutex);
+ops.c:			mutex_unlock(&mvm->mutex);
+ops.c:	trig = iwl_fw_dbg_trigger_on(&mvm->fwrt, NULL,
+ops.c:		iwl_fw_dbg_collect_trig(&mvm->fwrt, trig,
+ops.c:	iwl_dbg_tlv_time_point(&mvm->fwrt,
+ops.c:	iwl_notification_wait_notify(&mvm->notif_wait, pkt);
+ops.c:		spin_lock(&mvm->async_handlers_lock);
+ops.c:		list_add_tail(&entry->list, &mvm->async_handlers_list);
+ops.c:		spin_unlock(&mvm->async_handlers_lock);
+ops.c:		schedule_work(&mvm->async_handlers_wk);
+ops.c:	iwl_tm_gnl_send_rx(mvm->trans, rxb);
+ops.c:	iwl_tm_gnl_send_rx(mvm->trans, rxb);
+ops.c:	iwl_trans_block_txq_ptrs(mvm->trans, false);
+ops.c:	return queue == mvm->aux_queue || queue == mvm->probe_queue ||
+ops.c:		queue == mvm->p2p_dev_queue || queue == mvm->snif_queue;
+ops.c:		mvm->tvqm_info[hw_queue].sta_id :
+ops.c:		mvm->queue_info[hw_queue].ra_sta_id;
+ops.c:	if (WARN_ON_ONCE(sta_id >= ARRAY_SIZE(mvm->fw_id_to_mac_id)))
+ops.c:	sta = rcu_dereference(mvm->fw_id_to_mac_id[sta_id]);
+ops.c:			ieee80211_stop_queues(mvm->hw);
+ops.c:			ieee80211_wake_queues(mvm->hw);
+ops.c:		int tid = mvm->tvqm_info[hw_queue].txq_tid;
+ops.c:		tid_bitmap = mvm->queue_info[hw_queue].tid_bitmap;
+ops.c:			iwl_mvm_mac_itxq_xmit(mvm->hw, txq);
+ops.c:		wake_up(&mvm->rx_sync_waitq);
+ops.c:	wiphy_rfkill_set_hw_state(mvm->hw->wiphy, state);
+ops.c:		set_bit(IWL_MVM_STATUS_HW_CTKILL, &mvm->status);
+ops.c:		clear_bit(IWL_MVM_STATUS_HW_CTKILL, &mvm->status);
+ops.c:	bool rfkill_safe_init_done = READ_ONCE(mvm->rfkill_safe_init_done);
+ops.c:		set_bit(IWL_MVM_STATUS_HW_RFKILL, &mvm->status);
+ops.c:		clear_bit(IWL_MVM_STATUS_HW_RFKILL, &mvm->status);
+ops.c:		iwl_abort_notification_waits(&mvm->notif_wait);
+ops.c:	iwl_trans_free_tx_cmd(mvm->trans, info->driver_data[1]);
+ops.c:	ieee80211_free_txskb(mvm->hw, skb);
+ops.c:	iwl_abort_notification_waits(&mvm->notif_wait);
+ops.c:	iwl_dbg_tlv_del_timers(mvm->trans);
+ops.c:	if (!mvm->fw_restart && fw_error) {
+ops.c:		iwl_fw_error_collect(&mvm->fwrt);
+ops.c:	} else if (test_bit(IWL_MVM_STATUS_IN_HW_RESTART, &mvm->status)) {
+ops.c:		reprobe->dev = mvm->trans->dev;
+ops.c:			    &mvm->status)) {
+ops.c:	} else if (mvm->fwrt.cur_fw_img == IWL_UCODE_REGULAR &&
+ops.c:		   mvm->hw_registered &&
+ops.c:		   !test_bit(STATUS_TRANS_DEAD, &mvm->trans->status)) {
+ops.c:		if (mvm->fw->ucode_capa.error_log_size) {
+ops.c:			u32 src_size = mvm->fw->ucode_capa.error_log_size;
+ops.c:			u32 src_addr = mvm->fw->ucode_capa.error_log_addr;
+ops.c:				mvm->error_recovery_buf = recover_buf;
+ops.c:				iwl_trans_read_mem_bytes(mvm->trans,
+ops.c:		iwl_fw_error_collect(&mvm->fwrt);
+ops.c:		iwl_dnt_dispatch_handle_nic_err(mvm->trans);
+ops.c:		if (fw_error && mvm->fw_restart > 0)
+ops.c:			mvm->fw_restart--;
+ops.c:		set_bit(IWL_MVM_STATUS_HW_RESTART_REQUESTED, &mvm->status);
+ops.c:		ieee80211_restart_hw(mvm->hw);
+ops.c:	if (!test_bit(STATUS_TRANS_DEAD, &mvm->trans->status))
