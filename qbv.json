@@ -1,0 +1,64 @@
+{
+    "global": {
+        "clock_id":"CLOCK_REALTIME",
+        "interface":"wlp5s0",
+        "offset":40,
+        "cycle-time":100000,
+        "default_prio":1,
+        "num_tc":2,
+        "num_tx_queues":4,
+        "enable_etf":false,
+        "enable_br_netfilter":true,
+        "clear_iptables":true
+    },
+    "traffic-map":[
+        {
+            "type": "udp",
+            "prio":3,
+            "dscp-class":"CS6",
+            "id": {"dport":5000, "sport":10000, "dest-ip":"10.100.6.23"},
+            "enable": true
+        }
+    ],
+    "priority-map":[{"prio":3, "tc":0}],
+    "queue":[{"tc":0, "num_q":1},{"tc":1, "num_q":3}],
+    "schedule":
+    [
+        {
+            "cmd":"S",
+            "mask":"01",
+            "duration":1000000
+        },
+        {
+            "cmd":"S",
+            "mask":"01",
+            "duration":1000000
+        },
+        {
+            "cmd":"S",
+            "mask":"01",
+            "duration":1000000
+        }
+    ],
+    "etf":[{"queue":0,"delta":50000}],
+    "shaping":[
+        {
+            "queue":2,
+            "rate":"5mbit",
+            "buffer":5000,
+            "limit":10000
+        },
+        {
+            "queue":3,
+            "rate":"5mbit",
+            "buffer":5000,
+            "limit":10000
+        },
+        {
+            "queue":4,
+            "rate":"5mbit",
+            "buffer":5000,
+            "limit":10000
+        }
+    ]    
+}
