@@ -33,6 +33,6 @@ sleep 2
 SUPPLICANT=`which wpa_supplicant`
 
 #ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=wheel
-_cmd="$SUPPLICANT -Dnl80211 -i $INTERFACE_NAME -K -dd -T -s -c /etc/wpa_supplicant/wpa_supplicant.conf"
+_cmd="$SUPPLICANT -Dnl80211 -i $INTERFACE_NAME -K -dd -T -s -c /etc/wpa_supplicant/wpa_supplicant.conf -f /var/log/wpa_supplicant.log"
 echo $_cmd
 new_terminal STA "$_cmd"
