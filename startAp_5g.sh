@@ -23,7 +23,7 @@ iw phy phy0 interface add sta0 type managed
 sleep 5
 
 WPA_SUPP=`which wpa_supplicant`
-_cmd="$WPA_SUPP -Dnl80211 -i sta0 -K -dd -T -s -c /etc/wpa_supplicant/wpa_supplicant-5g.conf"
+_cmd="$WPA_SUPP -Dnl80211 -i sta0 -K -dd -T -s -c /etc/wpa_supplicant/wpa_supplicant-5g.conf -f /var/log/wpa_supplicant.log -t -ddd"
 
 # Connect to the real commercial AP
 new_terminal STA_5G "$_cmd"
