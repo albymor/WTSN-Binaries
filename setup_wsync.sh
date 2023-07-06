@@ -4,8 +4,10 @@ FOLLOWER_MAC=
 
 
 function new_terminal {
+	echo command
 	echo "$2"
-	screen -dmS $1 $2
+	echo done
+	screen -L -Logfile $1  -dmS $1 $2
 }
 
 
@@ -13,7 +15,7 @@ function new_terminal {
 
 function start_wphc2sys {
 
-	PHC=$(dmesg | awk '/Registered PHC clock/ {print $10}')
+	PHC=$(dmesg | awk '/Registered PHC clock/ {print $11}')
 	local phc2sys_s="CLOCK_REALTIME"
 	local phc2sys_c="/dev/ptp$PHC"
 	if [ $1 == "slave" ]
@@ -44,9 +46,9 @@ function start_wptp4l {
 		read -p "Enter the MAC address of the $whose_mac WiFi device and Press Enter to start ptp4l: " _peer_mac
 	fi
 
-	sed -i -e "/ptp_dst_mac/ s/ptp_dst_mac.*/ptp_dst_mac\t$_peer_mac/" _config
-	PHC=$(dmesg | awk '/Registered PHC clock/ {print $10}')
-	local _cmd="ptp4l -p /dev/ptp$PHC -f wifi-leader.cfg --step_threshold=1 -m"
+	sed -i -e "/ptp_dst_mac/ s/ptp_dst_mac.*/ptp_dst_mac\t$_peer_mac/" $_config
+	PHC=$(dmesg | awk '/Registered PHC clock/ {print $11}')
+	local _cmd="ptp4l -p /dev/ptp$PHC -f $_config --step_threshold=1 -m"
 
 	read -p "$_cmd ;  Continue ? (Y/N): " confirm && [[ $confirm == [yY] || $confirm == [yY][eE][sS] ]] || exit 1
 	echo $_cmd
@@ -61,7 +63,7 @@ function usage {
 	exit -1
 }
 
-while getopts b:dhi: opt; do
+while getopts b:dhp: opt; do
 	case ${opt} in
 		b) MODE=${OPTARG} ;;
 		p) PEER_MAC=${OPTARG} ;;
