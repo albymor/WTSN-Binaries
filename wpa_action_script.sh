@@ -15,7 +15,7 @@
 
 IFNAME=$1
 CMD=$2
-INTERFACE_NAME="wlp1s0"
+INTERFACE_NAME="wlp88s0"
 HOSTAPD=$(which hostapd)
 
 function new_terminal {
