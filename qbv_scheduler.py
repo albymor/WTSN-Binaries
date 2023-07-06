@@ -50,8 +50,9 @@ def run_cmd(cmd, printOnly=False, igoreError=True):
     run_cmd - Run shell command from code
     @cmd: Command to run
     """
+    
     cmd = cmd.replace('\n', '')
-    #logger.info(f"{cmd}")
+    logger.info(f"{cmd}")
     if printOnly:
         return
     
@@ -166,7 +167,7 @@ def generate_iptables_rule( traffic_map):
         prio_map_cmd_udp += f" -d {traffic_map['id']['dest-ip']}"
     
     if 'dport' in traffic_map['id'] :
-        prio_map_cmd_udp += f" -dport {traffic_map['id']['dport']}"
+        prio_map_cmd_udp += f" --dport {traffic_map['id']['dport']}"
     
     if 'sport' in traffic_map['id'] :
         prio_map_cmd_udp += f" -sport {traffic_map['id']['sport']}"
@@ -197,10 +198,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--config', help='Configuration File', required=True)
     parser.add_argument('-c', '--command', help='Command to run', type=str, choices=['exec', 'del'], default='exec')
-    
+    parser.add_argument('-s', '--simulate', help='Simulate only',  action='store_false') 
     args = parser.parse_args()
 
     config_file = args.config
+    simulate = args.simulate 
+
+    if simulate:
+        print("!!!!!!!!!!! SIMULATION ONLY !!!!!!!!!!!!")
     
     # Check if priority-queue mapping file is valid
     if os.path.isfile(config_file) == False:
@@ -234,7 +239,7 @@ def main():
         print( "Qbv configuration cleared")
         exit(0)
 
-    out = run_cmd( "ls -lah /sys/class/net/wlp110s0/queues/ | grep tx | wc -l").replace('\n', '')
+    out = run_cmd( f"ls -lah /sys/class/net/{interface}/queues/ | grep tx | wc -l").replace('\n', '')
     logger.debug (f" num tx queues: {out}")
     num_tx_queues = int(out)
 
@@ -293,6 +298,7 @@ def main():
     handle_id = 10
     for shaping_rule in config['shaping']:
         cmd = f"tc qdisc replace dev {interface} parent 100:{shaping_rule['queue']} handle {handle_id}: tbf rate {shaping_rule['rate']} buffer {shaping_rule['buffer']} limit {shaping_rule['limit']}"
+        print(cmd)
         qbv_script.append(cmd)
         handle_id +=1
 
@@ -303,9 +309,9 @@ def main():
     if time_elapsed:
         print ('Base time set to ' + str(time_elapsed) + 's from now (ns): ' + base_time)
         qbv_script.append(show_qdisc_cmd)
-    
+    print("Setting")
     for cmd in qbv_script:
-        run_cmd(cmd, printOnly=True)
+        run_cmd(cmd, printOnly=simulate)
 
 if __name__ == '__main__':
     main()
