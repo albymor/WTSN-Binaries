@@ -38,7 +38,7 @@ function start_wptp4l {
 		_whose_mac="leader"
 	fi
 
-	echo 'Starting ptp4l on leader.'
+	#echo 'Starting ptp4l on leader.'
 
 	local _peer_mac=$2
 	if [ -z $_peer_mac ]
